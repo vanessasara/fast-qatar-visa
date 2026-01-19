@@ -1,0 +1,338 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  /* Background and foreground */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Fonts */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Qatar Maroon - Primary Color */
+  --color-qatar-maroon: #8B1538;
+  --color-qatar-maroon-50: #fdf2f4;
+  --color-qatar-maroon-100: #fce7ea;
+  --color-qatar-maroon-200: #f9d0d9;
+  --color-qatar-maroon-300: #f4a9b8;
+  --color-qatar-maroon-400: #ec7691;
+  --color-qatar-maroon-500: #df4a6d;
+  --color-qatar-maroon-600: #cb2952;
+  --color-qatar-maroon-700: #8B1538;
+  --color-qatar-maroon-800: #731434;
+  --color-qatar-maroon-900: #621532;
+  --color-qatar-maroon-950: #370717;
+
+  /* Qatar Gold - Secondary/Accent Color */
+  --color-qatar-gold: #D4AF37;
+  --color-qatar-gold-50: #fbf9eb;
+  --color-qatar-gold-100: #f6f1cb;
+  --color-qatar-gold-200: #efe299;
+  --color-qatar-gold-300: #e5cc5f;
+  --color-qatar-gold-400: #D4AF37;
+  --color-qatar-gold-500: #cc9a23;
+  --color-qatar-gold-600: #b0781c;
+  --color-qatar-gold-700: #8d5819;
+  --color-qatar-gold-800: #76481c;
+  --color-qatar-gold-900: #653c1d;
+  --color-qatar-gold-950: #3a1f0d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B1538;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #731434;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #8B1538 #f1f1f1;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Animation delay utilities */
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  z-index: 9999;
+  padding: 1rem;
+  background: #8B1538;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.skip-to-content:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+}
+
+/* Focus visible styles for better accessibility */
+*:focus-visible {
+  outline: 2px solid #8B1538;
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #8B1538;
+  outline-offset: 2px;
+}
+
+/* Remove default focus outline and use custom */
+*:focus {
+  outline: none;
+}
+
+/* Selection styling */
+::selection {
+  background-color: #8B1538;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #8B1538;
+  color: white;
+}
+
+/* Responsive text utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Touch target minimum size for mobile */
+@media (pointer: coarse) {
+  button,
+  a,
+  input[type="checkbox"],
+  input[type="radio"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  header,
+  footer,
+  nav,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+  }
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Text gradient utility */
+.text-gradient {
+  background: linear-gradient(135deg, #8B1538 0%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover lift effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient backgrounds */
+.bg-gradient-maroon {
+  background: linear-gradient(135deg, #8B1538 0%, #731434 100%);
+}
+
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #cc9a23 100%);
+}
+
+/* Container utilities */
+.container-narrow {
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.container-wide {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Image aspect ratio containers */
+.aspect-hero {
+  aspect-ratio: 21/9;
+}
+
+.aspect-card {
+  aspect-ratio: 4/3;
+}
+
+.aspect-portrait {
+  aspect-ratio: 3/4;
+}
