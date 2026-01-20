@@ -81,14 +81,14 @@ export default function Header() {
             </div>
             <div className="flex items-center gap-3 sm:gap-6 mx-auto sm:mx-0">
               <a
-                href="tel:+97451049145"
+                href="tel:+97 23456789"
                 className="flex items-center gap-1.5 text-xs sm:text-sm font-medium hover:text-qatar-gold transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                <span>+974-5104 9145</span>
+                <span>+974-234 5678</span>
               </a>
               <a
-                href="https://wa.me/97451049145"
+                href="https://wa.me/97"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-xs sm:text-sm font-medium hover:text-qatar-gold transition-colors"
@@ -187,7 +187,7 @@ export default function Header() {
             {/* Desktop CTA Buttons */}
             <div className="hidden md:flex items-center gap-2 lg:gap-3">
               <a
-                href="https://wa.me/97451049145"
+                href="https://wa.me/9712345678"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-md border border-input bg-background px-3 lg:px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-green-50 hover:text-green-600 hover:border-green-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -264,7 +264,7 @@ export default function Header() {
               {/* Mobile Contact Buttons */}
               <div className="mt-4 pt-4 border-t space-y-2">
                 <a
-                  href="tel:+97451049145"
+                  href="tel:+97 23456789"
                   className="flex items-center justify-center gap-2 rounded-md border border-input bg-background px-5 py-3 text-base font-semibold shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
