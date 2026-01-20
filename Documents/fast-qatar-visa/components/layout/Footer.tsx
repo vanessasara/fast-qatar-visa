@@ -17,9 +17,9 @@ import { useState } from "react";
 const quickLinks = [
   { href: "/services", label: "Tourist Visa" },
   { href: "/services", label: "Business Visa" },
-  { href: "/services", label: "Transit Visa" },
-  { href: "/services", label: "Family Visa" },
-  { href: "/services", label: "Work Visa" },
+  { href: "/services/work", label: "Work Visas" },
+  { href: "/services/work/bike-rider", label: "Bike Rider Visa" },
+  { href: "/services/work/accountant", label: "Accountant Visa" },
 ];
 
 const importantLinks = [
@@ -139,20 +139,21 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-5 w-5 flex-shrink-0 text-qatar-gold" />
                 <div>
-                  <p className="text-sm text-gray-300">Call Us</p>
+                  <p className="text-sm text-gray-300">Call / WhatsApp</p>
                   <a
-                    href="tel:+97412345678"
+                    href="tel:+97451049145"
                     className="text-sm text-white hover:text-qatar-gold"
                   >
-                    +974 1234 5678
+                    +974-5104 9145
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-qatar-gold" />
                 <div>
-                  <p className="text-sm text-gray-300">Location</p>
-                  <p className="text-sm text-white">Doha, Qatar</p>
+                  <p className="text-sm text-gray-300">Qatar Office</p>
+                  <p className="text-sm text-white">Office 303, Abdul Jaleel Abdul Ghani Building</p>
+                  <p className="text-sm text-white">Al Matar Street, Doha, Qatar</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">

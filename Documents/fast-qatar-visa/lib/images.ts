@@ -24,6 +24,17 @@ export const IMAGES = {
     luggage: "https://images.unsplash.com/photo-1520769669658-f07657f5a307?w=800&q=80",
   },
 
+  // Work visa category images
+  work: {
+    bikeRider: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=800&q=80",
+    cleaner: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
+    labour: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80",
+    accountant: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+    workPermit: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80",
+    freelance: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+    overview: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1200&q=80",
+  },
+
   // About page images
   about: {
     team: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80",

@@ -1,50 +1,57 @@
 "use client";
 
 import {
+  Award,
   Zap,
-  Shield,
-  Headphones,
-  UserCheck,
   TrendingUp,
-  BadgeDollarSign,
+  Headphones,
+  ShieldCheck,
+  BadgeCheck,
 } from "lucide-react";
+import ScrollAnimation from "@/components/ui/scroll-animation";
 
 const features = [
   {
+    icon: Award,
+    title: "Decade of Excellence",
+    subtitle: "10+ Years Experience",
+    description:
+      "Over 10 years of specialized experience in Qatar visa processing with thousands of successful applications",
+  },
+  {
     icon: Zap,
-    title: "Fast Processing",
+    title: "Quick Turnaround",
+    subtitle: "Fast Processing",
     description:
-      "Get your visa approved in as little as 24 hours with our express service. No more waiting weeks.",
-  },
-  {
-    icon: Shield,
-    title: "Secure & Safe",
-    description:
-      "Bank-level encryption protects all your personal and payment information. Your data is safe with us.",
-  },
-  {
-    icon: Headphones,
-    title: "24/7 Support",
-    description:
-      "Our expert team is available round the clock to assist you anytime, anywhere in the world.",
-  },
-  {
-    icon: UserCheck,
-    title: "Expert Assistance",
-    description:
-      "Dedicated visa specialists guide you through every step of the process for a smooth experience.",
+      "Express processing available - get your visa approved in as little as 24 hours with our priority service",
   },
   {
     icon: TrendingUp,
-    title: "High Success Rate",
+    title: "Proven Track Record",
+    subtitle: "98% Success Rate",
     description:
-      "98% approval rate with thousands of satisfied customers worldwide. Your visa is in good hands.",
+      "Exceptional approval rate with thousands of satisfied clients from over 150 countries worldwide",
   },
   {
-    icon: BadgeDollarSign,
-    title: "Money-Back Guarantee",
+    icon: Headphones,
+    title: "Always Available",
+    subtitle: "24/7 Expert Support",
     description:
-      "Full refund if your visa application is rejected. Apply with confidence, risk-free service.",
+      "Round-the-clock assistance from our dedicated visa specialists via phone, email, and WhatsApp",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Complete Security",
+    subtitle: "Secure & Transparent",
+    description:
+      "Bank-level encryption for your data and transparent process with no hidden fees",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Official Partner",
+    subtitle: "Government Approved",
+    description:
+      "Authorized visa processing center working directly with Qatar government authorities",
   },
 ];
 
@@ -53,35 +60,47 @@ export default function WhyChooseUs() {
     <section className="bg-gray-50 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            Why Choose Fast Qatar Visa?
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-            Your trusted partner for Qatar visa processing
-          </p>
-        </div>
+        <ScrollAnimation animation="fade-up">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
+              Why Choose Fast Qatar Visa?
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+              Your trusted partner for hassle-free visa processing
+            </p>
+          </div>
+        </ScrollAnimation>
 
         {/* Features Grid */}
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
-            <div
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature, index) => (
+            <ScrollAnimation
               key={feature.title}
-              className="group rounded-xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-qatar-gold hover:shadow-lg"
+              animation="fade-up"
+              delay={index * 100}
             >
-              {/* Icon */}
-              <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-qatar-maroon/10 text-qatar-maroon transition-colors group-hover:bg-qatar-maroon group-hover:text-white">
-                <feature.icon className="h-7 w-7" />
-              </div>
+              <div className="group h-full rounded-xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-qatar-gold hover:shadow-lg">
+                {/* Icon */}
+                <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-qatar-gold/10 text-qatar-gold transition-colors group-hover:bg-qatar-gold group-hover:text-white">
+                  <feature.icon className="h-7 w-7" />
+                </div>
 
-              {/* Content */}
-              <h3 className="text-xl font-bold text-gray-900">
-                {feature.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-gray-600">
-                {feature.description}
-              </p>
-            </div>
+                {/* Subtitle */}
+                <p className="text-sm font-semibold text-qatar-maroon uppercase tracking-wide">
+                  {feature.subtitle}
+                </p>
+
+                {/* Title */}
+                <h3 className="mt-2 text-xl font-bold text-gray-900">
+                  {feature.title}
+                </h3>
+
+                {/* Description */}
+                <p className="mt-3 text-sm leading-relaxed text-gray-600">
+                  {feature.description}
+                </p>
+              </div>
+            </ScrollAnimation>
           ))}
         </div>
       </div>

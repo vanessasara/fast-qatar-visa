@@ -1,1252 +1,1926 @@
-# Fast Qatar Visa Center - Website Development Guide (Updated with Images)
-
-## Project Overview
-Build a professional visa processing website for Fast Qatar Visa Center using Next.js 14+, Tailwind CSS, and shadcn/ui components. The website should have a clean, trustworthy design with Qatar-inspired colors (maroon and gold) and high-quality imagery for better user experience.
+# Fast Qatar Visa Center - Complete Website Development Guide
+## Updated with Fast Global ME Reference & Work Visa Categories
 
 ---
 
-## PHASE 0: Next.js Configuration & Image Setup
+## 📋 PROJECT INFORMATION SUMMARY
 
-### Tasks:
+### Reference Website Analysis
+Based on **fastglobalme.com** - a professional migration services company offering:
+- Multiple country visa services (Qatar, Dubai, Abu Dhabi, India, Canada, UK, Europe, Australia)
+- 12+ years of industry experience
+- Offices in Dubai, Abu Dhabi, Qatar, India, Canada, Portugal, UK
+- Emphasis on: Fast processing, Expert assistance, 24/7 support, High success rate
+- Clean, professional design with trust-building elements
+- Strong use of testimonials and success stories
+- Multiple contact channels (Phone, Email, WhatsApp)
 
-1. **Update next.config.js file to allow all image domains**:
-   - Find or create the next.config.js file in your project root folder
-   - Add a configuration for images that allows loading from any external website
-   - Set it up to accept images from both secure (https) and regular (http) websites
-   - Use two asterisks as a wildcard pattern to allow any domain name
-   - This means you can use images from Unsplash, Pexels, or any other image hosting service without getting errors
-   - Make sure image optimization is enabled for better loading speeds
+### Your Website Focus
+**Fast Qatar Visa Center** - Specialized Qatar visa processing service
 
-2. **Create an image constants file** at `/lib/images.ts`:
-   - Make a new TypeScript file to store all your image URLs in one organized place
-   - This makes it super easy to change images later without hunting through code
-   - Create an object called IMAGES with different categories
-   - Organize images by where they'll be used:
-     - Hero section: Doha skyline, modern buildings, Qatar landmarks
-     - Services: Travel photos, passports, business meetings, families traveling
-     - About page: Professional teams, office spaces, Qatar culture
-     - Features: Security symbols, customer support, fast delivery
-     - Qatar culture: Architecture blending tradition and modernity, desert scenes
-   - Use free stock photo websites like Unsplash or Pexels for high-quality images
-   - All images should look professional and trustworthy
+### New Work Visa Categories to Add
+1. **Bike Rider Visa**
+   - Visa Price: QAR 7,500
+   - Monthly Salary: QAR 2,300/month (PKR 180,000/month)
+   - Includes residence permit
 
-3. **Image Selection Guidelines for Best UI/UX**:
-   - Choose images that make visitors feel confident and safe
-   - Look for photos with Qatar or Middle Eastern settings when you can
-   - Make sure images aren't too dark or too bright - you need good contrast for text
-   - Pick images with colors that work well with maroon and gold theme
-   - Show diverse people in professional settings
-   - Avoid cluttered or busy backgrounds
-   - Use landscape orientation for hero sections
-   - Use square or portrait for cards and smaller sections
-   - Every image should serve a purpose - either informative or trust-building
+2. **Cleaner Visa**
+   - Visa Price: QAR 7,000
+   - Monthly Salary: QAR 2,000/month
+   - Includes residence permit
 
----
+3. **Labour Visa**
+   - Same pricing as Cleaner Visa
+   - Visa Price: QAR 7,000
+   - Monthly Salary: QAR 2,000/month
+   - Includes residence permit
 
-## PHASE 1: Project Setup & Configuration
+4. **Accountant Open Visa**
+   - Visa Price: QAR 8,000
+   - Monthly Salary: QAR 25,000/month + Residence
+   - Professional category
 
-### Tasks:
-1. **Update `tailwind.config.ts`** with custom colors:
-   - Add Qatar-inspired color palette to theme.extend.colors
-   - Include qatarMaroon as primary color
-   - Include qatarGold as accent/secondary color
-   - Add complementary shades for hover states and variants
-   - Add custom gradient backgrounds using these colors
+5. **Work Permit Visa (2 Years)**
+   - For various professional categories
+   - Extended validity period
 
-2. **Create comprehensive folder structure**:
-   - Create /components folder with subfolders: sections, ui, layout
-   - Create /lib folder for utilities and constants
-   - Create /app folder with route folders: about, services, contact, track
-   - Create /public/images folder for any local images
-   - The images.ts file goes in /lib for centralized image management
-
-3. **Update globals.css**:
-   - Add any custom global styles needed
-   - Set smooth scroll behavior
-   - Add custom animations for fade-in effects
-   - Style scrollbar to match theme colors
+6. **Freelance Visa**
+   - For independent professionals
+   - Flexible work arrangements
 
 ---
 
-## PHASE 2: Layout Components (Header & Footer)
+## 🎨 DESIGN DIRECTION & AESTHETIC
 
-### Tasks:
+### Core Design Philosophy (Inspired by Fast Global ME)
+- **Aesthetic**: Professional, trustworthy, modern Middle Eastern fusion
+- **Tone**: Confident but approachable, premium but accessible
+- **Colors**: Qatar maroon (#8B1538) + Gold (#D4AF37) with clean whites
+- **Typography**: Professional serif for headings (Playfair Display or Crimson Pro), clean sans-serif for body (Manrope or DM Sans)
+- **Visual Style**: Clean, spacious, trust-building with subtle cultural elements
 
-1. **Create Header component** at `/components/layout/Header.tsx`:
-   - Add Qatar flag emoji or icon next to logo text "Fast Qatar Visa"
-   - Logo should be maroon color and bold
-   - Use NavigationMenu from shadcn for main navigation
-   - Navigation links: Home, Services, About, Contact, Track Application
-   - Add "Apply Now" button in maroon color on the right side
-   - Make header sticky with blur background effect when scrolling
-   - Add mobile hamburger menu for responsive design
-   - Use smooth transitions for all hover effects
-
-2. **Create Footer component** at `/components/layout/Footer.tsx`:
-   - Use dark background (maroon or dark gray) with white text
-   - Create 4 columns layout for desktop:
-     - Column 1: About company with brief description
-     - Column 2: Quick links to services
-     - Column 3: Important links (Track, FAQ, Requirements)
-     - Column 4: Contact information with icons
-   - Add social media icons at bottom (placeholder for now)
-   - Include newsletter signup section with email input
-   - Add copyright text at the very bottom
-   - On mobile, stack columns vertically
-   - Use gold color for headings and hover states
-
-3. **Create Layout wrapper** at `/components/layout/Layout.tsx`:
-   - Simple wrapper component that includes Header and Footer
-   - Accepts children prop for page content
-   - Ensures consistent layout across all pages
+### Key Differentiators
+- Qatar flag colors throughout (maroon & gold)
+- Middle Eastern architectural influences in patterns
+- Professional photography showing modern Qatar
+- Success-oriented messaging
+- Multi-channel support emphasis
 
 ---
 
-## PHASE 3: Home Page Sections (Enhanced with Images)
+## 📊 INFORMATION ARCHITECTURE
 
-### Tasks:
-
-1. **Create Hero Section** at `/components/sections/Hero.tsx`:
-   - **Background Image Setup**:
-     - Use a stunning photo of Doha's modern skyline during sunset or blue hour
-     - The image should show Qatar's impressive architecture and development
-     - Alternative: Use the Pearl Qatar, Museum of Islamic Art, or Katara Cultural Village
-     - Make sure the image is high resolution and looks sharp on large screens
-   - **Image Overlay for Readability**:
-     - Add a dark semi-transparent layer over the image
-     - This makes white text easy to read
-     - The overlay should be about half transparent so you can still see the beautiful image
-   - **Text Content**:
-     - Main headline in large bold letters: "Get Your Qatar Visa Fast & Easy"
-     - Subtitle explaining benefits: quick processing, reliable service, expert help
-     - Make text white and very easy to read
-   - **Call-to-Action Buttons**:
-     - Primary button: "Apply Now" with solid maroon background
-     - Secondary button: "Check Status" with maroon outline, white background
-     - Place buttons side by side on desktop, stack on mobile
-   - **Trust Indicators**:
-     - Add small badges below buttons showing key benefits
-     - Examples: "98% Success Rate", "24-Hour Processing", "24/7 Support"
-     - Use subtle icons with each badge
-   - **Animation**:
-     - Make everything fade in smoothly when page loads
-     - Text should appear from bottom to top
-     - Keep it professional, not too flashy
-   - **Responsive Design**:
-     - On mobile, make sure text doesn't get too small
-     - Adjust padding so everything fits nicely
-     - Background image should still look good when cropped on mobile
-
-2. **Create Services Preview Section** at `/components/sections/ServicesPreview.tsx`:
-   - **Section Header**:
-     - Title: "Our Visa Services"
-     - Subtitle: "Choose the visa type that suits your travel needs"
-     - Center aligned with good spacing above and below
-   - **Service Cards Layout**:
-     - Create a grid showing 4 cards
-     - On desktop: show all 4 in one row
-     - On tablet: show 2 cards per row
-     - On mobile: stack them vertically, one card at a time
-   - **Individual Card Design**:
-     - Each card should have its own unique background image (subtle, not overpowering)
-     - Add a light overlay so the image doesn't distract from text
-     - Place a large colorful icon at the top of each card
-     - Service name as bold heading
-     - Write 2-3 sentences describing what this visa is for
-     - Add a "Learn More →" link in gold color at the bottom
-   - **Four Service Types with Images**:
-     - **Tourist Visa Card**:
-       - Image: Airplane flying, tourist attractions, or luggage/travel gear
-       - Icon: Airplane or camera icon
-       - Description: For leisure travel, sightseeing, and family visits
-     - **Business Visa Card**:
-       - Image: Business meeting, handshake, or modern office
-       - Icon: Briefcase or building icon
-       - Description: For conferences, meetings, and business trips
-     - **Transit Visa Card**:
-       - Image: Airport terminal, airplane at gate, or transit area
-       - Icon: Transfer or connecting flights icon
-       - Description: For layovers and connections through Doha
-     - **Family Visa Card**:
-       - Image: Happy family traveling together or family at airport
-       - Icon: Family/people icon
-       - Description: For bringing family members to Qatar
-   - **Interactive Effects**:
-     - When someone hovers over a card, it should lift up slightly
-     - The border should change to gold color
-     - Shadow should get stronger to show depth
-     - Make the transition smooth and elegant
-   - **Card Spacing**:
-     - Leave enough space between cards so they don't look cramped
-     - Make sure each card has equal height for a clean look
-     - Add generous padding inside each card
-
-3. **Create How It Works Section** at `/components/sections/HowItWorks.tsx`:
-   - Section heading: "How It Works" with subtitle "Get your visa in 4 simple steps"
-   - 4 step cards in a row (or 2x2 grid on mobile)
-   - Each step includes:
-     - Large circular badge with step number (use gold background)
-     - Icon representing the step
-     - Step title
-     - Brief description
-   - Add connecting line or arrow between steps on desktop
-   - Steps should be:
-     - Step 1: Fill Application (form icon)
-     - Step 2: Upload Documents (upload icon)
-     - Step 3: Make Payment (credit card icon)
-     - Step 4: Receive Visa (checkmark/email icon)
-   - Keep design clean and minimal with plenty of white space
-
-4. **Create Why Choose Us Section** at `/components/sections/WhyChooseUs.tsx`:
-   - **Section Introduction**:
-     - Title: "Why Choose Fast Qatar Visa?"
-     - Subtitle: "Your trusted partner for Qatar visa processing"
-     - Center the text with good spacing
-   - **Grid Layout**:
-     - Show 6 feature cards in a grid
-     - Desktop: 3 cards per row (2 rows total)
-     - Tablet: 2 cards per row
-     - Mobile: 1 card at a time, stacked vertically
-   - **Individual Feature Card Design**:
-     - Clean white background with subtle border
-     - Good padding inside each card for breathing room
-     - Hover effect: card lifts slightly, border turns gold
-     - Each card contains: icon, title, description
-   - **Six Features with Specific Icons and Details**:
-     - **Fast Processing**:
-       - Icon: Lightning bolt or rocket (shows speed)
-       - Title: "Fast Processing"
-       - Description: "Get your visa approved in as little as 24 hours with our express service"
-       - Optional small image: Clock showing fast time or speedometer
-     - **Secure & Safe**:
-       - Icon: Shield with checkmark or lock
-       - Title: "Secure & Safe"
-       - Description: "Bank-level encryption protects all your personal and payment information"
-       - Optional small image: Secure payment or data protection visual
-     - **24/7 Support**:
-       - Icon: Headset or chat bubbles
-       - Title: "24/7 Support"
-       - Description: "Our expert team is available round the clock to assist you anytime"
-       - Optional small image: Customer service representative or support desk
-     - **Expert Assistance**:
-       - Icon: Person with checkmark or graduation cap
-       - Title: "Expert Assistance"
-       - Description: "Dedicated visa specialists guide you through every step of the process"
-       - Optional small image: Professional consultant helping client
-     - **High Success Rate**:
-       - Icon: Chart trending upward or trophy
-       - Title: "High Success Rate"
-       - Description: "98% approval rate with thousands of satisfied customers worldwide"
-       - Optional small image: Success chart or happy customer
-     - **Money-Back Guarantee**:
-       - Icon: Money with checkmark or shield with dollar sign
-       - Title: "Money-Back Guarantee"
-       - Description: "Full refund if your visa application is rejected - risk-free service"
-       - Optional small image: Money back or guarantee seal
-   - **Icon Styling**:
-     - Make icons large enough to be noticed (about 2-3 inches on screen)
-     - Use maroon or gold color for icons
-     - Place icon at top of each card
-     - Icons should be simple and easily recognizable
-   - **Card Consistency**:
-     - Keep all cards the same height for neat appearance
-     - Use same padding and spacing in each card
-     - Make sure text doesn't get too long in any one card
-     - Align everything nicely for professional look
-
-5. **Create Testimonials Section** at `/components/sections/Testimonials.tsx`:
-   - **Section Header**:
-     - Title: "What Our Clients Say"
-     - Subtitle: "Real experiences from satisfied customers" (optional)
-     - Center aligned
-   - **Layout Design**:
-     - Show 3 testimonial cards in a row
-     - On desktop: all 3 side by side
-     - On tablet: 2 cards, then 1 below
-     - On mobile: stack all 3 vertically
-   - **Individual Testimonial Card**:
-     - **Client Photo** (top of card):
-       - Small circular photo of the person
-       - Use professional-looking stock photos of diverse people
-       - Photos should show friendly, happy faces
-       - Size: about the size of a large coin
-       - Center the photo at top of card
-     - **Quote/Review**:
-       - Add quotation mark icon or design element
-       - Write realistic positive review (3-4 sentences)
-       - Talk about specific benefits they experienced
-       - Examples: fast processing, helpful support, easy process
-       - Use natural, conversational language
-     - **Client Information**:
-       - Client name (can be first name + last initial for privacy)
-       - Country they're from with small flag emoji
-       - Example: "Sarah M. 🇺🇸 United States"
-     - **Star Rating**:
-       - Show 5 gold stars at bottom
-       - All testimonials should be 5-star for trust
-       - Stars should be visible and nicely designed
-   - **Card Design**:
-     - White background with subtle shadow
-     - Rounded corners for friendly feel
-     - Good padding inside so text isn't cramped
-     - Border can be light gray or gold on hover
-   - **Sample Testimonials Content**:
-     - Testimonial 1: Focus on speed and efficiency
-       - "Got my Qatar visa in just 24 hours! The process was incredibly smooth and the support team answered all my questions instantly. Highly recommend!"
-     - Testimonial 2: Focus on ease of use
-       - "I was worried about the application process, but Fast Qatar Visa made everything so simple. Clear instructions and very professional service."
-     - Testimonial 3: Focus on reliability
-       - "Used this service twice now for business visas. Never had any issues, always approved on time. Very trustworthy and reliable!"
-   - **Visual Polish**:
-     - Keep cards equal height for clean look
-     - Add subtle hover effect (slight lift)
-     - Consider adding a light background color for the section (very light gray)
-     - Space cards evenly with consistent gaps
-
-6. **Create CTA Section** at `/components/sections/CTASection.tsx`:
-   - **Background Design**:
-     - Use a maroon gradient background (dark to lighter maroon)
-     - Alternative: Solid maroon with subtle pattern overlay
-     - Pattern ideas: Geometric shapes inspired by Islamic art, subtle dots, or diagonal lines
-     - Keep pattern very subtle - shouldn't distract from text
-   - **Optional Background Image**:
-     - You can add a faded background image of Qatar
-     - Use very low opacity (like 10-15%) so it's barely visible
-     - This adds depth without being distracting
-   - **Text Content**:
-     - Large bold heading: "Ready to Apply for Your Qatar Visa?"
-     - Make heading white and really stand out
-     - Supporting text below (1-2 sentences):
-       - Example: "Join thousands of travelers who trust us for their Qatar visa needs. Start your application today and get approved in 24 hours!"
-     - Keep text centered
-     - All text should be white for good contrast
-   - **Call-to-Action Button**:
-     - Large prominent button: "Start Your Application"
-     - Button color: White background with maroon text
-     - OR: Gold background with dark text
-     - Make button bigger than normal buttons
-     - Add hover effect: button should slightly change color or lift
-     - Place button centered below the text
-   - **Additional Trust Elements** (Optional):
-     - Add small icons or badges below button:
-       - "Secure Payment" icon
-       - "24/7 Support" icon
-       - "Money-Back Guarantee" icon
-     - Keep these small and subtle
-     - Use white or gold color
-   - **Spacing**:
-     - Generous padding top and bottom
-     - Make sure section feels spacious, not cramped
-     - Give the button plenty of space around it
-   - **Overall Feel**:
-     - This section should feel important and urgent
-     - But not pushy or aggressive
-     - Professional and inviting
-
-7. **Update Home Page** at `/app/page.tsx`:
-   - Import all section components created above
-   - Arrange in this order:
-     - Hero
-     - ServicesPreview
-     - HowItWorks
-     - WhyChooseUs
-     - Testimonials
-     - CTASection
-   - Wrap everything in Layout component
-   - Add smooth scroll behavior
-   - Ensure proper spacing between sections (use consistent padding)
+### Website Structure
+```
+Fast Qatar Visa Center
+├── Home
+├── Visa Services
+│   ├── Tourist Visa
+│   ├── Business Visa
+│   ├── Transit Visa
+│   ├── Family Visa
+│   └── Work Visas ⭐ NEW SECTION
+│       ├── Bike Rider Visa
+│       ├── Cleaner Visa
+│       ├── Labour Visa
+│       ├── Accountant Open Visa
+│       ├── Work Permit Visa (2 Years)
+│       └── Freelance Visa
+├── About Us
+├── Contact
+└── Track Application
+```
 
 ---
 
-## PHASE 4: Services Page (Detailed with Images)
+## 📱 PHASE 0: Project Setup & Configuration
 
-### Tasks:
+### Task 0.1: Next.js Configuration for Images
+```javascript
+// next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+      {
+        protocol: 'http',
+        hostname: '**',
+      },
+    ],
+  },
+}
 
-1. **Create Page Hero** at `/components/sections/ServicesHero.tsx`:
-   - Smaller hero section with background image
-   - Page title: "Our Visa Services"
-   - Brief description of comprehensive visa solutions
-   - Breadcrumb navigation (Home > Services)
+module.exports = nextConfig
+```
 
-2. **Create Detailed Services List** at `/components/sections/ServicesList.tsx`:
-   - **Tab Navigation Setup**:
-     - Create clickable tabs at the top to switch between visa types
-     - Tab options: Tourist | Business | Transit | Family | Work
-     - Active tab should be highlighted in maroon color
-     - Inactive tabs in gray, change to gold on hover
-   - **Content Layout for Each Tab**:
-     - When someone clicks a tab, show that visa type's information
-     - Use two-column layout on desktop:
-       - Left side (40%): Large featured image
-       - Right side (60%): All the information
-     - On mobile, stack image on top, then information below
-   - **Featured Image Selection** (Left Column):
-     - **Tourist Visa**: 
-       - Show tourists at famous Qatar landmark (Museum of Islamic Art, Souq Waqif)
-       - OR happy travelers with luggage at modern airport
-       - OR someone taking photos of Doha skyline
-     - **Business Visa**:
-       - Business people shaking hands in modern office
-       - Professional conference or meeting setting
-       - Corporate buildings in Doha's financial district
-     - **Transit Visa**:
-       - Hamad International Airport terminal (modern and luxurious)
-       - Airplane at gate with boarding bridge
-       - Comfortable airport lounge or waiting area
-     - **Family Visa**:
-       - Happy family at airport with luggage
-       - Family exploring Qatar together
-       - Parents with children in a welcoming setting
-     - **Work Visa**:
-       - Professional in office environment
-       - Construction or development project in Qatar
-       - Modern workspace or business district
-     - Make image fill the space nicely with rounded corners
-     - Add subtle shadow to make image stand out
-   - **Information Content** (Right Column):
-     - **Detailed Description**:
-       - Write 3-4 paragraphs explaining this visa type
-       - Who needs it, what it allows, how long it's valid
-       - Make it easy to understand, avoid legal jargon
-     - **Eligibility Criteria**:
-       - Create a list showing who can apply
-       - Use checkmark icons for each point
-       - Keep points short and clear
-     - **Processing Time**:
-       - Show time in a colored badge
-       - Example: "2-3 Business Days" in a green badge
-       - If express options available, mention them
-     - **Price Information**:
-       - Display starting price clearly
-       - Mention "From $XX" if prices vary
-       - Add small note about what's included
-     - **Apply Now Button**:
-       - Large, prominent maroon button
-       - Place it at the bottom of content
-       - Should stand out as the main action
-   - **Visual Consistency**:
-     - Keep same layout for all tabs
-     - Use same image size and position
-     - Maintain consistent spacing
-     - Make sure switching tabs feels smooth
+### Task 0.2: Create Image Constants
+Create `/lib/images.ts`:
+```typescript
+export const IMAGES = {
+  // Hero Sections
+  hero: {
+    main: 'https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=2070', // Doha skyline
+    services: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074', // Airplane
+    about: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2070', // Team collaboration
+    contact: 'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2074', // Customer support
+    track: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070', // Documents/tracking
+  },
 
-3. **Create Requirements Checklist** at `/components/sections/RequirementsChecklist.tsx`:
-   - Section heading: "Document Requirements"
-   - Use Accordion component for different visa types
-   - Each accordion item expands to show:
-     - Checklist of required documents with checkmark icons
-     - Special notes or important reminders in highlighted boxes
-     - Sample document images where helpful (passport, photo specs)
-   - Use icons to indicate document types
-   - Make it easy to scan and understand
+  // Service Cards - Tourist Visa
+  tourist: {
+    card: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=2035', // Airplane travel
+    detail: 'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?q=80&w=2070', // Tourist landmarks
+  },
 
-4. **Create Pricing Table** at `/components/sections/PricingTable.tsx`:
-   - Section heading: "Pricing & Processing Time"
-   - Three pricing tiers displayed as cards:
-     - Standard (2-3 days processing)
-     - Express (24 hours processing)
-     - Super Express (same day processing)
-   - Each pricing card shows:
-     - Processing time badge at top
-     - Price in large text
-     - List of included features with checkmarks
-     - "Select Plan" button
-   - Highlight the Express option as "Most Popular"
-   - Use gold accent for the popular choice
+  // Service Cards - Business Visa
+  business: {
+    card: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=2073', // Business meeting
+    detail: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070', // Professional handshake
+  },
 
-5. **Update Services Page** at `/app/services/page.tsx`:
-   - Import all service-related components
-   - Arrange sections: ServicesHero, ServicesList, RequirementsChecklist, PricingTable
-   - Add CTA section at bottom
-   - Wrap in Layout
+  // Service Cards - Transit Visa
+  transit: {
+    card: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074', // Airport terminal
+    detail: 'https://images.unsplash.com/photo-1474302770737-173ee21bab63?q=80&w=2006', // Airport lounge
+  },
 
----
+  // Service Cards - Family Visa
+  family: {
+    card: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2070', // Happy family
+    detail: 'https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=2070', // Family at airport
+  },
 
-## PHASE 5: About Page (With Team & Company Images)
+  // NEW - Work Visa Categories
+  work: {
+    bikeRider: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2006', // Delivery person
+    cleaner: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2070', // Professional cleaning
+    labour: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070', // Construction worker
+    accountant: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070', // Office professional
+    workPermit: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2070', // Professional team
+    freelance: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070', // Freelancer working
+  },
 
-### Tasks:
+  // Features & Benefits
+  features: {
+    fast: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070', // Speed/fast processing
+    secure: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070', // Security
+    support: 'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2074', // Customer support
+    expert: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2076', // Expert professional
+    success: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015', // Success chart
+    guarantee: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=2071', // Money/guarantee
+  },
 
-1. **Create About Hero** at `/components/sections/AboutHero.tsx`:
-   - **Background Image Selection**:
-     - Use an inspiring image that represents professionalism and teamwork
-     - Good options:
-       - Team of diverse professionals collaborating in modern office
-       - Aerial view of Qatar showing development and progress
-       - Handshake or partnership image showing trust
-       - Modern office building exterior in Doha
-     - Make sure image is bright and welcoming, not dark or intimidating
-   - **Image Overlay**:
-     - Add a semi-transparent dark layer over the image
-     - Not too dark - you should still see the image clearly
-     - This helps white text stand out and be readable
-   - **Text Content**:
-     - Large heading: "About Fast Qatar Visa Center"
-     - Subtitle with mission statement (1-2 sentences):
-       - Example: "We're committed to making Qatar visa processing simple, fast, and stress-free for travelers worldwide"
-     - Keep text centered and easy to read
-     - Use white text color for good contrast
-   - **Size and Spacing**:
-     - Make this hero smaller than the home page hero
-     - It should take up about half the screen height
-     - Add good padding so text isn't touching edges
-   - **Breadcrumb Navigation**:
-     - Add small breadcrumb at top: Home > About
-     - Helps users know where they are
-     - Use subtle white or light gray color
+  // About Page
+  about: {
+    story: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070', // Team meeting
+    office: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069', // Modern office
+    culture: 'https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=2070', // Qatar culture
+  },
 
-2. **Create Company Story Section** at `/components/sections/CompanyStory.tsx`:
-   - **Layout Design**:
-     - Split the section into two halves side by side
-     - Left side shows a large inspiring image
-     - Right side contains text and statistics
-     - On mobile, stack image on top, text below
-   - **Image Selection for Left Side**:
-     - Choose ONE of these image types:
-       - Professional team collaborating around a table
-       - Modern office space with people working
-       - Customer service representative helping someone
-       - Qatar skyline representing growth and modernity
-     - Image should look warm, professional, and trustworthy
-     - Make sure image has good lighting and looks high quality
-   - **Text Content on Right Side**:
-     - Start with a small label like "Our Story" in gold color
-     - Write the company story in 3-4 paragraphs:
-       - Paragraph 1: When and why the company was founded
-       - Paragraph 2: How you've grown and what makes you different
-       - Paragraph 3: Your commitment to customers and service quality
-       - Paragraph 4: Your vision for the future
-     - Use a warm, friendly but professional tone
-     - Make text easy to read with good spacing between paragraphs
-   - **Statistics Cards Below Text**:
-     - Show 3-4 impressive numbers in small cards
-     - Each stat card should have:
-       - Large number (like "5+" or "10,000+")
-       - Small description below (like "Years in Business" or "Visas Processed")
-       - Icon related to the statistic
-     - Arrange cards in a grid or row
-     - Examples of stats to show:
-       - Years of experience
-       - Total visas successfully processed
-       - Customer satisfaction percentage
-       - Countries served
-     - Use maroon or gold accent colors for numbers
-   - **Visual Balance**:
-     - Make sure image and text take roughly equal space
-     - Keep generous padding around all elements
-     - Image should be vertically centered with text section
+  // Testimonials (diverse, professional headshots)
+  testimonials: {
+    client1: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2070',
+    client2: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070',
+    client3: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=2070',
+  },
 
-3. **Create Values Section** at `/components/sections/Values.tsx`:
-   - Section heading: "Our Core Values"
-   - Grid of 4-6 value cards
-   - Each card includes:
-     - Relevant icon
-     - Value name (Trust, Speed, Transparency, Excellence, etc.)
-     - Brief description
-   - Use clean card design with subtle shadows
-   - Optional: Add related background images with overlay
+  // Background patterns (subtle Islamic geometry)
+  patterns: {
+    subtle: '/patterns/islamic-pattern-subtle.svg', // You'll create this
+    gold: '/patterns/islamic-pattern-gold.svg', // You'll create this
+  },
+}
+```
 
-4. **Create Team Section (Optional)** at `/components/sections/Team.tsx`:
-   - If you want to add team members:
-     - Grid of team member cards
-     - Each card: Photo, Name, Role, Brief bio
-     - Use placeholder professional photos
-   - If no team section, skip this component
+### Task 0.3: Tailwind Configuration
+Update `tailwind.config.ts`:
+```typescript
+import type { Config } from "tailwindcss"
 
-5. **Update About Page** at `/app/about/page.tsx`:
-   - Import and arrange: AboutHero, CompanyStory, Values, (Team if created)
-   - Add trust indicators section with certifications or partnerships
-   - Include CTA section at bottom
-   - Wrap in Layout
+const config: Config = {
+  darkMode: ["class"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Qatar Brand Colors
+        qatarMaroon: {
+          DEFAULT: '#8B1538',
+          50: '#FAE8ED',
+          100: '#F5D1DB',
+          200: '#EBA3B7',
+          300: '#E17593',
+          400: '#D7476F',
+          500: '#8B1538',
+          600: '#70112D',
+          700: '#540D22',
+          800: '#380917',
+          900: '#1C040B',
+        },
+        qatarGold: {
+          DEFAULT: '#D4AF37',
+          50: '#FAF6E9',
+          100: '#F5EDD3',
+          200: '#EBDBA7',
+          300: '#E1C97B',
+          400: '#D7B74F',
+          500: '#D4AF37',
+          600: '#A98C2C',
+          700: '#7F6921',
+          800: '#544616',
+          900: '#2A230B',
+        },
+        // Semantic Colors
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        border: 'hsl(var(--border))',
+      },
+      fontFamily: {
+        heading: ['Playfair Display', 'serif'],
+        body: ['Manrope', 'sans-serif'],
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.6s ease-in-out',
+        'slide-up': 'slideUp 0.6s ease-out',
+        'scale-in': 'scaleIn 0.4s ease-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        scaleIn: {
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+}
 
----
+export default config
+```
 
-## PHASE 6: Contact Page (User-Friendly Design)
+### Task 0.4: Install Required Fonts
+Add to `app/layout.tsx`:
+```typescript
+import { Playfair_Display, Manrope } from 'next/font/google'
 
-### Tasks:
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-heading',
+  display: 'swap',
+})
 
-1. **Create Contact Hero** at `/components/sections/ContactHero.tsx`:
-   - **Background Image**:
-     - Use a welcoming, friendly image
-     - Good options:
-       - Customer service representative with headset, smiling
-       - Helping hands or handshake representing support
-       - Phone and laptop representing communication
-       - Modern communication/contact center
-     - Keep image warm and inviting, not cold or corporate
-   - **Overlay and Text**:
-     - Add semi-transparent overlay for text readability
-     - Heading: "Get In Touch"
-     - Subtitle: "We're here to help with your Qatar visa questions"
-     - OR: "Have questions? Our team is ready to assist you 24/7"
-     - Keep it simple and reassuring
-   - **Size**:
-     - Smaller than main homepage hero
-     - About 30-40% of screen height
-     - Focus user's attention on the contact form below
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+})
 
-2. **Create Contact Form** at `/components/sections/ContactForm.tsx`:
-   - **Form Container Design**:
-     - White background card with subtle shadow
-     - Rounded corners for friendly feel
-     - Good padding inside for comfortable spacing
-   - **Form Title**:
-     - "Send Us a Message" or "How Can We Help?"
-     - Place at top of form
-   - **Form Fields** (in this order):
-     - **Full Name**:
-       - Label: "Full Name"
-       - Placeholder: "Enter your full name"
-       - Required field indicator (red asterisk)
-     - **Email Address**:
-       - Label: "Email Address"
-       - Placeholder: "your.email@example.com"
-       - Required, with email validation
-     - **Phone Number**:
-       - Label: "Phone Number"
-       - Placeholder: "+974 XXXX XXXX"
-       - Optional or required as you prefer
-     - **Visa Type** (Dropdown):
-       - Label: "Visa Type"
-       - Options: Tourist, Business, Transit, Family, Work, Not Sure
-       - Default: "Select visa type"
-     - **Your Message**:
-       - Label: "Message"
-       - Large text area (5-6 lines tall)
-       - Placeholder: "Tell us how we can help you..."
-       - Required field
-   - **Submit Button**:
-     - Text: "Send Message" or "Submit"
-     - Maroon background, white text
-     - Full width of form
-     - Show loading spinner when submitting
-   - **Success/Error Messages**:
-     - After submission show green success message
-     - "Thank you! We'll respond within 24 hours"
-     - If error, show red message explaining what went wrong
-   - **Visual Details**:
-     - Use clean, modern input fields
-     - Good spacing between fields
-     - Clear labels above each field
-     - Subtle borders on inputs
-     - Focus state: border turns maroon when clicked
+// In the HTML tag:
+<html className={`${playfair.variable} ${manrope.variable}`}>
+```
 
-3. **Create Contact Info Section** at `/components/sections/ContactInfo.tsx`:
-   - **Container Design**:
-     - Can be a card or just clean layout
-     - Match the styling of contact form
-   - **Section Title**:
-     - "Contact Information" or "Reach Us Directly"
-   - **Contact Details with Icons**:
-     - **Email**:
-       - Icon: Envelope/mail icon
-       - Label: "Email Us"
-       - Value: "info@fastqatarvisa.com"
-       - Make email clickable (opens email client)
-     - **Phone Number**:
-       - Icon: Phone icon
-       - Label: "Call Us"
-       - Value: "+974 XXXX XXXX"
-       - Make phone clickable on mobile
-     - **WhatsApp** (Optional):
-       - Icon: WhatsApp icon
-       - Label: "WhatsApp"
-       - Value: "+974 XXXX XXXX"
-       - Very popular in Qatar region
-     - **Working Hours**:
-       - Icon: Clock icon
-       - Label: "Available"
-       - Value: "24/7 - Always Here to Help"
-       - OR specific hours if not 24/7
-     - **Office Address** (if applicable):
-       - Icon: Location pin icon
-       - Label: "Office Location"
-       - Value: "Doha, Qatar" or specific address
-   - **Layout of Info Items**:
-     - Stack vertically with good spacing
-     - Icon on left, text on right
-     - Use maroon or gold for icons
-     - Make contact details stand out
-   - **Optional Map**:
-     - If you have physical office, add Google Maps embed
-     - Place below contact details
-     - Make it interactive
-     - Use rounded corners to match design
-   - **Trust Badge** (Optional):
-     - Add "24/7 Support Available" badge
-     - Use gold color to highlight
-     - Place prominently
+### Task 0.5: Global Styles
+Update `app/globals.css`:
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-4. **Create FAQ Accordion** at `/components/sections/FAQ.tsx`:
-   - **Section Title**:
-     - "Frequently Asked Questions"
-     - Subtitle: "Quick answers to common questions"
-   - **Accordion Design**:
-     - Use expandable accordion component
-     - One question visible at a time
-     - Click to expand and see answer
-     - Smooth animation when opening/closing
-   - **10 Essential Questions** (with helpful answers):
-     - **Q1: How long does visa processing take?**
-       - A: Standard processing is 2-3 business days. Express service available in 24 hours.
-     - **Q2: What documents do I need?**
-       - A: Passport copy, photo, confirmed hotel booking, and return flight ticket. Full list varies by visa type.
-     - **Q3: What payment methods do you accept?**
-       - A: We accept all major credit cards, debit cards, and bank transfers.
-     - **Q4: Is my information secure?**
-       - A: Yes, we use bank-level encryption for all data and payments.
-     - **Q5: What if my visa is rejected?**
-       - A: We offer a full refund if your application is rejected. Our success rate is 98%.
-     - **Q6: Can I track my application?**
-       - A: Yes, use your reference number on our Track Application page.
-     - **Q7: Do I need to visit your office?**
-       - A: No, everything is done online. No office visit required.
-     - **Q8: How will I receive my visa?**
-       - A: Your approved visa will be emailed to you as a PDF document.
-     - **Q9: Can I apply for multiple people?**
-       - A: Yes, you can submit multiple applications in one order.
-     - **Q10: What if I need help during the process?**
-       - A: Our support team is available 24/7 via email, phone, and live chat.
-   - **Visual Design**:
-     - Clean, easy to read
-     - Question in bold, answer in regular text
-     - Add plus/minus icon to show expand/collapse state
-     - Hover effect on questions
-     - Adequate spacing between questions
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --border: 0 0% 89.8%;
+  }
 
-5. **Update Contact Page** at `/app/contact/page.tsx`:
-   - **Layout Structure**:
-     - ContactHero at very top (full width)
-     - Main content section below with two columns:
-       - **Left Column (60% width)**: ContactForm
-       - **Right Column (40% width)**: ContactInfo
-       - On mobile: Stack form first, then info below
-     - **FAQ Section**: Full width below the two columns
-     - **CTA Section**: At bottom encouraging users to apply
-   - **Spacing**:
-     - Good gap between columns
-     - Generous padding around all sections
-     - Make page feel open and breathable
-   - **Overall Feel**:
-     - Welcoming and accessible
-     - Easy to use and understand
-     - Professional but friendly
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #8B1538;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #70112D;
+  }
+}
+```
 
 ---
 
-## PHASE 7: Track Application Page (Status Tracking)
+## 🏗️ PHASE 1: Layout Components
 
-### Tasks:
+### Task 1.1: Header Component
+Create `/components/layout/Header.tsx`:
 
-1. **Create Track Hero** at `/components/sections/TrackHero.tsx`:
-   - **Simple Clean Design** (no background image needed):
-     - Light colored background (light gray or subtle gradient)
-     - OR small background image related to tracking/progress
-   - **Text Content**:
-     - Heading: "Track Your Application"
-     - Subtitle: "Enter your reference number to check your visa status"
-     - Keep it simple and informative
-   - **Size**:
-     - Smaller hero, about 25-30% of screen
-     - Just enough to introduce the page
+**Key Features:**
+- Qatar flag emoji 🇶🇦 next to logo
+- Sticky header with blur background on scroll
+- Navigation: Home | Visa Services | About | Contact | Track Application
+- "Apply Now" CTA button (maroon)
+- Mobile responsive with hamburger menu
+- Phone number: +974-5104 9145 (from Fast Global ME Qatar)
+- WhatsApp integration option
 
-2. **Create Tracking Form** at `/components/sections/TrackingForm.tsx`:
-   - **Card Container**:
-     - White card with rounded corners
-     - Centered on page
-     - Not too wide (about half screen width on desktop)
-     - Subtle shadow for depth
-   - **Icon or Illustration** (Optional):
-     - Small search or tracking icon at top of card
-     - Can be magnifying glass or document with checkmark
-     - Use maroon or gold color
-   - **Form Fields**:
-     - **Reference Number Input**:
-       - Label: "Reference Number"
-       - Placeholder: "Enter your reference number (e.g., QV-12345-2024)"
-       - Large, easy to read input field
-       - Required field
-     - **Email Address Input**:
-       - Label: "Email Address"
-       - Placeholder: "Enter your email address"
-       - For verification purposes
-       - Required field
-   - **Helper Text**:
-     - Below inputs, add small helpful text
-     - "Reference number was sent to your email after application"
-     - Use gray color, smaller font
-   - **Track Button**:
-     - Text: "Track Status" or "Check Status"
-     - Maroon background, white text
-     - Full width of form
-     - Large and prominent
-     - Loading spinner shows when checking
-   - **Can't Find Reference Section**:
-     - Small link below button
-     - "Can't find your reference number?"
-     - Opens help dialog or scrolls to help section
+**Design Notes:**
+- Use distinctive font for logo (Playfair Display)
+- Maroon color for main branding
+- Gold hover states
+- Smooth transitions
+- Glass morphism effect when scrolling
 
-3. **Create Status Display** at `/components/sections/StatusDisplay.tsx`:
-   - **Show This After Tracking** (replaces or appears below form):
-     - Only appears after user successfully tracks application
-   - **Application Details Card**:
-     - **Header Section**:
-       - Title: "Application Status"
-       - Reference number displayed prominently
-       - Application date
-     - **Applicant Information**:
-       - Full name
-       - Visa type applied for
-       - Display in clean, organized format
-   - **Status Progress Timeline**:
-     - Visual stepper/timeline showing 4 stages:
-       - **Stage 1: Application Received** ✓
-         - Icon: Document received
-         - Color: Green (completed)
-         - Date: When received
-       - **Stage 2: Under Review** (current example)
-         - Icon: Magnifying glass or person reviewing
-         - Color: Gold (current/in progress)
-         - Pulsing or animated to show activity
-       - **Stage 3: Approved** (pending)
-         - Icon: Checkmark or stamp
-         - Color: Gray (not yet complete)
-         - Empty circle or outline
-       - **Stage 4: Visa Dispatched** (pending)
-         - Icon: Email or send icon
-         - Color: Gray (not yet complete)
-         - Empty circle or outline
-     - **Timeline Design**:
-       - Vertical timeline on mobile
-       - Horizontal timeline on desktop
-       - Connecting line between stages
-       - Completed stages: solid green line
-       - Current stage: gold/yellow line
-       - Future stages: dotted gray line
-   - **Current Status Badge**:
-     - Large badge showing current status
-     - Example: "UNDER REVIEW"
-     - Use appropriate color (green for approved, gold for processing, etc.)
-     - Placed prominently
-   - **Estimated Completion**:
-     - Show estimated date when visa will be ready
-     - Example: "Estimated completion: Jan 25, 2024"
-     - Use calendar icon
-   - **Action Buttons**:
-     - "Download Receipt" button (if applicable)
-     - "Print Status" button
-     - "Contact Support" button if there's an issue
-   - **Visual Design**:
-     - Clean, professional layout
-     - Good use of spacing
-     - Clear visual hierarchy
-     - Easy to understand at a glance
+### Task 1.2: Footer Component
+Create `/components/layout/Footer.tsx`:
 
-4. **Create Help Section** at `/components/sections/TrackingHelp.tsx`:
-   - **Section Title**:
-     - "Need Help?"
-   - **Common Tracking Questions**:
-     - Use small FAQ format or info cards
-     - **"Where is my reference number?"**
-       - Answer: Check your email confirmation or receipt
-     - **"My status hasn't updated"**
-       - Answer: Processing can take 24-48 hours. If longer, contact support
-     - **"What if I entered wrong information?"**
-       - Answer: Link to contact support
-   - **Contact Support Card**:
-     - Prominent card with support options
-     - "Can't find your application? We're here to help"
-     - Email address
-     - Phone number
-     - Live chat link (if available)
-     - Use different background color to stand out
-   - **Tips Section** (Optional):
-     - Small tips box with helpful information
-     - "Tip: Save your reference number for future tracking"
-     - "Tip: Check spam folder if you can't find our email"
+**Content Structure (4 Columns):**
 
-5. **Update Track Page** at `/app/track/page.tsx`:
-   - **Layout Structure**:
-     - TrackHero at top
-     - TrackingForm in center, prominently displayed
-     - StatusDisplay shows conditionally (only after successful tracking)
-     - TrackingHelp section at bottom
-   - **Responsive Design**:
-     - On mobile, make form full width with padding
-     - Timeline should stack vertically on mobile
-     - All text should remain readable
-   - **User Flow**:
-     - User arrives → sees form
-     - User enters info → clicks track
-     - Loading state shows briefly
-     - Status display appears with smooth animation
-     - Help section always visible at bottom
-   - **Overall Feel**:
-     - Efficient and straightforward
-     - No unnecessary clutter
-     - Focus on the tracking functionality
-     - Professional and trustworthy
+**Column 1: About**
+- Company description
+- "Your trusted Qatar visa partner with 10+ years of experience"
+- Social media icons (placeholder)
+
+**Column 2: Quick Links**
+- Tourist Visa
+- Business Visa
+- Work Visas
+- Family Visa
+- Transit Visa
+
+**Column 3: Resources**
+- Track Application
+- FAQs
+- Visa Requirements
+- Document Checklist
+- Privacy Policy
+
+**Column 4: Contact**
+- **Qatar Office:**
+  - Office 303, Abdul Jaleel Abdul Ghani Building
+  - Al Matar Street, Doha, Qatar
+- **Phone:** +974-5104 9145
+- **Email:** info@fastqatarvisa.com
+- **Working Hours:** 24/7 Support Available
+
+**Design Notes:**
+- Dark maroon background (#540D22)
+- White/light gray text
+- Gold headings
+- Newsletter subscription field
+- Copyright: "© 2026 Fast Qatar Visa Center. All rights reserved."
 
 ---
 
-## PHASE 8: Styling, Responsiveness & Polish
+## 🏠 PHASE 2: Home Page Sections
 
-### Tasks:
+### Task 2.1: Hero Section
+Create `/components/sections/Hero.tsx`:
 
-1. **Responsive Design Check**:
-   - Test every page on mobile (375px), tablet (768px), and desktop (1024px+)
-   - Ensure navigation menu works on mobile with hamburger icon
-   - Check that all grids collapse properly on smaller screens
-   - Verify images resize and don't overflow
-   - Test forms on mobile devices for usability
-   - Make sure buttons are touch-friendly (min 44px height)
+**Background Image:**
+- Stunning Doha skyline (use IMAGES.hero.main)
+- Dark overlay (50% opacity) for text readability
+- Full viewport height
 
-2. **Image Optimization - Making Images Load Fast**:
-   - **Always Use Next.js Image Component**:
-     - Never use regular HTML img tags
-     - Next.js Image component automatically optimizes images
-     - Makes images smaller in file size
-     - Serves the right size image for each device
-   - **Setting Image Dimensions**:
-     - For images with known size: set width and height
-     - Example: width={800} height={600}
-     - This prevents page from jumping around while loading
-     - For full-width images: use fill prop with proper container
-   - **Image Loading Strategy**:
-     - **Hero images** (above the fold):
-       - Add priority={true} property
-       - Makes them load first, immediately
-       - Users see them right away
-     - **Below-fold images** (further down page):
-       - Add loading="lazy" property
-       - Only loads when user scrolls near them
-       - Saves bandwidth and speeds up initial load
-   - **Alt Text for Accessibility**:
-     - Every image must have descriptive alt text
-     - Describe what's in the image
-     - Helps screen readers for visually impaired users
-     - Example: alt="Professional team collaborating in modern office"
-     - Don't just say alt="image" - be specific
-   - **Object Fit Property**:
-     - **object-fit: cover** - Use for most images
-       - Fills the container, may crop edges
-       - Keeps aspect ratio, no distortion
-       - Good for backgrounds and card images
-     - **object-fit: contain** - Use for logos or important details
-       - Shows full image, may have empty space
-       - Never crops, never distorts
-   - **Placeholder Blur Effect**:
-     - Add placeholder="blur" to images
-     - Shows blurry preview while loading
-     - Makes loading feel faster and smoother
-     - Better user experience
-   - **Image Format**:
-     - Next.js automatically converts to WebP format
-     - WebP is smaller and faster than JPEG/PNG
-     - No action needed on your part - it's automatic
-   - **Practical Tips**:
-     - Don't use images larger than needed
-     - If showing 400px wide, don't use 4000px image
-     - Compress images before uploading if very large
-     - Test page speed and image loading on slow connections
+**Content:**
+- Main Headline: "Fast & Reliable Qatar Visa Processing"
+- Subheadline: "Get your Qatar visa approved in 24-48 hours with our expert assistance. Serving travelers worldwide for over 10 years."
+- **Two CTA Buttons:**
+  - Primary: "Apply for Visa Now" (maroon solid)
+  - Secondary: "Track Application" (maroon outline)
 
-3. **Animations & Transitions**:
-   - Add hover states to all interactive elements
-   - Smooth transitions for color and transform changes
-   - Consider adding fade-in animations for sections on scroll (use Intersection Observer)
-   - Button loading states with spinner
-   - Smooth page transitions
-   - Keep animations subtle and professional (not too flashy)
+**Trust Badges (Below CTAs):**
+- "10+ Years Experience"
+- "98% Success Rate"
+- "24/7 Expert Support"
+- "Government Approved"
 
-4. **Consistent Spacing**:
-   - Use Tailwind spacing scale consistently (px-4, py-8, etc.)
-   - Section padding: py-16 or py-20 on desktop, py-12 on mobile
-   - Container max-width: 1280px or 1440px
-   - Consistent gaps in grids: gap-6 or gap-8
+**Animation:**
+- Fade in from bottom
+- Staggered appearance for elements
 
-5. **Typography Refinement**:
-   - Set clear heading hierarchy (h1, h2, h3)
-   - Heading sizes: h1 (3-4rem), h2 (2.5rem), h3 (1.5rem)
-   - Body text size: 16px (base)
-   - Line height for readability: 1.6-1.8
-   - Use font weights appropriately (400 for body, 600 for headings)
-   - Ensure good contrast ratios for accessibility
+### Task 2.2: Services Preview Section
+Create `/components/sections/ServicesPreview.tsx`:
 
-6. **Color Consistency**:
-   - Use maroon for primary actions and headings
-   - Use gold for accents and highlights
-   - Use neutral grays for body text
-   - Ensure sufficient contrast for text readability
-   - Hover states should use darker/lighter shades
-   - Disabled states should be clearly visible
+**Section Header:**
+- Title: "Our Visa Services"
+- Subtitle: "Comprehensive visa solutions for every travel need"
 
-7. **Icons Implementation**:
-   - Replace all placeholder text with actual lucide-react icons
-   - Ensure icon sizes are consistent (typically 24px or 1.5rem)
-   - Use appropriate icons for each feature/service
-   - Icons should match the overall design aesthetic
-   - Add proper aria-labels for accessibility
+**Service Cards (Grid of 6):**
+
+**Row 1: Traditional Visas**
+1. **Tourist Visa**
+   - Image: Airplane/travel
+   - Icon: Camera/Plane
+   - Description: "Explore Qatar's rich culture and modern attractions"
+   - Processing: "2-3 days"
+   - "Learn More →"
+
+2. **Business Visa**
+   - Image: Business meeting
+   - Icon: Briefcase
+   - Description: "Attend conferences, meetings, and business opportunities"
+   - Processing: "24-48 hours"
+   - "Learn More →"
+
+3. **Transit Visa**
+   - Image: Airport terminal
+   - Icon: Transfer icon
+   - Description: "Smooth layovers and connections through Doha"
+   - Processing: "12-24 hours"
+   - "Learn More →"
+
+**Row 2: Work & Family Visas**
+4. **Family Visa**
+   - Image: Happy family
+   - Icon: Family/People
+   - Description: "Bring your loved ones to Qatar"
+   - Processing: "3-5 days"
+   - "Learn More →"
+
+5. **Work Visa** ⭐ NEW HIGHLIGHT
+   - Image: Professional office
+   - Icon: Briefcase/ID Card
+   - Description: "Employment visas for various job categories"
+   - Badge: "Multiple Options Available"
+   - "Explore Work Visas →"
+
+6. **Freelance Visa** ⭐ NEW
+   - Image: Freelancer working
+   - Icon: Laptop/Globe
+   - Description: "Independent professional work permits"
+   - Processing: "5-7 days"
+   - "Learn More →"
+
+**Card Design:**
+- White background
+- Subtle shadow
+- Gold border on hover
+- Lift effect on hover
+- Consistent height
+
+### Task 2.3: How It Works Section
+Create `/components/sections/HowItWorks.tsx`:
+
+**Title:** "Simple 4-Step Process"
+**Subtitle:** "Get your Qatar visa in just a few easy steps"
+
+**Steps (Horizontal Timeline):**
+
+**Step 1: Choose Visa Type**
+- Icon: Document with checkmark
+- Gold circular badge with "1"
+- Description: "Select the visa category that matches your travel purpose"
+
+**Step 2: Submit Documents**
+- Icon: Upload cloud
+- Gold circular badge with "2"
+- Description: "Upload required documents through our secure portal"
+
+**Step 3: Make Payment**
+- Icon: Credit card/Payment
+- Gold circular badge with "3"
+- Description: "Pay securely with multiple payment options"
+
+**Step 4: Receive Visa**
+- Icon: Email/Checkmark
+- Gold circular badge with "4"
+- Description: "Get your approved visa delivered to your email"
+
+**Visual Elements:**
+- Connecting line/arrow between steps
+- On mobile: vertical layout
+- Clean, minimal design
+
+### Task 2.4: Work Visa Categories Section ⭐ NEW
+Create `/components/sections/WorkVisaCategories.tsx`:
+
+**Section Title:** "Qatar Work Visa Services"
+**Subtitle:** "Professional employment visas with competitive packages"
+
+**6 Work Visa Cards in Grid (2 rows × 3 columns):**
+
+**1. Bike Rider Visa**
+- **Image:** Delivery person on bike
+- **Visa Price:** QAR 7,500
+- **Salary Package:**
+  - QAR 2,300/month
+  - PKR 180,000/month equivalent
+- **Includes:**
+  - 2-year work permit
+  - Residence permit
+  - Medical insurance processing
+- **CTA:** "Apply Now"
+- **Badge:** "High Demand"
+
+**2. Cleaner Visa**
+- **Image:** Professional cleaning service
+- **Visa Price:** QAR 7,000
+- **Salary Package:**
+  - QAR 2,000/month
+  - Housing allowance included
+- **Includes:**
+  - Work permit
+  - Residence permit
+  - Food & accommodation support
+- **CTA:** "Apply Now"
+
+**3. Labour Visa**
+- **Image:** Construction/Labour worker
+- **Visa Price:** QAR 7,000
+- **Salary Package:**
+  - QAR 2,000/month
+  - Basic benefits
+- **Includes:**
+  - Work permit
+  - Residence permit
+  - Safety equipment
+- **CTA:** "Apply Now"
+
+**4. Accountant Open Visa**
+- **Image:** Professional in office
+- **Visa Price:** QAR 8,000
+- **Salary Package:**
+  - QAR 25,000/month + Benefits
+  - PKR 620,000/month equivalent
+- **Includes:**
+  - Professional work permit
+  - Residence permit
+  - Family sponsorship option
+- **CTA:** "Apply Now"
+- **Badge:** "Professional Category"
+
+**5. Work Permit Visa (2 Years)**
+- **Image:** Business professional
+- **Visa Price:** Starting from QAR 7,500
+- **Duration:** 2 years validity
+- **Includes:**
+  - Extended work permit
+  - Residence permit
+  - Renewable option
+- **CTA:** "Apply Now"
+
+**6. Freelance Visa**
+- **Image:** Independent professional
+- **Visa Price:** Starting from QAR 8,500
+- **Benefits:**
+  - Work independently
+  - Multiple clients allowed
+  - Flexible arrangement
+- **Includes:**
+  - Professional permit
+  - Residence permit
+  - Business setup support
+- **CTA:** "Apply Now"
+- **Badge:** "New in Qatar"
+
+**Card Design:**
+- Clean white cards with shadow
+- Maroon top border accent
+- Gold price highlighting
+- Clear salary information
+- Professional icons
+- "Popular" or "Most Applied" badges where applicable
+
+**Section Footer:**
+- "All prices include government fees and processing"
+- "Contact us for customized packages"
+- Link to detailed comparison page
+
+### Task 2.5: Why Choose Us Section
+Create `/components/sections/WhyChooseUs.tsx`:
+
+**Title:** "Why Choose Fast Qatar Visa?"
+**Subtitle:** "Your trusted partner for hassle-free visa processing"
+
+**6 Feature Cards (Based on Fast Global ME strengths):**
+
+**1. 10+ Years Experience**
+- Icon: Award/Trophy
+- Title: "Decade of Excellence"
+- Description: "Over 10 years of specialized experience in Qatar visa processing with thousands of successful applications"
+
+**2. Fast Processing**
+- Icon: Lightning/Rocket
+- Title: "Quick Turnaround"
+- Description: "Express processing available - get your visa approved in as little as 24 hours with our priority service"
+
+**3. 98% Success Rate**
+- Icon: Chart trending up
+- Title: "Proven Track Record"
+- Description: "Exceptional approval rate with thousands of satisfied clients from over 150 countries worldwide"
+
+**4. 24/7 Expert Support**
+- Icon: Headset/Support
+- Title: "Always Available"
+- Description: "Round-the-clock assistance from our dedicated visa specialists via phone, email, and WhatsApp"
+
+**5. Secure & Transparent**
+- Icon: Shield with check
+- Title: "Complete Security"
+- Description: "Bank-level encryption for your data and transparent process with no hidden fees"
+
+**6. Government Approved**
+- Icon: Verified badge
+- Title: "Official Partner"
+- Description: "Authorized visa processing center working directly with Qatar government authorities"
+
+**Design:**
+- 3 columns on desktop, 2 on tablet, 1 on mobile
+- Icon at top (maroon or gold)
+- Clean typography
+- Hover effect: lift + gold border
+
+### Task 2.6: Testimonials Section
+Create `/components/sections/Testimonials.tsx`:
+
+**Title:** "What Our Clients Say"
+**Subtitle:** "Real experiences from travelers worldwide"
+
+**3 Testimonial Cards:**
+
+**Testimonial 1:**
+- **Photo:** Professional South Asian male
+- **Quote:** "I got my bike rider visa through Fast Qatar Visa in just 5 days! The team was incredibly professional and guided me through every step. The salary package was exactly as promised. Highly recommend for anyone seeking work in Qatar!"
+- **Name:** Ahmed K.
+- **Country:** 🇵🇰 Pakistan
+- **Visa Type:** Bike Rider Visa
+- **Rating:** ⭐⭐⭐⭐⭐
+
+**Testimonial 2:**
+- **Photo:** Professional female
+- **Quote:** "Fast Qatar Visa made my family visa process so smooth and stress-free. They handled all the documentation and kept me updated at every stage. Received my visa in just 4 days. Excellent service and very trustworthy!"
+- **Name:** Sarah M.
+- **Country:** 🇮🇳 India
+- **Visa Type:** Family Visa
+- **Rating:** ⭐⭐⭐⭐⭐
+
+**Testimonial 3:**
+- **Photo:** Professional male
+- **Quote:** "I applied for accountant open visa and the process was incredibly efficient. The team explained all salary details, benefits, and requirements clearly. Got my visa approved and now working in Doha. Best visa service!"
+- **Name:** Michael O.
+- **Country:** 🇵🇭 Philippines
+- **Visa Type:** Accountant Visa
+- **Rating:** ⭐⭐⭐⭐⭐
+
+**Design:**
+- Cards with photo at top (circular)
+- Quotation mark design element
+- 5 gold stars
+- Equal height cards
+- Subtle shadow and border
+
+### Task 2.7: CTA Section
+Create `/components/sections/CTASection.tsx`:
+
+**Background:**
+- Maroon gradient (dark to light)
+- Optional: Subtle Islamic pattern overlay (10% opacity)
+
+**Content:**
+- **Headline:** "Ready to Start Your Qatar Journey?"
+- **Subtext:** "Join thousands of satisfied clients who trust Fast Qatar Visa for their visa needs. Expert guidance, fast processing, and guaranteed support."
+- **Primary CTA Button:** "Apply for Visa Now" (white bg, maroon text, large)
+- **Secondary CTA Button:** "Contact Our Team" (maroon outline, white text)
+
+**Trust Indicators Below:**
+- Icon + Text: "Secure Payment"
+- Icon + Text: "24/7 Support"
+- Icon + Text: "Money-Back Guarantee"
+
+**Design:**
+- All text white
+- Generous padding
+- Centered content
+- Prominent buttons
+
+### Task 2.8: Statistics Section ⭐ NEW
+Create `/components/sections/Statistics.tsx`:
+
+**Background:** Light gray or subtle pattern
+
+**4 Stat Cards in Row:**
+
+**Stat 1: Visas Processed**
+- Large Number: "50,000+"
+- Label: "Visas Successfully Processed"
+- Icon: Document with check
+
+**Stat 2: Countries Served**
+- Large Number: "150+"
+- Label: "Countries Served Worldwide"
+- Icon: Globe
+
+**Stat 3: Success Rate**
+- Large Number: "98%"
+- Label: "Visa Approval Success Rate"
+- Icon: Trophy
+
+**Stat 4: Processing Time**
+- Large Number: "24-48"
+- Label: "Average Processing Hours"
+- Icon: Clock
+
+**Design:**
+- Numbers in maroon, large and bold
+- Icons in gold
+- Clean white cards
+- Subtle animation on scroll
 
 ---
 
-## PHASE 9: Accessibility & SEO
+## 📄 PHASE 3: Services Page (Work Visas Focus)
 
-### Tasks:
+### Task 3.1: Services Page Hero
+Create `/components/sections/ServicesHero.tsx`:
 
-1. **Accessibility Improvements**:
-   - Add proper alt text to all images
-   - Ensure proper heading hierarchy (h1 -> h2 -> h3)
-   - Use semantic HTML elements
-   - Add ARIA labels where needed
-   - Ensure keyboard navigation works everywhere
-   - Test with screen reader (basic check)
-   - Add focus visible states to all interactive elements
-   - Ensure color contrast meets WCAG AA standards
-   - Add skip-to-content link for keyboard users
+**Background:** Image of professional office/modern Qatar
+**Overlay:** Dark (50%)
+**Breadcrumb:** Home > Visa Services
 
-2. **SEO Optimization**:
-   - Add metadata to each page (title, description)
-   - Use descriptive page titles: "Tourist Visa Services - Fast Qatar Visa"
-   - Write compelling meta descriptions (150-160 characters)
-   - Add Open Graph tags for social sharing
-   - Use structured data markup for organization/services (optional)
-   - Ensure URLs are clean and descriptive
-   - Add favicon in /public folder
+**Content:**
+- Title: "Qatar Visa Services"
+- Description: "Comprehensive visa solutions for tourists, business travelers, families, and professionals"
 
-3. **Performance Optimization**:
-   - Use Next.js Image component everywhere
-   - Implement lazy loading for below-fold content
-   - Minimize use of large dependencies
-   - Ensure fast page load times
-   - Test on slow connections
-   - Use loading skeletons where appropriate
+### Task 3.2: Service Category Tabs
+Create `/components/sections/ServicesTabs.tsx`:
 
----
+**Tab Navigation:**
+```
+[ Tourist ] [ Business ] [ Transit ] [ Family ] [ Work Visas ⭐ ] [ Freelance ]
+```
 
-## PHASE 10: Content & Final Touches
+**Active Tab:** Maroon background
+**Inactive Tabs:** Gray, gold on hover
 
-### Tasks:
+### Task 3.3: Work Visas Detailed Section ⭐ CRITICAL
+Create `/components/sections/WorkVisasDetailed.tsx`:
 
-1. **Content Writing**:
-   - Replace all placeholder text with realistic visa-related content
-   - Write clear, concise descriptions for each visa type
-   - Create helpful FAQ answers based on common visa questions
-   - Write trust-building content that emphasizes security and reliability
-   - Ensure professional tone throughout
-   - Proofread all content for grammar and clarity
+For EACH work visa category, create detailed page with:
 
-2. **Realistic Data**:
-   - Add realistic pricing (research typical visa service costs)
-   - Include actual processing times
-   - List real document requirements for Qatar visas
-   - Add genuine-sounding testimonials (or mark as examples)
+#### **Bike Rider Visa Detail Page**
 
-3. **Create Reusable Components**:
-   - Extract repeated patterns into components:
-     - VisaCard component for displaying visa types
-     - FeatureCard for features/benefits
-     - StepCard for process steps
-     - StatCard for displaying statistics
-   - This makes the code more maintainable
+**Left Column (40%): Featured Image**
+- High-quality image of delivery person in Qatar
+- Professional, positive environment
 
-4. **Error Handling**:
-   - Add proper error states for forms
-   - Handle failed form submissions gracefully
-   - Show helpful error messages
-   - Add loading states for async operations
+**Right Column (60%): Information**
 
-5. **Legal Pages (Optional but Recommended)**:
-   - Create Privacy Policy page
-   - Create Terms of Service page
-   - Add links in footer
-   - Keep content simple but comprehensive
+**Overview:**
+"The Bike Rider Visa is designed for delivery and courier professionals seeking employment in Qatar's rapidly growing food delivery and logistics sector. This visa category offers stable employment with competitive salary and full residence benefits."
 
----
+**Eligibility Criteria:**
+✓ Age: 21-45 years
+✓ Valid passport (minimum 6 months validity)
+✓ Basic education certificate
+✓ Clean police clearance certificate
+✓ Medical fitness certificate
+✓ Previous experience preferred but not mandatory
 
-## Design Guidelines Throughout Development
+**Visa Package Details:**
+- **Visa Processing Fee:** QAR 7,500
+- **Monthly Salary:** QAR 2,300 (PKR 180,000)
+- **Contract Duration:** 2 years (renewable)
+- **Accommodation:** Company provided or allowance
+- **Food:** Company provided or allowance
+- **Medical Insurance:** Included
+- **Transport:** Company bike provided
+- **Working Hours:** 8-10 hours/day, 6 days/week
+- **Leave:** 30 days annual leave
 
-### Visual Design Principles:
+**What's Included:**
+✓ Work permit processing
+✓ Residence permit (2 years)
+✓ Medical insurance
+✓ End of service benefits
+✓ Company accommodation
+✓ Work equipment (bike, uniform)
 
-1. **Color Usage**:
-   - Primary (Qatar Maroon #8B1538): Main buttons, headings, key accents
-   - Secondary (Gold #D4AF37): Highlights, hover states, badges, borders
-   - Success: Green for approved/completed states
-   - Warning: Yellow for pending states
-   - Error: Red for rejections/errors
-   - Neutral: Slate/Gray for text, borders, backgrounds
-   - Always maintain sufficient contrast for readability
+**Processing Time:**
+- Standard: 15-20 working days
+- Express: 10-12 working days (additional fee)
 
-2. **Typography Guidelines**:
-   - Use system fonts or Inter/Geist for clean, modern look
-   - Headings: Bold, generous sizing, maroon or dark gray
-   - Body text: Regular weight, 16px base size, comfortable line-height
-   - Avoid all-caps except for small labels
-   - Use letter-spacing carefully
+**Required Documents:**
+- Passport copy (valid 6+ months)
+- Recent passport-size photos (white background)
+- Educational certificates (attested)
+- Police clearance certificate (attested)
+- Medical fitness certificate
+- Previous employment certificates (if any)
+- CV/Resume
 
-3. **Spacing Philosophy**:
-   - Generous whitespace between sections
-   - Consistent internal padding in cards and components
-   - Section spacing: py-16 to py-24 on desktop
-   - Container padding: px-4 on mobile, px-6 on tablet, px-8 on desktop
-   - Grid gaps: gap-6 to gap-8
+**Career Opportunities:**
+- Food delivery services (Talabat, Rafeeq, etc.)
+- Courier companies
+- E-commerce delivery
+- Logistics companies
 
-4. **Component Styling**:
-   - Rounded corners: rounded-lg (0.5rem) to rounded-xl (0.75rem)
-   - Subtle shadows on cards: shadow-sm or shadow-md
-   - Borders: Use sparingly, 1px width, light gray
-   - Hover effects: Slight lift (translateY), border color change, shadow increase
-   - Active states: Slightly pressed appearance
-
-5. **Image Treatment - Making Images Look Professional**:
-   - **Text Overlay on Images**:
-     - When you put text on top of images, always add a dark overlay
-     - The overlay is a semi-transparent dark layer between image and text
-     - **Overlay Darkness**:
-       - For bright images: use 40-50% dark overlay
-       - For medium images: use 50-60% dark overlay
-       - For already dark images: might need 30-40%
-       - Test to ensure text is always easy to read
-     - **How to Test Readability**:
-       - Squint your eyes - can you still read the text?
-       - View on mobile - is it still clear?
-       - Check in sunlight conditions
-   - **Object-Fit for Different Situations**:
-     - **Use object-fit: cover** when:
-       - Background images in hero sections
-       - Card images where edges can be cropped
-       - Photo grids where uniformity matters
-       - Any decorative images
-     - **Use object-fit: contain** when:
-       - Logos that must show completely
-       - Infographics or charts
-       - Product images that need all details visible
-       - When aspect ratio is critical
-   - **Aspect Ratios to Keep Consistent**:
-     - **Hero sections**: Usually 16:9 or 21:9 (wide)
-     - **Service cards**: 4:3 or 16:9
-     - **Team photos**: 1:1 (square) or 4:5 (portrait)
-     - **Testimonial avatars**: 1:1 (perfect circle)
-     - Keep ratios same within each section for visual harmony
-   - **Blur and Gradient Overlays**:
-     - **Blur Effect**:
-       - Slightly blur background images behind text
-       - Helps text stand out more
-       - Don't blur too much - image should still be recognizable
-     - **Gradient Overlays**:
-       - Instead of solid dark overlay, use gradient
-       - Darker at bottom where text is
-       - Lighter at top showing more of image
-       - Looks more elegant and modern
-     - **Example Gradient**:
-       - Top: 20% dark
-       - Bottom: 60% dark
-       - Smooth transition between
-   - **Image Quality Guidelines**:
-     - All images should be sharp and clear
-     - No pixelated or blurry images
-     - Proper lighting - not too dark or washed out
-     - Professional looking, not amateur selfies
-     - Consistent color grading across similar images
-   - **Common Image Mistakes to Avoid**:
-     - Don't stretch or squish images - keeps original proportions
-     - Don't use watermarked stock photos
-     - Don't mix photo styles (black & white with color randomly)
-     - Don't use images with too much text already in them
-     - Don't use low-resolution images
-   - **Adding Subtle Effects**:
-     - Rounded corners: makes images friendly (8-12px radius)
-     - Shadows: adds depth (subtle, not too dark)
-     - Borders: only if it enhances the design (1-2px max)
-     - Hover effects: slight zoom or brightness change
+**Apply Now Button:** Large, maroon, prominent
 
 ---
 
-## Implementation Notes for Claude Code:
+#### **Cleaner Visa Detail Page**
 
-### Best Practices:
+**Left Column: Featured Image**
+- Professional cleaning service in modern setting
 
-1. **Build Incrementally**: Complete each phase fully before moving to the next. Test each component after creation.
+**Right Column: Information**
 
-2. **Component Structure**: Keep components focused on single responsibility. Extract reusable patterns early.
+**Overview:**
+"The Cleaner Visa provides employment opportunities for professional cleaning staff in Qatar's residential, commercial, and hospitality sectors. This category offers stable income with comprehensive benefits and accommodation support."
 
-3. **TypeScript Usage**: Always use proper typing for props, state, and function parameters.
+**Eligibility Criteria:**
+✓ Age: 21-50 years
+✓ Valid passport (minimum 6 months validity)
+✓ Basic education
+✓ Clean police clearance
+✓ Medical fitness
+✓ Experience preferred
 
-4. **Next.js Conventions**: 
-   - Use 'use client' directive only when needed (forms, state, interactivity)
-   - Keep page.tsx files minimal - they should mostly import and arrange components
-   - Use Server Components by default for better performance
+**Visa Package Details:**
+- **Visa Processing Fee:** QAR 7,000
+- **Monthly Salary:** QAR 2,000
+- **Contract Duration:** 2 years (renewable)
+- **Housing Allowance:** QAR 500/month
+- **Food Allowance:** QAR 300/month
+- **Medical Insurance:** Included
+- **Transport:** Company provided
+- **Working Hours:** 8 hours/day, 6 days/week
+- **Leave:** 30 days annual leave
 
-5. **Styling Approach**:
-   - Use Tailwind utility classes primarily
-   - Use shadcn component defaults - customize only when necessary
-   - Keep custom CSS minimal
-   - Use Tailwind's responsive prefixes (sm:, md:, lg:, xl:)
+**What's Included:**
+✓ Work permit processing
+✓ Residence permit (2 years)
+✓ Medical insurance
+✓ Housing and food allowances
+✓ End of service benefits
+✓ Cleaning equipment and uniform
 
-6. **Image Handling**:
-   - Always use Next.js Image component
-   - Import images from /lib/images.ts constants
-   - Set explicit width and height where possible
-   - Use fill prop for unknown dimensions with proper object-fit
+**Job Sectors:**
+- Hotels and resorts
+- Corporate offices
+- Shopping malls
+- Residential compounds
+- Hospitals and clinics
+- Educational institutions
 
-7. **Form Handling**:
-   - Use shadcn Form components with react-hook-form
-   - Implement proper validation
-   - Show clear error messages
-   - Provide visual feedback for all states
+**Processing Time:**
+- Standard: 15-20 working days
 
-8. **Code Organization**:
-   - Keep component files focused and under 300 lines
-   - Use clear, descriptive names
-   - Add JSDoc comments for complex components
-   - Group related components in folders
+**Required Documents:**
+[Same as Bike Rider Visa list]
 
-9. **Testing As You Go**:
-   - Check mobile view after each component
-   - Test forms for validation and submission
-   - Verify all links work
-   - Check image loading and optimization
-   - Test keyboard navigation
-
-10. **Performance Mindset**:
-    - Lazy load components below fold
-    - Use dynamic imports for heavy components
-    - Optimize images aggressively
-    - Minimize client-side JavaScript
+**Apply Now Button**
 
 ---
 
-## Expected Final File Structure:
+#### **Labour Visa Detail Page**
+
+**Left Column: Featured Image**
+- Construction worker or general labor in Qatar
+
+**Right Column: Information**
+
+**Overview:**
+"The Labour Visa category serves Qatar's construction and general labor workforce. With major infrastructure projects and continuous development, skilled and unskilled laborers are in high demand across Qatar."
+
+**Eligibility Criteria:**
+✓ Age: 21-50 years
+✓ Valid passport
+✓ Basic education
+✓ Clean background
+✓ Physically fit
+✓ Skills in specific trades (optional)
+
+**Visa Package Details:**
+- **Visa Processing Fee:** QAR 7,000
+- **Monthly Salary:** QAR 2,000 (varies by skill level)
+- **Contract Duration:** 2 years (renewable)
+- **Accommodation:** Company camp/housing
+- **Food:** Company provided
+- **Medical Insurance:** Included
+- **Transport:** To/from work site
+- **Working Hours:** 8-10 hours/day
+- **Leave:** 30 days annual leave
+- **Overtime:** Available with additional pay
+
+**What's Included:**
+✓ Work permit processing
+✓ Residence permit (2 years)
+✓ Medical insurance
+✓ Full accommodation
+✓ Meals provided
+✓ Safety equipment
+✓ End of service benefits
+
+**Job Categories:**
+- Construction labor
+- General labor
+- Warehouse workers
+- Factory workers
+- Agricultural workers
+- Maintenance staff
+- Skilled trades (electrician, plumber, carpenter)
+
+**Processing Time:**
+- Standard: 15-20 working days
+
+**Salary Range Based on Skills:**
+- Unskilled: QAR 2,000/month
+- Semi-skilled: QAR 2,500/month
+- Skilled: QAR 3,000-4,000/month
+
+**Required Documents:**
+[Same comprehensive list]
+
+**Apply Now Button**
+
+---
+
+#### **Accountant Open Visa Detail Page** ⭐ PREMIUM
+
+**Left Column: Featured Image**
+- Professional accountant in modern office
+
+**Right Column: Information**
+
+**Overview:**
+"The Accountant Open Visa is a premium professional category designed for qualified accounting professionals. This visa offers high earning potential, family sponsorship options, and career advancement opportunities in Qatar's thriving business sector."
+
+**Eligibility Criteria:**
+✓ Age: 25-55 years
+✓ Bachelor's degree in Accounting/Finance (mandatory)
+✓ Minimum 2-3 years professional experience
+✓ Professional certifications (CPA, ACCA, CMA) preferred
+✓ Valid passport (6+ months)
+✓ Clean police clearance
+✓ Medical fitness
+
+**Visa Package Details:**
+- **Visa Processing Fee:** QAR 8,000
+- **Monthly Salary:** QAR 25,000+ (PKR 620,000+)
+- **Contract Duration:** 2 years (renewable)
+- **Housing Allowance:** QAR 5,000-8,000/month
+- **Transport Allowance:** QAR 1,500-2,000/month
+- **Medical Insurance:** Family coverage available
+- **Education Allowance:** For children (if applicable)
+- **Annual Bonus:** Performance-based
+- **Leave:** 30 days + air tickets
+
+**What's Included:**
+✓ Professional work permit
+✓ Residence permit (2 years)
+✓ Family sponsorship eligibility
+✓ Comprehensive medical insurance
+✓ Housing and transport allowances
+✓ End of service gratuity
+✓ Career development opportunities
+
+**Career Opportunities:**
+- Multinational corporations
+- Qatar Financial Centre companies
+- Banks and financial institutions
+- Oil & gas companies
+- Real estate firms
+- Consulting firms
+- Government organizations
+
+**Additional Benefits:**
+- Tax-free income
+- Savings potential 60-70%
+- Professional growth
+- Networking opportunities
+- Family visa options
+- Quality lifestyle
+
+**Processing Time:**
+- Standard: 20-25 working days
+- Express: 15 working days (additional fee)
+
+**Required Documents:**
+- Passport copy (valid 6+ months)
+- Recent passport photos
+- Bachelor's degree (attested)
+- Professional certificates (attested)
+- Experience certificates (attested)
+- Police clearance (attested)
+- Medical fitness certificate
+- Detailed CV/Resume
+- Reference letters
+
+**Apply Now Button** - Make this stand out more
+
+---
+
+#### **Work Permit Visa (2 Years) Detail Page**
+
+**Overview:**
+"The 2-Year Work Permit Visa provides extended employment authorization for various professional and skilled categories. This visa offers longer stability and is suitable for professionals seeking long-term opportunities in Qatar."
+
+**Visa Package Details:**
+- **Visa Processing Fee:** QAR 7,500-10,000 (varies by category)
+- **Duration:** 2 years full validity
+- **Renewable:** Yes, with employer sponsorship
+- **Job Categories:** Multiple professions available
+
+**Applicable For:**
+- Engineers
+- IT Professionals
+- Healthcare workers
+- Teachers
+- Sales professionals
+- Hotel staff
+- Restaurant workers
+- Retail managers
+- And more...
+
+**Benefits:**
+✓ Extended validity (2 years)
+✓ Residence permit included
+✓ Family sponsorship possible
+✓ Multiple re-entry options
+✓ Job change flexibility (with NOC)
+
+**Processing Time:** 20-30 working days
+
+---
+
+#### **Freelance Visa Detail Page** ⭐ NEW CATEGORY
+
+**Overview:**
+"The Freelance Visa enables independent professionals to work in Qatar without traditional employer sponsorship. Perfect for consultants, digital professionals, and service providers seeking flexibility and independence."
+
+**Eligibility Criteria:**
+✓ Professional qualification or proven expertise
+✓ Portfolio of previous work
+✓ Business plan or service offering
+✓ Minimum age: 25 years
+✓ Clean background
+✓ Financial stability proof
+
+**Visa Package Details:**
+- **Visa Processing Fee:** QAR 8,500
+- **Duration:** 1-2 years
+- **Renewable:** Yes
+- **Income:** Based on your services
+- **Clients:** Multiple clients allowed
+
+**What's Included:**
+✓ Self-sponsored work permit
+✓ Residence permit
+✓ Business setup support
+✓ Multi-entry visa
+✓ Independent work authorization
+
+**Suitable For:**
+- IT consultants
+- Graphic designers
+- Marketing professionals
+- Content creators
+- Business consultants
+- Trainers and coaches
+- Photographers
+- Event planners
+- Translators
+- And other professional services
+
+**Processing Time:**
+- Standard: 25-30 working days
+
+**Required Documents:**
+- Detailed business plan
+- Portfolio of work
+- Professional qualifications
+- Bank statements (proof of funds)
+- Passport copy
+- All standard documents
+
+**Apply Now Button**
+
+---
+
+### Task 3.4: Document Requirements Section
+Create `/components/sections/DocumentRequirements.tsx`:
+
+**Use Accordion Component (shadcn/ui)**
+
+**General Requirements (All Visa Types):**
+```
+▼ General Documents
+  ✓ Valid passport (minimum 6 months validity)
+  ✓ Passport-size photographs (2 copies, white background)
+  ✓ Police clearance certificate (home country, attested)
+  ✓ Medical fitness certificate
+  ✓ Educational certificates (attested)
+```
+
+**Work Visa Specific:**
+```
+▼ Work Visa Additional Documents
+  ✓ Employment contract from Qatar employer
+  ✓ Job offer letter
+  ✓ Company registration documents
+  ✓ Salary certificate
+  ✓ Experience certificates (previous employment)
+  ✓ Professional qualifications (for skilled positions)
+```
+
+**Professional Categories (Accountant, etc.):**
+```
+▼ Professional Category Requirements
+  ✓ University degree (attested by Ministry of Foreign Affairs)
+  ✓ Qatar Embassy attestation
+  ✓ Professional certifications (CPA, ACCA, etc.)
+  ✓ Minimum 2-3 years experience proof
+  ✓ Reference letters from previous employers
+  ✓ Detailed CV/Resume
+```
+
+**Attestation Process:**
+```
+▼ Document Attestation Guide
+  Step 1: Notary attestation in home country
+  Step 2: Ministry of Foreign Affairs attestation
+  Step 3: Qatar Embassy attestation
+  Step 4: Qatar Ministry of Foreign Affairs attestation
+  
+  Note: We provide complete attestation assistance
+```
+
+---
+
+### Task 3.5: Pricing Comparison Table
+Create `/components/sections/PricingComparison.tsx`:
+
+**Table Format:**
+
+| Visa Category | Processing Fee | Salary Range | Processing Time | Family Sponsorship |
+|--------------|----------------|--------------|----------------|-------------------|
+| Bike Rider | QAR 7,500 | QAR 2,300/month | 15-20 days | After 1 year |
+| Cleaner | QAR 7,000 | QAR 2,000/month | 15-20 days | After 1 year |
+| Labour | QAR 7,000 | QAR 2,000-4,000/month | 15-20 days | After 1 year |
+| Accountant | QAR 8,000 | QAR 25,000+/month | 20-25 days | Eligible |
+| Work Permit (2Y) | QAR 7,500-10,000 | Varies by job | 20-30 days | Depends on salary |
+| Freelance | QAR 8,500 | Self-determined | 25-30 days | After 6 months |
+
+**Note Below Table:**
+"All fees include government charges and processing. Additional express processing available for urgent applications."
+
+---
+
+## 👥 PHASE 4: About Page
+
+### Task 4.1: About Hero
+- Background: Team collaboration image
+- Title: "About Fast Qatar Visa Center"
+- Mission statement
+
+### Task 4.2: Company Story
+**Based on Fast Global ME model:**
+
+"Fast Qatar Visa Center was established with a vision to simplify Qatar visa processing for travelers, workers, and families worldwide. With over 10 years of specialized experience in Qatar immigration services, we have successfully processed thousands of visa applications from over 150 countries.
+
+Our team of expert visa consultants works directly with Qatar government authorities to ensure your application is handled professionally and efficiently. We understand the challenges and complexities of visa applications, which is why we provide personalized guidance throughout the entire process.
+
+As an authorized and government-approved visa processing center, we maintain the highest standards of service quality, transparency, and security. Our success is measured by the thousands of satisfied clients who have successfully obtained their Qatar visas through our services.
+
+Whether you're planning a leisure trip, business visit, or seeking employment opportunities in Qatar, Fast Qatar Visa Center is your trusted partner for a smooth and hassle-free visa experience."
+
+**Statistics Cards:**
+- "10+ Years" - Industry Experience
+- "50,000+" - Visas Processed
+- "98%" - Success Rate
+- "150+" - Countries Served
+
+### Task 4.3: Core Values
+1. **Integrity** - Honest and transparent service
+2. **Excellence** - Highest quality standards
+3. **Speed** - Fast and efficient processing
+4. **Support** - 24/7 customer assistance
+5. **Security** - Data protection and privacy
+6. **Trust** - Building long-term relationships
+
+### Task 4.4: Office Locations
+**Qatar Office (Main):**
+- Office 303, Abdul Jaleel Abdul Ghani Building
+- Al Matar Street, Doha, Qatar
+- Phone: +974-5104 9145
+- Email: info@fastqatarvisa.com
+
+**Optional:** Add Google Maps embed
+
+---
+
+## 📞 PHASE 5: Contact Page
+
+### Task 5.1: Contact Hero
+- Background: Customer support image
+- Title: "Get in Touch"
+- Subtitle: "Our expert team is ready to assist with your visa queries"
+
+### Task 5.2: Contact Form
+**Form Fields:**
+1. Full Name (required)
+2. Email Address (required)
+3. Phone Number (with country code)
+4. Visa Type (dropdown):
+   - Tourist Visa
+   - Business Visa
+   - Transit Visa
+   - Family Visa
+   - Bike Rider Visa
+   - Cleaner Visa
+   - Labour Visa
+   - Accountant Visa
+   - Work Permit (2 Years)
+   - Freelance Visa
+   - Other
+5. Message (textarea, required)
+6. Submit Button
+
+**Success Message:**
+"Thank you for contacting us! Our team will respond within 2-4 hours."
+
+### Task 5.3: Contact Information Card
+**Qatar Office:**
+- **Address:** Office 303, Abdul Jaleel Abdul Ghani Building, Al Matar Street, Doha, Qatar
+- **Phone:** +974-5104 9145
+- **WhatsApp:** +974-5104 9145 (clickable)
+- **Email:** info@fastqatarvisa.com
+- **Working Hours:** 24/7 Support Available
+
+**Quick Contact Options:**
+- Call icon → +974-5104 9145
+- WhatsApp icon → Chat Now
+- Email icon → Send Email
+- Location icon → Get Directions
+
+### Task 5.4: FAQ Section
+**20 Essential Questions:**
+
+**General Questions:**
+1. **How long does visa processing take?**
+   - Tourist/Transit: 24-48 hours
+   - Business: 2-3 days
+   - Work visas: 15-30 days depending on category
+   - Family: 3-5 days
+
+2. **What payment methods do you accept?**
+   - Credit/Debit cards (Visa, Mastercard)
+   - Bank transfers
+   - Online payment gateways
+   - Cash (at office)
+
+3. **Is my information secure?**
+   - Yes, we use bank-level SSL encryption
+   - Secure payment processing
+   - Confidential document handling
+   - Data protection compliance
+
+4. **What if my visa is rejected?**
+   - Full refund of processing fees
+   - Government fees non-refundable
+   - Reapplication assistance
+   - Success rate: 98%
+
+5. **Can I track my application?**
+   - Yes, use reference number on Track page
+   - Email updates at each stage
+   - SMS notifications available
+   - 24/7 status checking
+
+**Work Visa Specific:**
+6. **What is the minimum salary for work visa?**
+   - Minimum: QAR 1,800/month (as per Qatar law)
+   - Our packages: QAR 2,000-25,000+ based on category
+   - Includes allowances and benefits
+
+7. **Can I bring my family on work visa?**
+   - Yes, if salary is QAR 10,000+ or specific categories
+   - Accountant visa: Family sponsorship eligible
+   - Other categories: After 1 year of employment
+   - Separate family visa fees apply
+
+8. **What documents need attestation?**
+   - Educational certificates
+   - Police clearance certificate
+   - Marriage certificate (for family visa)
+   - Birth certificates (for children)
+   - We provide complete attestation assistance
+
+9. **How long is the work visa valid?**
+   - Bike Rider/Cleaner/Labour: 2 years
+   - Professional categories: 2 years
+   - Freelance: 1-2 years
+   - All renewable with employer/sponsor
+
+10. **What is included in the visa fee?**
+    - Government processing fees
+    - Our service charges
+    - Document verification
+    - Application submission
+    - Status tracking
+    - NOT included: Attestation, courier, medical
+
+**Application Process:**
+11. **Do I need to visit your office?**
+    - No, complete online process available
+    - Document upload through portal
+    - Video call verification if needed
+    - Office visit optional
+
+12. **How do I submit documents?**
+    - Upload through our secure portal
+    - Email scanned copies
+    - Courier original documents
+    - Drop off at office
+
+13. **When should I apply?**
+    - Tourist: 2 weeks before travel
+    - Work visa: 1-2 months before joining
+    - Allow extra time for attestation
+    - Express processing available
+
+14. **Can I apply for multiple people?**
+    - Yes, family applications together
+    - Group applications for companies
+    - Bulk processing available
+    - Discounts on group applications
+
+15. **What if I made a mistake in application?**
+    - Contact us immediately
+    - Corrections before submission: free
+    - After submission: may need reapplication
+    - Our team verifies before submission
+
+**Payment & Refunds:**
+16. **When do I pay?**
+    - 50% advance to start processing
+    - 50% before visa issuance
+    - Full payment option available
+    - Secure online payment
+
+17. **What is your refund policy?**
+    - Processing fees: refundable if rejected
+    - Government fees: non-refundable
+    - Refund within 7-10 business days
+    - Bank transfer or original payment method
+
+18. **Are there hidden charges?**
+    - No hidden fees
+    - Complete price transparency
+    - Optional services clearly marked
+    - Detailed invoice provided
+
+**Visa Validity & Travel:**
+19. **How will I receive my visa?**
+    - Email PDF (electronic visa)
+    - Original courier option available
+    - Print and carry for immigration
+    - Valid for entry to Qatar
+
+20. **Can I extend my visa in Qatar?**
+    - Tourist visa: possible once (30 days)
+    - Work visa: renewable with employer
+    - Contact Qatar immigration
+    - We provide guidance
+
+**Design:**
+- Accordion format (shadcn/ui)
+- Search functionality
+- Category filters
+- Plus/minus icons
+
+---
+
+## 🔍 PHASE 6: Track Application Page
+
+### Task 6.1: Track Hero
+- Simple, clean header
+- Title: "Track Your Visa Application"
+- Subtitle: "Enter your reference number to check status"
+
+### Task 6.2: Tracking Form
+**Form Design:**
+- Clean white card, centered
+- **Fields:**
+  1. Reference Number (e.g., FQV-12345-2026)
+  2. Email Address (verification)
+- **Button:** "Track Status" (large, maroon)
+- **Help Text:** "Reference number was sent to your email after application submission"
+
+### Task 6.3: Status Display Component
+**Application Details Card:**
+- Reference Number: FQV-XXXXX-2026
+- Applicant Name: [Name]
+- Visa Type: [Type]
+- Application Date: [Date]
+- Estimated Completion: [Date]
+
+**Status Timeline (4 Stages):**
+
+**Stage 1: Application Received ✓**
+- Status: Completed
+- Date: Jan 15, 2026, 10:30 AM
+- Icon: Document received (green)
+- Message: "Your application has been received and verified"
+
+**Stage 2: Under Review** ← CURRENT
+- Status: In Progress
+- Icon: Magnifying glass (gold, pulsing)
+- Message: "Our team is processing your documents"
+- Estimated: 2-3 days remaining
+
+**Stage 3: Approved** (pending)
+- Status: Pending
+- Icon: Checkmark (gray)
+- Message: "Awaiting approval"
+
+**Stage 4: Visa Issued** (pending)
+- Status: Pending
+- Icon: Email/Send (gray)
+- Message: "Visa will be sent to your email"
+
+**Design:**
+- Vertical timeline on mobile
+- Horizontal on desktop
+- Connecting lines (green=complete, gold=current, gray=pending)
+- Smooth animations
+
+**Action Buttons:**
+- Download Receipt (if applicable)
+- Print Status
+- Contact Support (if issue)
+- Back to Home
+
+### Task 6.4: Tracking Help Section
+**Can't Find Your Reference?**
+- Check spam/junk folder
+- Search email for "Fast Qatar Visa"
+- Contact support: +974-5104 9145
+- Email: info@fastqatarvisa.com
+
+**Status Update Timing:**
+- Updates every 6-12 hours
+- Email notifications at each stage
+- SMS updates (if opted in)
+
+---
+
+## 🎨 PHASE 7: UI/UX Polish & Frontend Design
+
+### Task 7.1: Review Frontend Design Skill
+**Apply these principles:**
+
+**Typography:**
+- ✅ Playfair Display for headings (distinctive, elegant)
+- ✅ Manrope for body (clean, readable)
+- ❌ Avoid: Inter, Roboto, Arial
+- Use: 48-60px for H1, 32-40px for H2, 24-28px for H3
+
+**Color Psychology:**
+- Maroon: Trust, stability, premium
+- Gold: Success, quality, achievement
+- White: Cleanliness, simplicity
+- Use 60-30-10 rule: 60% white, 30% maroon, 10% gold
+
+**Motion & Animation:**
+- Page load: Staggered fade-in
+- Scroll: Reveal animations
+- Hover: Smooth lift + color transition
+- Button click: Subtle scale + shadow
+- Use `animation-delay` for stagger effect
+
+**Spatial Composition:**
+- Generous white space
+- Asymmetric layouts where appropriate
+- Overlapping elements (hero text over image)
+- Z-index layering for depth
+
+**Visual Details:**
+- Subtle gradient overlays on images
+- Box shadows for depth
+- Border radius: 12-16px for cards
+- Islamic geometric patterns (subtle)
+- Grain texture overlay (2-5% opacity)
+
+### Task 7.2: Create Custom Components
+
+**1. Visa Card Component**
+Create `/components/ui/VisaCard.tsx`:
+```typescript
+interface VisaCardProps {
+  title: string;
+  description: string;
+  price: string;
+  salary?: string;
+  image: string;
+  badge?: string;
+  icon: React.ReactNode;
+  href: string;
+}
+```
+
+**Features:**
+- Image with overlay
+- Icon at top
+- Title + description
+- Price highlight (gold)
+- Salary info (if work visa)
+- Badge (optional)
+- Hover effect: lift + border glow
+- CTA button
+
+**2. Stat Card Component**
+Create `/components/ui/StatCard.tsx`:
+```typescript
+interface StatCardProps {
+  number: string;
+  label: string;
+  icon: React.ReactNode;
+  suffix?: string;
+}
+```
+
+**3. Feature Card Component**
+Create `/components/ui/FeatureCard.tsx`:
+- Icon
+- Title
+- Description
+- Hover effects
+
+**4. Testimonial Card Component**
+Create `/components/ui/TestimonialCard.tsx`:
+- Client photo (circular)
+- Quote with quotation marks
+- Name, country, visa type
+- 5-star rating
+
+### Task 7.3: Responsive Design Refinement
+
+**Breakpoints:**
+- Mobile: 320px - 640px
+- Tablet: 641px - 1024px
+- Desktop: 1025px+
+
+**Mobile Optimizations:**
+- Hamburger menu (smooth slide-in)
+- Stacked cards (no grid)
+- Larger touch targets (min 44px)
+- Simplified hero (less text)
+- Collapsible sections
+
+**Tablet Optimizations:**
+- 2-column grids
+- Adjusted padding
+- Optimized images
+
+**Desktop Optimizations:**
+- 3-4 column grids
+- Full-width hero
+- Hover effects
+- Sidebar navigation
+
+### Task 7.4: Image Optimization Checklist
+
+For EVERY image:
+```typescript
+<Image
+  src={IMAGES.hero.main}
+  alt="Modern Doha skyline at sunset"
+  width={1920}
+  height={1080}
+  priority={true} // For hero images only
+  loading="lazy" // For below-fold images
+  placeholder="blur"
+  blurDataURL="data:image/..." // Low-quality placeholder
+  className="object-cover"
+/>
+```
+
+**Hero Images:**
+- `priority={true}`
+- Load immediately
+- High quality
+
+**Below-fold Images:**
+- `loading="lazy"`
+- Load on scroll
+- Optimize size
+
+**Object Fit:**
+- `object-cover` - Most images
+- `object-contain` - Logos
+
+### Task 7.5: Accessibility Improvements
+
+**1. Semantic HTML:**
+```html
+<header>, <nav>, <main>, <section>, <article>, <aside>, <footer>
+```
+
+**2. ARIA Labels:**
+- Navigation: `aria-label="Main navigation"`
+- Forms: `aria-label="Visa application form"`
+- Buttons: Descriptive text
+
+**3. Keyboard Navigation:**
+- All interactive elements focusable
+- Visible focus states (gold outline)
+- Skip to content link
+- Tab order logical
+
+**4. Screen Reader:**
+- Alt text for ALL images (descriptive)
+- Form labels properly associated
+- Error messages clear
+- Status updates announced
+
+**5. Color Contrast:**
+- Text: Minimum 4.5:1 ratio
+- Large text: Minimum 3:1 ratio
+- Use contrast checker tools
+
+### Task 7.6: Performance Optimization
+
+**1. Code Splitting:**
+```typescript
+// Dynamic imports for heavy components
+const WorkVisaDetails = dynamic(() => import('@/components/WorkVisaDetails'))
+```
+
+**2. Image Optimization:**
+- Next.js Image component everywhere
+- WebP format (automatic)
+- Responsive images
+- Lazy loading
+
+**3. Font Loading:**
+- `display: 'swap'` for fonts
+- Preload critical fonts
+- Subset fonts (Latin only)
+
+**4. CSS Optimization:**
+- Tailwind purge unused
+- Critical CSS inline
+- Minimize custom CSS
+
+**5. Bundle Size:**
+- Tree shaking
+- Remove unused dependencies
+- Monitor bundle size
+
+### Task 7.7: Animations & Micro-interactions
+
+**Page Load Animation:**
+```css
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-load {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+```
+
+**Scroll Animations:**
+Use Intersection Observer:
+```typescript
+const [isVisible, setIsVisible] = useState(false);
+const ref = useRef(null);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => setIsVisible(entry.isIntersecting)
+  );
+  
+  if (ref.current) observer.observe(ref.current);
+  
+  return () => observer.disconnect();
+}, []);
+```
+
+**Button Hover:**
+```css
+.btn-primary {
+  @apply transition-all duration-300;
+  @apply hover:scale-105 hover:shadow-lg;
+}
+```
+
+---
+
+## 📋 PHASE 8: Content & Final Touches
+
+### Task 8.1: SEO Optimization
+
+**Page Metadata:**
+```typescript
+// app/page.tsx
+export const metadata = {
+  title: 'Fast Qatar Visa Center | Quick & Reliable Qatar Visa Processing',
+  description: 'Get your Qatar visa in 24-48 hours. Tourist, business, work, and family visas. 10+ years experience, 98% success rate. Apply online today!',
+  keywords: 'Qatar visa, work visa Qatar, tourist visa Qatar, bike rider visa, accountant visa Qatar',
+  openGraph: {
+    title: 'Fast Qatar Visa Center',
+    description: 'Professional Qatar visa services',
+    images: ['/og-image.jpg'],
+  },
+}
+```
+
+**Structured Data:**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Fast Qatar Visa Center",
+  "url": "https://fastqatarvisa.com",
+  "logo": "https://fastqatarvisa.com/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+974-5104-9145",
+    "contactType": "customer service"
+  }
+}
+```
+
+### Task 8.2: Legal Pages
+
+**Privacy Policy Page:**
+- Data collection
+- Usage
+- Protection measures
+- User rights
+- Contact info
+
+**Terms of Service:**
+- Service description
+- User responsibilities
+- Payment terms
+- Refund policy
+- Liability limitations
+
+**Cookie Policy:**
+- Types of cookies
+- Purpose
+- How to disable
+- Third-party cookies
+
+### Task 8.3: Final Content Review
+
+**Checklist:**
+- ✅ All placeholder text replaced
+- ✅ All images have alt text
+- ✅ All links tested
+- ✅ Forms validated
+- ✅ Phone numbers clickable
+- ✅ Email addresses clickable
+- ✅ Prices verified
+- ✅ Processing times accurate
+- ✅ Grammar checked
+- ✅ Consistent terminology
+
+### Task 8.4: Testing Checklist
+
+**Functionality:**
+- ✅ All navigation links work
+- ✅ Forms submit correctly
+- ✅ Validation working
+- ✅ Mobile menu opens/closes
+- ✅ Tracking system functional
+- ✅ All buttons clickable
+- ✅ Images load properly
+
+**Responsive:**
+- ✅ Mobile (375px)
+- ✅ Tablet (768px)
+- ✅ Desktop (1024px+)
+- ✅ Large desktop (1440px+)
+
+**Browser Testing:**
+- ✅ Chrome
+- ✅ Firefox
+- ✅ Safari
+- ✅ Edge
+- ✅ Mobile browsers
+
+**Performance:**
+- ✅ Lighthouse score >90
+- ✅ Page load <3 seconds
+- ✅ Images optimized
+- ✅ No console errors
+
+---
+
+## 📦 COMPLETE FILE STRUCTURE
 
 ```
 fast-qatar-visa/
 ├── app/
-│   ├── layout.tsx (root layout with metadata)
-│   ├── page.tsx (home page - imports all home sections)
+│   ├── layout.tsx (root layout, fonts, metadata)
+│   ├── page.tsx (Home page)
+│   ├── globals.css (Tailwind + custom styles)
+│   │
+│   ├── services/
+│   │   ├── page.tsx (Services overview)
+│   │   ├── tourist/page.tsx
+│   │   ├── business/page.tsx
+│   │   ├── transit/page.tsx
+│   │   ├── family/page.tsx
+│   │   ├── work/
+│   │   │   ├── page.tsx (Work visas overview)
+│   │   │   ├── bike-rider/page.tsx ⭐
+│   │   │   ├── cleaner/page.tsx ⭐
+│   │   │   ├── labour/page.tsx ⭐
+│   │   │   ├── accountant/page.tsx ⭐
+│   │   │   ├── work-permit/page.tsx ⭐
+│   │   │   └── freelance/page.tsx ⭐
+│   │
 │   ├── about/
 │   │   └── page.tsx
-│   ├── services/
-│   │   └── page.tsx
+│   │
 │   ├── contact/
 │   │   └── page.tsx
-│   └── track/
+│   │
+│   ├── track/
+│   │   └── page.tsx
+│   │
+│   ├── privacy/
+│   │   └── page.tsx
+│   │
+│   └── terms/
 │       └── page.tsx
 │
 ├── components/
 │   ├── layout/
 │   │   ├── Header.tsx
 │   │   ├── Footer.tsx
+│   │   ├── MobileMenu.tsx
 │   │   └── Layout.tsx
 │   │
 │   ├── sections/
 │   │   ├── Hero.tsx
 │   │   ├── ServicesPreview.tsx
 │   │   ├── HowItWorks.tsx
+│   │   ├── WorkVisaCategories.tsx ⭐
 │   │   ├── WhyChooseUs.tsx
+│   │   ├── Statistics.tsx ⭐
 │   │   ├── Testimonials.tsx
 │   │   ├── CTASection.tsx
 │   │   ├── ServicesHero.tsx
-│   │   ├── ServicesList.tsx
-│   │   ├── RequirementsChecklist.tsx
-│   │   ├── PricingTable.tsx
+│   │   ├── ServicesTabs.tsx
+│   │   ├── WorkVisasDetailed.tsx ⭐
+│   │   ├── DocumentRequirements.tsx
+│   │   ├── PricingComparison.tsx ⭐
 │   │   ├── AboutHero.tsx
 │   │   ├── CompanyStory.tsx
 │   │   ├── Values.tsx
@@ -1259,80 +1933,206 @@ fast-qatar-visa/
 │   │   ├── StatusDisplay.tsx
 │   │   └── TrackingHelp.tsx
 │   │
-│   └── ui/ (all shadcn components)
-│       ├── button.tsx
-│       ├── card.tsx
-│       ├── input.tsx
-│       ├── form.tsx
-│       ├── accordion.tsx
-│       ├── tabs.tsx
+│   └── ui/
+│       ├── VisaCard.tsx ⭐
+│       ├── StatCard.tsx ⭐
+│       ├── FeatureCard.tsx
+│       ├── TestimonialCard.tsx
+│       ├── button.tsx (shadcn)
+│       ├── card.tsx (shadcn)
+│       ├── input.tsx (shadcn)
+│       ├── form.tsx (shadcn)
+│       ├── accordion.tsx (shadcn)
+│       ├── tabs.tsx (shadcn)
 │       └── ... (other shadcn components)
 │
 ├── lib/
-│   ├── utils.ts (cn utility and helpers)
-│   └── images.ts (centralized image URLs)
+│   ├── utils.ts
+│   └── images.ts ⭐
 │
 ├── public/
-│   └── images/ (any local images, favicon)
+│   ├── images/
+│   ├── patterns/
+│   │   ├── islamic-pattern-subtle.svg
+│   │   └── islamic-pattern-gold.svg
+│   └── favicon.ico
 │
-├── next.config.js (with image domain configuration)
-├── tailwind.config.ts (with custom colors)
+├── next.config.js ⭐
+├── tailwind.config.ts ⭐
 └── package.json
 ```
 
 ---
 
-## Quality Checklist Before Completion:
+## 🚀 IMPLEMENTATION PRIORITY
 
-### Visual Quality:
-- [ ] All pages look professional and polished
-- [ ] Consistent spacing throughout
-- [ ] Images load properly and look good
-- [ ] Colors are used consistently
-- [ ] Typography hierarchy is clear
-- [ ] Hover states work on all interactive elements
+### Phase 1: Foundation (Do First)
+1. ✅ Next.js config for images
+2. ✅ Create image constants file
+3. ✅ Tailwind config with Qatar colors
+4. ✅ Install fonts
+5. ✅ Global styles
+6. ✅ Header component
+7. ✅ Footer component
 
-### Functionality:
-- [ ] All navigation links work
-- [ ] Forms validate properly
-- [ ] Mobile menu opens and closes
-- [ ] Responsive design works on all screen sizes
-- [ ] Images are optimized and load quickly
-- [ ] No console errors in browser
+### Phase 2: Home Page (Do Second)
+1. ✅ Hero section
+2. ✅ Services preview (include work visas)
+3. ✅ Work Visa Categories section ⭐ PRIORITY
+4. ✅ How It Works
+5. ✅ Why Choose Us
+6. ✅ Statistics
+7. ✅ Testimonials
+8. ✅ CTA section
 
-### Content:
-- [ ] All placeholder text is replaced with realistic content
-- [ ] No lorem ipsum remaining
-- [ ] All images have alt text
-- [ ] Contact information is present (even if placeholder)
-- [ ] FAQ answers are helpful and clear
+### Phase 3: Work Visas (Do Third - CRITICAL)
+1. ✅ Work visas overview page
+2. ✅ Bike Rider visa detail page ⭐
+3. ✅ Cleaner visa detail page ⭐
+4. ✅ Labour visa detail page ⭐
+5. ✅ Accountant visa detail page ⭐
+6. ✅ Work Permit visa detail page ⭐
+7. ✅ Freelance visa detail page ⭐
+8. ✅ Pricing comparison table
+9. ✅ Document requirements
 
-### Accessibility:
-- [ ] Proper heading hierarchy
-- [ ] Good color contrast
-- [ ] Keyboard navigation works
-- [ ] Forms have proper labels
-- [ ] Images have descriptive alt text
+### Phase 4: Other Pages (Do Fourth)
+1. ✅ About page
+2. ✅ Contact page
+3. ✅ Track page
+4. ✅ Traditional visa service pages
 
-### Code Quality:
-- [ ] No TypeScript errors
-- [ ] Components are properly organized
-- [ ] Code is readable and well-commented
-- [ ] No unused imports or variables
-- [ ] Following Next.js best practices
+### Phase 5: Polish (Do Last)
+1. ✅ Responsive testing
+2. ✅ Animation refinement
+3. ✅ Performance optimization
+4. ✅ Accessibility review
+5. ✅ Content review
+6. ✅ SEO optimization
+7. ✅ Legal pages
 
 ---
 
-## Ready to Build!
+## 💎 KEY SUCCESS FACTORS
 
-This guide provides a comprehensive roadmap for building the Fast Qatar Visa Center website. Follow each phase sequentially, test as you go, and refer back to the design guidelines for consistency. The end result will be a professional, user-friendly visa processing website with excellent UI/UX.
+### Design Excellence
+- **Distinctive Typography:** Playfair Display + Manrope (NOT Inter/Roboto)
+- **Bold Color Use:** Maroon (#8B1538) + Gold (#D4AF37) dominance
+- **Cultural Elements:** Subtle Islamic geometric patterns
+- **Professional Photography:** High-quality Qatar-specific images
+- **Smooth Animations:** Staggered reveals, hover effects, scroll triggers
 
-**Important Reminders:**
-- Start with Phase 0 to configure Next.js properly for images
-- Use the images.ts file to manage all image URLs centrally
-- Test responsiveness after completing each major section
-- Keep the Qatar color theme (maroon and gold) consistent throughout
-- Focus on trust-building through professional design and clear information
-- Prioritize user experience in forms and navigation
+### Content Quality
+- **Clear Pricing:** Transparent visa fees and salary information
+- **Detailed Information:** Complete work visa category descriptions
+- **Trust Signals:** 10+ years, 98% success, 24/7 support
+- **Real Examples:** Authentic testimonials and success stories
+- **Comprehensive FAQs:** Answer all common questions
 
-Good luck with the build!
+### User Experience
+- **Simple Navigation:** Easy to find work visa categories
+- **Clear CTAs:** "Apply Now" buttons prominent
+- **Mobile-First:** Excellent experience on all devices
+- **Fast Loading:** Optimized images and code
+- **Easy Contact:** Multiple channels (phone, WhatsApp, email)
+
+### Technical Excellence
+- **Next.js Best Practices:** Server components, image optimization
+- **Accessibility:** WCAG AA compliance
+- **SEO:** Proper metadata, structured data
+- **Performance:** Lighthouse score >90
+- **Security:** SSL, data protection
+
+---
+
+## 📞 CONTACT INFORMATION TO USE
+
+- **Company Name:** Fast Qatar Visa Center
+- **Qatar Office:** Office 303, Abdul Jaleel Abdul Ghani Building, Al Matar Street, Doha, Qatar
+- **Phone:** +974-5104 9145
+- **WhatsApp:** +974-5104 9145
+- **Email:** info@fastqatarvisa.com
+- **Working Hours:** 24/7 Support Available
+
+---
+
+## ⚠️ CRITICAL REMINDERS
+
+1. **Frontend Design Skill:** Use distinctive fonts, avoid AI clichés
+2. **Image Optimization:** Use Next.js Image component EVERYWHERE
+3. **Work Visas:** This is your MAIN differentiator - make it prominent
+4. **Pricing Transparency:** Show all fees clearly (QAR amounts)
+5. **Salary Information:** Clearly display monthly salaries
+6. **Trust Building:** Emphasize experience, success rate, support
+7. **Mobile Experience:** Test thoroughly on mobile devices
+8. **Loading Speed:** Optimize everything for fast load times
+9. **Accessibility:** Alt text, keyboard navigation, screen readers
+10. **Real Data:** Use accurate processing times and requirements
+
+---
+
+## 🎯 FINAL QUALITY CHECKLIST
+
+### Visual Design
+- [ ] Distinctive typography (no Inter/Roboto)
+- [ ] Qatar colors (maroon + gold) used prominently
+- [ ] High-quality images with proper alt text
+- [ ] Consistent spacing and alignment
+- [ ] Professional, trustworthy appearance
+- [ ] Cultural elements incorporated subtly
+
+### Functionality
+- [ ] All navigation links working
+- [ ] Forms validate and submit
+- [ ] Mobile menu functions properly
+- [ ] Tracking system operational
+- [ ] All CTAs linked correctly
+- [ ] Images load and display properly
+
+### Content
+- [ ] Work visa information complete and accurate
+- [ ] Pricing clearly displayed (QAR amounts)
+- [ ] Salary information included
+- [ ] Processing times specified
+- [ ] FAQs comprehensive
+- [ ] No placeholder text remaining
+- [ ] Grammar and spelling checked
+
+### Performance
+- [ ] Lighthouse score >90
+- [ ] Images optimized
+- [ ] Page load <3 seconds
+- [ ] No console errors
+- [ ] Mobile performance excellent
+
+### Accessibility
+- [ ] All images have alt text
+- [ ] Keyboard navigation works
+- [ ] Color contrast sufficient
+- [ ] Form labels proper
+- [ ] ARIA labels where needed
+
+### SEO
+- [ ] Page titles optimized
+- [ ] Meta descriptions written
+- [ ] Open Graph tags added
+- [ ] Structured data implemented
+- [ ] URLs clean and descriptive
+
+---
+
+## 🎉 YOU'RE READY TO BUILD!
+
+This comprehensive guide provides everything needed to create Fast Qatar Visa Center website with:
+
+✅ **Clear work visa focus** with all 6 categories detailed
+✅ **Professional design** inspired by Fast Global ME
+✅ **Complete content** for all pages
+✅ **Technical excellence** with Next.js best practices
+✅ **User-centric** approach with trust-building elements
+✅ **Mobile-optimized** responsive design
+✅ **Performance-focused** fast loading and smooth interactions
+
+**Remember:** The work visa categories (especially Bike Rider, Cleaner, Labour, and Accountant) are your UNIQUE selling points. Make them prominent, clear, and easy to find!
+
+**Start with Phase 0, follow the priority order, and create something amazing! 🚀**

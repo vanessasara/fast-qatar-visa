@@ -2,21 +2,25 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, Clock, Headphones } from "lucide-react";
+import { Award, TrendingUp, Headphones, BadgeCheck } from "lucide-react";
 import { IMAGES } from "@/lib/images";
 
 const trustBadges = [
   {
-    icon: CheckCircle,
+    icon: Award,
+    text: "10+ Years Experience",
+  },
+  {
+    icon: TrendingUp,
     text: "98% Success Rate",
   },
   {
-    icon: Clock,
-    text: "24-Hour Processing",
+    icon: Headphones,
+    text: "24/7 Expert Support",
   },
   {
-    icon: Headphones,
-    text: "24/7 Support",
+    icon: BadgeCheck,
+    text: "Government Approved",
   },
 ];
 
@@ -42,29 +46,30 @@ export default function Hero() {
         <div className="max-w-3xl py-20">
           {/* Main Heading */}
           <h1 className="animate-fade-in text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            Get Your Qatar Visa{" "}
-            <span className="text-qatar-gold">Fast & Easy</span>
+            Fast & Reliable{" "}
+            <span className="text-qatar-gold">Qatar Visa</span>{" "}
+            Processing
           </h1>
 
           {/* Subtitle */}
           <p className="mt-6 animate-fade-in-up text-lg leading-relaxed text-gray-200 opacity-0 animation-delay-200 sm:text-xl md:text-2xl">
-            Quick processing, reliable service, and expert assistance for all
-            your Qatar visa needs. Join thousands of satisfied travelers.
+            Get your Qatar visa approved in 24-48 hours with our expert assistance.
+            Serving travelers worldwide for over 10 years.
           </p>
 
           {/* CTA Buttons */}
           <div className="mt-10 flex animate-fade-in-up flex-col gap-4 opacity-0 animation-delay-300 sm:flex-row">
             <Link
-              href="/services"
+              href="/contact"
               className="inline-flex items-center justify-center rounded-lg bg-qatar-maroon px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-qatar-maroon-800 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-qatar-maroon focus:ring-offset-2"
             >
-              Apply Now
+              Apply for Visa Now
             </Link>
             <Link
               href="/track"
               className="inline-flex items-center justify-center rounded-lg border-2 border-white bg-transparent px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white hover:text-qatar-maroon focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
             >
-              Check Status
+              Track Application
             </Link>
           </div>
 
