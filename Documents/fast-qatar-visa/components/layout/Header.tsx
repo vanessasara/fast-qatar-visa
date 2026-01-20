@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ChevronDown, Briefcase, Phone, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -85,11 +86,14 @@ export default function Header() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between md:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl">🇶🇦</span>
-              <span className="text-xl font-bold text-qatar-maroon md:text-2xl">
-                Fast Qatar Visa
-              </span>
+            <Link href="/" className="relative shrink-0 h-8 w-24 sm:h-9 sm:w-28 lg:h-10 lg:w-32">
+              <Image
+              src="/logo.png"
+              fill
+              alt="Fast qatar visa Logo"
+              className="object-contain"
+              priority
+            />
             </Link>
 
           {/* Desktop Navigation */}
