@@ -88,7 +88,7 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="relative shrink-0 h-8 w-24 sm:h-9 sm:w-28 lg:h-10 lg:w-32">
               <Image
-              src="/logo.png"
+              src="/Logo.png"
               fill
               alt="Fast qatar visa Logo"
               className="object-contain"
