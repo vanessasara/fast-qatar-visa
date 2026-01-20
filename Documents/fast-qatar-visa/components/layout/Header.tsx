@@ -86,7 +86,7 @@ export default function Header() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between md:h-20">
             {/* Logo */}
-            <Link href="/" className="relative shrink-0 h-8 w-24 sm:h-9 sm:w-28 lg:h-10 lg:w-32">
+            <Link href="/" className="relative shrink-0 h-100 w-100 sm:h-30 sm:w-30 lg:h-70 lg:w-70">
               <Image
               src="/Logo.png"
               fill
