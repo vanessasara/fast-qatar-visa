@@ -86,15 +86,15 @@ export default function Header() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between md:h-20">
             {/* Logo */}
-            <Link href="/" className="relative shrink-0 h-100 w-100 sm:h-30 sm:w-30 lg:h-70 lg:w-70">
-              <Image
-              src="/Logo.png"
-              fill
-              alt="Fast qatar visa Logo"
-              className="object-contain"
-              priority
-            />
-            </Link>
+           <Link href="/" className="relative shrink-0 h-16 w-32 sm:h-20 sm:w-40 lg:h-24 lg:w-48">
+  <Image
+    src="/Logo.png"
+    fill
+    alt="Fast qatar visa Logo"
+    className="object-contain"
+    priority
+  />
+</Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-1 md:flex lg:gap-2">
