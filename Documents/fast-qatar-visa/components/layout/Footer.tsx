@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   Mail,
   Phone,
@@ -18,16 +19,16 @@ const quickLinks = [
   { href: "/services", label: "Tourist Visa" },
   { href: "/services", label: "Business Visa" },
   { href: "/services/work", label: "Work Visas" },
-  { href: "/services/work/bike-rider", label: "Bike Rider Visa" },
-  { href: "/services/work/accountant", label: "Accountant Visa" },
+  { href: "/services", label: "Family Visa" },
+  { href: "/services", label: "Transit Visa" },
 ];
 
-const importantLinks = [
+const resourceLinks = [
   { href: "/track", label: "Track Application" },
-  { href: "/contact", label: "FAQ" },
-  { href: "/services", label: "Requirements" },
-  { href: "/about", label: "About Us" },
-  { href: "/contact", label: "Contact Us" },
+  { href: "/contact", label: "FAQs" },
+  { href: "/services", label: "Visa Requirements" },
+  { href: "/services", label: "Document Checklist" },
+  { href: "#", label: "Privacy Policy" },
 ];
 
 const socialLinks = [
@@ -48,22 +49,24 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-qatar-maroon-900 text-white">
+    <footer className="bg-qatar-maroon-700 text-white">
       {/* Main Footer Content */}
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: About Company */}
           <div>
-            <div className="mb-4 flex items-center gap-2">
-              <span className="text-2xl">🇶🇦</span>
-              <span className="text-xl font-bold text-white">
-                Fast Qatar Visa
-              </span>
-            </div>
+            <Link href="/" className="relative block h-16 w-36 mb-4">
+              <Image
+                src="/Logo.png"
+                fill
+                alt="Fast Qatar Visa Logo"
+                className="object-contain object-left"
+              />
+            </Link>
             <p className="mb-6 text-sm leading-relaxed text-gray-300">
-              Your trusted partner for Qatar visa processing. We provide fast,
-              reliable, and secure visa services with a 98% success rate. Get
-              your visa approved in as little as 24 hours.
+              Your trusted Qatar visa partner with 10+ years of experience. We
+              provide fast, reliable, and secure visa services with a 98%
+              success rate and 24/7 expert support.
             </p>
             {/* Social Media Icons */}
             <div className="flex gap-3">
@@ -83,7 +86,7 @@ export default function Footer() {
           {/* Column 2: Quick Links */}
           <div>
             <h3 className="mb-4 text-lg font-semibold text-qatar-gold">
-              Our Services
+              Quick Links
             </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -99,13 +102,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Important Links */}
+          {/* Column 3: Resources */}
           <div>
             <h3 className="mb-4 text-lg font-semibold text-qatar-gold">
-              Quick Links
+              Resources
             </h3>
             <ul className="space-y-3">
-              {importantLinks.map((link) => (
+              {resourceLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
