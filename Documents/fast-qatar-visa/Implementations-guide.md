@@ -577,12 +577,12 @@ export default function BikeRiderVisaPage() {
                 </p>
                 <div className="space-y-2">
                   <Button variant="outline" className="w-full justify-start" asChild>
-                    <a href="tel:+97451049145">
-                      📞 +974-5104 9145
+                    <a href="tel:+97412345678">
+                      📞 +974 12345678
                     </a>
                   </Button>
                   <Button variant="outline" className="w-full justify-start" asChild>
-                    <a href="https://wa.me/97451049145">
+                    <a href="https://wa.me/97412345678">
                       💬 WhatsApp Chat
                     </a>
                   </Button>
@@ -645,8 +645,8 @@ Update contact information:
     <li>Office 303, Abdul Jaleel Abdul Ghani Building</li>
     <li>Al Matar Street, Doha, Qatar</li>
     <li className="mt-4">
-      <a href="tel:+97451049145" className="hover:text-qatarGold">
-        📞 +974-5104 9145
+      <a href="tel:+97412345678" className="hover:text-qatarGold">
+        📞 +974 12345678
       </a>
     </li>
     <li>
@@ -655,8 +655,8 @@ Update contact information:
       </a>
     </li>
     <li>
-      <a href="https://wa.me/97451049145" className="hover:text-qatarGold">
-        💬 WhatsApp: +974-5104 9145
+      <a href="https://wa.me/97412345678" className="hover:text-qatarGold">
+        💬 WhatsApp: +974 12345678
       </a>
     </li>
   </ul>

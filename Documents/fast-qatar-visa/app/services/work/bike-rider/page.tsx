@@ -420,17 +420,17 @@ export default function BikeRiderVisaPage() {
                   Our visa experts are available 24/7 to answer your questions
                 </p>
                 <div className="space-y-2">
-                  <a href="tel:+97451049145" className="block">
+                  <a href="tel:+97412345678" className="block">
                     <Button
                       variant="outline"
                       className="w-full justify-start gap-2"
                     >
                       <Phone className="w-4 h-4" />
-                      +974-5104 9145
+                      +974 12345678
                     </Button>
                   </a>
                   <a
-                    href="https://wa.me/97451049145"
+                    href="https://wa.me/97412345678"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block"

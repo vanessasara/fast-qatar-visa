@@ -517,7 +517,7 @@ export default function WorkVisasPage() {
               </Button>
             </Link>
             <a
-              href="https://wa.me/97451049145"
+              href="https://wa.me/97412345678"
               target="_blank"
               rel="noopener noreferrer"
             >

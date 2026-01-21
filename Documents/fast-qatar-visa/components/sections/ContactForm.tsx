@@ -10,8 +10,13 @@ const visaTypes = [
   { value: "business", label: "Business Visa" },
   { value: "transit", label: "Transit Visa" },
   { value: "family", label: "Family Visa" },
-  { value: "work", label: "Work Visa" },
-  { value: "not-sure", label: "Not Sure" },
+  { value: "bike-rider", label: "Bike Rider Visa" },
+  { value: "cleaner", label: "Cleaner Visa" },
+  { value: "labour", label: "Labour Visa" },
+  { value: "accountant", label: "Accountant Visa" },
+  { value: "work-permit", label: "Work Permit (2 Years)" },
+  { value: "freelance", label: "Freelance Visa" },
+  { value: "other", label: "Other" },
 ];
 
 interface FormData {
@@ -105,16 +110,25 @@ export default function ContactForm() {
 
   return (
     <div className="rounded-2xl bg-white p-8 shadow-xl">
-      <h2 className="text-2xl font-bold text-gray-900">Send Us a Message</h2>
+      <span className="inline-flex items-center gap-2 rounded-full bg-qatar-maroon/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-qatar-maroon">
+        <span className="h-1.5 w-1.5 rounded-full bg-qatar-maroon" />
+        Contact Form
+      </span>
+      <h2 className="mt-3 font-heading text-2xl font-bold text-gray-900 sm:text-3xl">
+        Send Us a Message
+      </h2>
       <p className="mt-2 text-gray-600">
-        Fill out the form below and we&apos;ll get back to you within 24 hours.
+        Fill out the form below and our visa experts will get back to you within 2-4 hours.
       </p>
 
       {/* Success Message */}
       {submitStatus === "success" && (
         <div className="mt-6 flex items-center gap-3 rounded-lg bg-green-50 p-4 text-green-700">
           <CheckCircle className="h-5 w-5 flex-shrink-0" />
-          <p>Thank you! We&apos;ll respond within 24 hours.</p>
+          <div>
+            <p className="font-semibold">Thank you for contacting us!</p>
+            <p className="text-sm">Our team will respond within 2-4 hours.</p>
+          </div>
         </div>
       )}
 

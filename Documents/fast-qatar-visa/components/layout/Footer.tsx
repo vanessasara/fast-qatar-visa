@@ -141,10 +141,10 @@ export default function Footer() {
                 <div>
                   <p className="text-sm text-gray-300">Call / WhatsApp</p>
                   <a
-                    href="tel:+97451049145"
+                    href="tel:+97412345678"
                     className="text-sm text-white hover:text-qatar-gold"
                   >
-                    +974-5104 9145
+                    +974 12345678
                   </a>
                 </div>
               </li>

@@ -7,9 +7,22 @@ import FAQ from "@/components/sections/FAQ";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Us | Fast Qatar Visa Center - 24/7 Expert Support",
   description:
-    "Get in touch with Fast Qatar Visa Center. Our team is available 24/7 to help with your Qatar visa questions. Email, phone, or WhatsApp support.",
+    "Get in touch with Fast Qatar Visa Center. Our expert team is available 24/7 via phone (+974 12345678), email, or WhatsApp. Office: Al Matar Street, Doha, Qatar.",
+  keywords: [
+    "contact Fast Qatar Visa",
+    "Qatar visa support",
+    "visa help Qatar",
+    "Qatar visa phone number",
+    "visa consultation Qatar",
+  ],
+  openGraph: {
+    title: "Contact Us | Fast Qatar Visa Center",
+    description:
+      "Expert visa support available 24/7. Call +974 12345678 or visit our office in Doha.",
+    type: "website",
+  },
 };
 
 export default function ContactPage() {

@@ -358,7 +358,7 @@ Create `/components/layout/Header.tsx`:
 - Navigation: Home | Visa Services | About | Contact | Track Application
 - "Apply Now" CTA button (maroon)
 - Mobile responsive with hamburger menu
-- Phone number: +974-5104 9145 (from Fast Global ME Qatar)
+- Phone number: +974 12345678 (from Fast Global ME Qatar)
 - WhatsApp integration option
 
 **Design Notes:**
@@ -396,7 +396,7 @@ Create `/components/layout/Footer.tsx`:
 - **Qatar Office:**
   - Office 303, Abdul Jaleel Abdul Ghani Building
   - Al Matar Street, Doha, Qatar
-- **Phone:** +974-5104 9145
+- **Phone:** +974 12345678
 - **Email:** info@fastqatarvisa.com
 - **Working Hours:** 24/7 Support Available
 
@@ -1241,7 +1241,7 @@ Whether you're planning a leisure trip, business visit, or seeking employment op
 **Qatar Office (Main):**
 - Office 303, Abdul Jaleel Abdul Ghani Building
 - Al Matar Street, Doha, Qatar
-- Phone: +974-5104 9145
+- Phone: +974 12345678
 - Email: info@fastqatarvisa.com
 
 **Optional:** Add Google Maps embed
@@ -1281,13 +1281,13 @@ Whether you're planning a leisure trip, business visit, or seeking employment op
 ### Task 5.3: Contact Information Card
 **Qatar Office:**
 - **Address:** Office 303, Abdul Jaleel Abdul Ghani Building, Al Matar Street, Doha, Qatar
-- **Phone:** +974-5104 9145
-- **WhatsApp:** +974-5104 9145 (clickable)
+- **Phone:** +974 12345678
+- **WhatsApp:** +974 12345678 (clickable)
 - **Email:** info@fastqatarvisa.com
 - **Working Hours:** 24/7 Support Available
 
 **Quick Contact Options:**
-- Call icon → +974-5104 9145
+- Call icon → +974 12345678
 - WhatsApp icon → Chat Now
 - Email icon → Send Email
 - Location icon → Get Directions
@@ -1494,7 +1494,7 @@ Whether you're planning a leisure trip, business visit, or seeking employment op
 **Can't Find Your Reference?**
 - Check spam/junk folder
 - Search email for "Fast Qatar Visa"
-- Contact support: +974-5104 9145
+- Contact support: +974 12345678
 - Email: info@fastqatarvisa.com
 
 **Status Update Timing:**
@@ -1787,7 +1787,7 @@ export const metadata = {
   "logo": "https://fastqatarvisa.com/logo.png",
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+974-5104-9145",
+    "telephone": "+974 12345678",
     "contactType": "customer service"
   }
 }
@@ -2049,8 +2049,8 @@ fast-qatar-visa/
 
 - **Company Name:** Fast Qatar Visa Center
 - **Qatar Office:** Office 303, Abdul Jaleel Abdul Ghani Building, Al Matar Street, Doha, Qatar
-- **Phone:** +974-5104 9145
-- **WhatsApp:** +974-5104 9145
+- **Phone:** +974 12345678
+- **WhatsApp:** +974 12345678
 - **Email:** info@fastqatarvisa.com
 - **Working Hours:** 24/7 Support Available
 

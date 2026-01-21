@@ -361,13 +361,13 @@ export default function FreelanceVisaPage() {
                   Our freelance visa specialists are available 24/7
                 </p>
                 <div className="space-y-2">
-                  <a href="tel:+97451049145" className="block">
+                  <a href="tel:+97412345678" className="block">
                     <Button variant="outline" className="w-full justify-start gap-2">
                       <Phone className="w-4 h-4" />
-                      +974-5104 9145
+                      +974 12345678
                     </Button>
                   </a>
-                  <a href="https://wa.me/97451049145" target="_blank" rel="noopener noreferrer" className="block">
+                  <a href="https://wa.me/97412345678" target="_blank" rel="noopener noreferrer" className="block">
                     <Button variant="outline" className="w-full justify-start gap-2 text-green-600 border-green-600 hover:bg-green-600 hover:text-white">
                       <MessageCircle className="w-4 h-4" />
                       WhatsApp Chat
