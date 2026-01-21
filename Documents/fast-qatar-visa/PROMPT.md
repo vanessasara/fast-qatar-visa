@@ -2136,3 +2136,170 @@ This comprehensive guide provides everything needed to create Fast Qatar Visa Ce
 **Remember:** The work visa categories (especially Bike Rider, Cleaner, Labour, and Accountant) are your UNIQUE selling points. Make them prominent, clear, and easy to find!
 
 **Start with Phase 0, follow the priority order, and create something amazing! 🚀**
+
+---
+
+## 🏗️ ARCHITECTURE BEST PRACTICES (IMPORTANT)
+
+### 1. Use Next.js App Router Layout (NO Custom Layout Wrapper)
+
+**❌ DON'T DO THIS:**
+```tsx
+// Every page wrapped with Layout component
+import Layout from "@/components/layout/Layout";
+
+export default function Page() {
+  return (
+    <Layout>
+      <Content />
+    </Layout>
+  );
+}
+```
+
+**✅ DO THIS INSTEAD:**
+```tsx
+// app/layout.tsx - Layout is defined ONCE here
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
+
+// Pages just return content directly
+export default function Page() {
+  return (
+    <>
+      <Hero />
+      <Content />
+    </>
+  );
+}
+```
+
+### 2. Dynamic Routes for Similar Pages
+
+**❌ DON'T DO THIS:**
+```
+/app/services/work/
+  ├── bike-rider/page.tsx (400 lines)
+  ├── cleaner/page.tsx (400 lines)
+  ├── labour/page.tsx (400 lines)
+  └── accountant/page.tsx (400 lines)
+```
+
+**✅ DO THIS INSTEAD:**
+```
+/app/services/work/
+  ├── page.tsx (overview)
+  └── [slug]/page.tsx (dynamic route - ONE file for all)
+
+/lib/work-visas.ts (centralized data)
+/components/work-visa/ (reusable components)
+```
+
+### 3. Centralize Repetitive Data
+
+**Store all data in `/lib/` folder:**
+- `/lib/work-visas.ts` - All work visa data
+- `/lib/contact.ts` - Contact information (phone, email, address)
+- `/lib/images.ts` - Image URLs (already exists)
+
+**Contact Info Example:**
+```typescript
+// lib/contact.ts
+export const CONTACT_INFO = {
+  phone: "+974 12345678",
+  phoneRaw: "+97412345678",
+  whatsapp: "97412345678",
+  email: "info@fastqatarvisa.com",
+  address: {
+    line1: "Office 303, Abdul Jaleel Abdul Ghani Building",
+    line2: "Al Matar Street, Doha, Qatar",
+  },
+};
+```
+
+### 4. Global CSS for Repetitive Tailwind Classes
+
+**❌ DON'T DO THIS:**
+```tsx
+// Repeating same classes 50+ times across files
+<div className="border-t border-gray-100 pt-4">
+<div className="p-5 bg-gradient-to-br from-qatar-gold/10 to-qatar-gold/5 rounded-xl border border-qatar-gold/20">
+```
+
+**✅ DO THIS INSTEAD:**
+```css
+/* globals.css */
+.sidebar-divider {
+  border-top: 1px solid #f3f4f6;
+  padding-top: 1rem;
+}
+
+.pricing-card-gold {
+  padding: 1.25rem;
+  background: linear-gradient(to bottom right, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+  border-radius: 0.75rem;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+```
+
+### 5. Create Reusable Components
+
+**Break large pages into smaller components:**
+```
+/components/work-visa/
+  ├── WorkVisaHero.tsx (hero section)
+  ├── WorkVisaContent.tsx (main content)
+  ├── WorkVisaSidebar.tsx (sidebar with cards)
+  └── index.ts (exports)
+```
+
+### 6. File Structure Summary
+
+**Current Best Practice Structure:**
+```
+/app/
+  ├── layout.tsx (Header, Footer, global wrapper)
+  ├── page.tsx (Home - just returns sections)
+  ├── services/
+  │   ├── page.tsx
+  │   └── work/
+  │       ├── page.tsx (overview)
+  │       └── [slug]/page.tsx (dynamic route)
+  ├── about/page.tsx
+  ├── contact/page.tsx
+  └── track/page.tsx
+
+/components/
+  ├── layout/ (Header, Footer)
+  ├── sections/ (reusable page sections)
+  ├── work-visa/ (work visa specific components)
+  └── ui/ (base UI components)
+
+/lib/
+  ├── images.ts (centralized images)
+  ├── work-visas.ts (work visa data)
+  ├── contact.ts (contact information)
+  └── utils.ts (utilities)
+```
+
+### 7. Key Principles
+
+1. **DRY (Don't Repeat Yourself)** - If code appears 3+ times, create a component or utility
+2. **Single Source of Truth** - Data lives in `/lib/`, not scattered across pages
+3. **Dynamic Routes** - Use `[slug]` for similar pages (work visas, blog posts, etc.)
+4. **Global Styles** - Repetitive Tailwind patterns go in `globals.css`
+5. **Layout in Root** - Header/Footer in `app/layout.tsx`, NOT wrapped in every page
+6. **Small Components** - Pages should compose small, focused components
+7. **TypeScript Types** - Define types in data files for consistency

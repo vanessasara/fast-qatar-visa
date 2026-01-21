@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Layout from "@/components/layout/Layout";
 import ContactHero from "@/components/sections/ContactHero";
 import ContactForm from "@/components/sections/ContactForm";
 import ContactInfo from "@/components/sections/ContactInfo";
@@ -27,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <Layout>
+    <>
       <ContactHero />
 
       {/* Contact Form and Info Section */}
@@ -52,6 +51,6 @@ export default function ContactPage() {
 
       <FAQ />
       <CTASection />
-    </Layout>
+    </>
   );
 }

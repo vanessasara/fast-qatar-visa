@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Manrope } from "next/font/google";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -55,7 +57,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${manrope.variable}`}>
       <body className="font-body antialiased">
-        {children}
+        <div className="flex min-h-screen flex-col">
+          {/* Skip to content link for accessibility */}
+          <a href="#main-content" className="skip-to-content">
+            Skip to main content
+          </a>
+
+          <Header />
+          <main id="main-content" className="flex-1 pt-16 md:pt-20" role="main">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

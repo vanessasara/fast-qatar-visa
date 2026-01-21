@@ -1,4 +1,3 @@
-import Layout from "@/components/layout/Layout";
 import Image from "next/image";
 import Link from "next/link";
 import { IMAGES } from "@/lib/images";
@@ -6,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
-  Clock,
   CheckCircle,
   Bike,
   Sparkles,
@@ -144,7 +142,7 @@ const workVisas = [
 
 export default function WorkVisasPage() {
   return (
-    <Layout>
+    <>
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center">
         <Image
@@ -533,6 +531,6 @@ export default function WorkVisasPage() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }

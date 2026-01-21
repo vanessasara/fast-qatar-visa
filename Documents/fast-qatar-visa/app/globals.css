@@ -343,3 +343,124 @@ textarea:focus-visible {
 .aspect-portrait {
   aspect-ratio: 3/4;
 }
+
+/* ==============================================
+   WORK VISA PAGE UTILITIES
+   ============================================== */
+
+/* Work Visa Hero Section */
+.work-visa-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+/* Sidebar Utilities */
+.sidebar-header {
+  background: linear-gradient(to right, #8B1538, rgba(139, 21, 56, 0.9));
+  color: white;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.sidebar-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4b5563;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-divider {
+  border-top: 1px solid #f3f4f6;
+  padding-top: 1rem;
+}
+
+/* Card Title with Icon */
+.card-title-with-icon {
+  font-size: 1.5rem;
+  color: #8B1538;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Checklist Items */
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.checklist-item-sm {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Icon Utilities */
+.icon-gold {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #D4AF37;
+  flex-shrink: 0;
+}
+
+.icon-gold-sm {
+  width: 1rem;
+  height: 1rem;
+  color: #D4AF37;
+  flex-shrink: 0;
+}
+
+.icon-gold-center {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #D4AF37;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5rem;
+}
+
+/* Pricing Cards */
+.pricing-card-gold {
+  padding: 1.25rem;
+  background: linear-gradient(to bottom right, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+  border-radius: 0.75rem;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.pricing-card-maroon {
+  padding: 1.25rem;
+  background: linear-gradient(to bottom right, rgba(139, 21, 56, 0.1), rgba(139, 21, 56, 0.05));
+  border-radius: 0.75rem;
+  border: 1px solid rgba(139, 21, 56, 0.2);
+}
+
+/* Contract Details Grid */
+.contract-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid #f3f4f6;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+@media (min-width: 768px) {
+  .contract-details-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Job Category Item */
+.job-category-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+}

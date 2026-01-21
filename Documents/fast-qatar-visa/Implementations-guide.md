@@ -707,13 +707,85 @@ Update contact information:
 
 ---
 
-## 💡 PRO TIPS
+## 💡 PRO TIPS (UPDATED)
 
-1. **Copy the detailed work visa pages** - Create one perfect page (like Bike Rider), then duplicate and modify for others
-2. **Focus on trust signals** - Emphasize 10+ years experience, 98% success rate, 24/7 support
-3. **Make pricing clear** - Always show both QAR and PKR amounts
-4. **Mobile-first** - Start with mobile design, then enhance for desktop
-5. **Use real images** - The Unsplash URLs provided are high-quality and free
+### ❌ OLD WAY (Don't do this):
+1. ~~Copy the detailed work visa pages - Create one perfect page, then duplicate~~
+2. ~~Create individual page files for each work visa~~
+
+### ✅ NEW WAY (Do this instead):
+1. **Use Dynamic Routes** - Create `/app/services/work/[slug]/page.tsx` for all work visas
+2. **Centralize Data** - Store all work visa data in `/lib/work-visas.ts`
+3. **Reusable Components** - Create components in `/components/work-visa/`
+4. **No Layout Wrapper** - Header/Footer go in `app/layout.tsx`, not in each page
+
+### Best Practices:
+1. **Focus on trust signals** - Emphasize 10+ years experience, 98% success rate, 24/7 support
+2. **Make pricing clear** - Always show both QAR and PKR amounts
+3. **Mobile-first** - Start with mobile design, then enhance for desktop
+4. **Use real images** - The Unsplash URLs provided are high-quality and free
+5. **Global CSS utilities** - Put repetitive Tailwind patterns in `globals.css`
+
+---
+
+## 🏗️ CURRENT ARCHITECTURE
+
+### Dynamic Work Visa Route
+The work visa pages now use a single dynamic route:
+
+```
+/app/services/work/[slug]/page.tsx
+```
+
+**Data Source:** `/lib/work-visas.ts`
+- All visa data (eligibility, pricing, documents, etc.)
+- Contact information centralized
+- Helper functions: `getWorkVisaBySlug()`, `getAllWorkVisaSlugs()`
+
+**Components:** `/components/work-visa/`
+- `WorkVisaHero.tsx` - Hero section with breadcrumb
+- `WorkVisaContent.tsx` - Main content cards
+- `WorkVisaSidebar.tsx` - Sidebar with quick facts, contact
+
+### No More Layout Wrapper
+The `app/layout.tsx` now includes Header and Footer directly:
+
+```tsx
+// app/layout.tsx
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
+```
+
+Pages just return their content:
+```tsx
+// app/page.tsx
+export default function Home() {
+  return (
+    <>
+      <Hero />
+      <ServicesPreview />
+      ...
+    </>
+  );
+}
+```
+
+### Global CSS Utilities
+Repetitive Tailwind patterns are in `globals.css`:
+- `.work-visa-hero` - Hero section styling
+- `.sidebar-divider` - Section dividers
+- `.pricing-card-gold` / `.pricing-card-maroon` - Pricing cards
+- `.checklist-item` / `.checklist-item-sm` - List items with icons
+- `.job-category-item` - Job category badges
 
 ---
 
@@ -721,9 +793,16 @@ Update contact information:
 
 You now have:
 ✅ Complete development guide (main file)
-✅ Practical code examples (this file)
-✅ Work visa category details
+✅ Dynamic route architecture
+✅ Centralized data management
+✅ Reusable component library
+✅ Global CSS utilities
 ✅ Design best practices
-✅ Step-by-step implementation plan
+
+**Remember:**
+- ONE dynamic route for all work visas
+- Data in `/lib/`, not scattered in pages
+- Layout in `app/layout.tsx`, not wrapped in pages
+- Global CSS for repetitive styles
 
 **Start building and create something amazing! 🎉**

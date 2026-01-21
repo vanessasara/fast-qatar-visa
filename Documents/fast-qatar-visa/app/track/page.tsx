@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Layout from "@/components/layout/Layout";
 import TrackHero from "@/components/sections/TrackHero";
 import TrackingForm from "@/components/sections/TrackingForm";
 import StatusDisplay, {
@@ -59,7 +58,7 @@ export default function TrackPage() {
   };
 
   return (
-    <Layout>
+    <>
       <TrackHero />
 
       {/* Tracking Section */}
@@ -80,6 +79,6 @@ export default function TrackPage() {
       </section>
 
       <TrackingHelp />
-    </Layout>
+    </>
   );
 }

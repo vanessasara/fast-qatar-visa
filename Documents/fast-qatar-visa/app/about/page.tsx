@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Layout from "@/components/layout/Layout";
 import AboutHero from "@/components/sections/AboutHero";
 import CompanyStory from "@/components/sections/CompanyStory";
 import Values from "@/components/sections/Values";
@@ -28,13 +27,13 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <Layout>
+    <>
       <AboutHero />
       <CompanyStory />
       <Values />
       <OfficeLocations />
       <Team />
       <CTASection />
-    </Layout>
+    </>
   );
 }

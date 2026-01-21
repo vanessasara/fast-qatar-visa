@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Layout from "@/components/layout/Layout";
 import ServicesHero from "@/components/sections/ServicesHero";
 import ServicesList from "@/components/sections/ServicesList";
 import RequirementsChecklist from "@/components/sections/RequirementsChecklist";
@@ -14,12 +13,12 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <Layout>
+    <>
       <ServicesHero />
       <ServicesList />
       <RequirementsChecklist />
       <PricingTable />
       <CTASection />
-    </Layout>
+    </>
   );
 }
