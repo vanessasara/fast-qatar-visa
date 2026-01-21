@@ -296,101 +296,103 @@ export default function AccountantVisaPage() {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-1 space-y-6">
-            <Card className="sticky top-24 border-qatar-gold border-2">
-              <CardHeader className="bg-gradient-to-r from-qatar-maroon to-qatar-maroon/90 text-white rounded-t-lg">
-                <CardTitle className="text-xl flex items-center gap-2">
-                  <Award className="w-5 h-5" />
-                  Premium Package
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4 pt-6">
-                <div>
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <Clock className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Processing Time</span>
+          <div className="lg:col-span-1">
+            <div className="lg:sticky lg:top-24 space-y-6">
+              <Card className="border-qatar-gold border-2">
+                <CardHeader className="bg-gradient-to-r from-qatar-maroon to-qatar-maroon/90 text-white rounded-t-lg">
+                  <CardTitle className="text-xl flex items-center gap-2">
+                    <Award className="w-5 h-5" />
+                    Premium Package
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 pt-6">
+                  <div>
+                    <div className="flex items-center gap-2 text-gray-600 mb-1">
+                      <Clock className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Processing Time</span>
+                    </div>
+                    <p className="text-gray-700 font-medium">20-25 working days</p>
+                    <p className="text-sm text-qatar-gold">Express: 15 days</p>
                   </div>
-                  <p className="text-gray-700 font-medium">20-25 working days</p>
-                  <p className="text-sm text-qatar-gold">Express: 15 days</p>
-                </div>
 
-                <div className="border-t border-gray-100 pt-4">
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <DollarSign className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Visa Fee</span>
+                  <div className="border-t border-gray-100 pt-4">
+                    <div className="flex items-center gap-2 text-gray-600 mb-1">
+                      <DollarSign className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Visa Fee</span>
+                    </div>
+                    <p className="text-3xl font-bold text-qatar-gold">QAR 8,000</p>
                   </div>
-                  <p className="text-3xl font-bold text-qatar-gold">QAR 8,000</p>
-                </div>
 
-                <div className="border-t border-gray-100 pt-4">
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <DollarSign className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Monthly Salary</span>
+                  <div className="border-t border-gray-100 pt-4">
+                    <div className="flex items-center gap-2 text-gray-600 mb-1">
+                      <DollarSign className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Monthly Salary</span>
+                    </div>
+                    <p className="text-2xl font-bold text-qatar-maroon">QAR 25,000+</p>
+                    <p className="text-sm text-gray-500">PKR 620,000+</p>
                   </div>
-                  <p className="text-2xl font-bold text-qatar-maroon">QAR 25,000+</p>
-                  <p className="text-sm text-gray-500">PKR 620,000+</p>
-                </div>
 
-                <div className="border-t border-gray-100 pt-4">
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <Users className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Family Sponsorship</span>
+                  <div className="border-t border-gray-100 pt-4">
+                    <div className="flex items-center gap-2 text-gray-600 mb-1">
+                      <Users className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Family Sponsorship</span>
+                    </div>
+                    <p className="text-green-600 font-medium">Eligible</p>
                   </div>
-                  <p className="text-green-600 font-medium">Eligible</p>
-                </div>
 
-                <div className="border-t border-gray-100 pt-4">
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <Calendar className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Contract Duration</span>
+                  <div className="border-t border-gray-100 pt-4">
+                    <div className="flex items-center gap-2 text-gray-600 mb-1">
+                      <Calendar className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Contract Duration</span>
+                    </div>
+                    <p className="text-gray-700 font-medium">2 years (renewable)</p>
                   </div>
-                  <p className="text-gray-700 font-medium">2 years (renewable)</p>
-                </div>
 
-                <div className="border-t border-gray-100 pt-4 space-y-3">
-                  <Link href="/contact" className="block">
-                    <Button className="w-full bg-qatar-gold hover:bg-qatar-gold/90 text-white text-lg py-6">
-                      Apply Now
+                  <div className="border-t border-gray-100 pt-4 space-y-3">
+                    <Link href="/contact" className="block">
+                      <Button className="w-full bg-qatar-gold hover:bg-qatar-gold/90 text-white text-lg py-6">
+                        Apply Now
+                      </Button>
+                    </Link>
+                    <Button variant="outline" className="w-full border-qatar-maroon text-qatar-maroon hover:bg-qatar-maroon hover:text-white">
+                      Schedule Consultation
                     </Button>
-                  </Link>
-                  <Button variant="outline" className="w-full border-qatar-maroon text-qatar-maroon hover:bg-qatar-maroon hover:text-white">
-                    Schedule Consultation
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                  </div>
+                </CardContent>
+              </Card>
 
-            {/* Contact Card */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Speak to an Expert</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm text-gray-600">
-                  Our professional visa consultants are available 24/7
-                </p>
-                <div className="space-y-2">
-                  <a href="tel:+97412345678" className="block">
-                    <Button variant="outline" className="w-full justify-start gap-2">
-                      <Phone className="w-4 h-4" />
-                      +974 12345678
-                    </Button>
-                  </a>
-                  <a href="https://wa.me/97412345678" target="_blank" rel="noopener noreferrer" className="block">
-                    <Button variant="outline" className="w-full justify-start gap-2 text-green-600 border-green-600 hover:bg-green-600 hover:text-white">
-                      <MessageCircle className="w-4 h-4" />
-                      WhatsApp Chat
-                    </Button>
-                  </a>
-                  <a href="mailto:info@fastqatarvisa.com" className="block">
-                    <Button variant="outline" className="w-full justify-start gap-2">
-                      <Mail className="w-4 h-4" />
-                      Email Us
-                    </Button>
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
+              {/* Contact Card */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Speak to an Expert</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm text-gray-600">
+                    Our professional visa consultants are available 24/7
+                  </p>
+                  <div className="space-y-2">
+                    <a href="tel:+97412345678" className="block">
+                      <Button variant="outline" className="w-full justify-start gap-2">
+                        <Phone className="w-4 h-4" />
+                        +974 12345678
+                      </Button>
+                    </a>
+                    <a href="https://wa.me/97412345678" target="_blank" rel="noopener noreferrer" className="block">
+                      <Button variant="outline" className="w-full justify-start gap-2 text-green-600 border-green-600 hover:bg-green-600 hover:text-white">
+                        <MessageCircle className="w-4 h-4" />
+                        WhatsApp Chat
+                      </Button>
+                    </a>
+                    <a href="mailto:info@fastqatarvisa.com" className="block">
+                      <Button variant="outline" className="w-full justify-start gap-2">
+                        <Mail className="w-4 h-4" />
+                        Email Us
+                      </Button>
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>

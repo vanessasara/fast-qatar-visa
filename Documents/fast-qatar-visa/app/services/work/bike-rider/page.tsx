@@ -352,138 +352,140 @@ export default function BikeRiderVisaPage() {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-1 space-y-6">
-            {/* Quick Facts Card */}
-            <Card className="sticky top-24">
-              <CardHeader className="bg-qatar-maroon text-white rounded-t-lg">
-                <CardTitle className="text-xl">Quick Facts</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4 pt-6">
-                <div>
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <Clock className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Processing Time</span>
+          <div className="lg:col-span-1">
+            <div className="lg:sticky lg:top-24 space-y-6">
+              {/* Quick Facts Card */}
+              <Card>
+                <CardHeader className="bg-qatar-maroon text-white rounded-t-lg">
+                  <CardTitle className="text-xl">Quick Facts</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 pt-6">
+                  <div>
+                    <div className="flex items-center gap-2 text-gray-600 mb-1">
+                      <Clock className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Processing Time</span>
+                    </div>
+                    <p className="text-gray-700 font-medium">15-20 working days</p>
+                    <p className="text-sm text-qatar-gold">Express: 10-12 days</p>
                   </div>
-                  <p className="text-gray-700 font-medium">15-20 working days</p>
-                  <p className="text-sm text-qatar-gold">Express: 10-12 days</p>
-                </div>
 
-                <div className="border-t border-gray-100 pt-4">
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <DollarSign className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Visa Fee</span>
+                  <div className="border-t border-gray-100 pt-4">
+                    <div className="flex items-center gap-2 text-gray-600 mb-1">
+                      <DollarSign className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Visa Fee</span>
+                    </div>
+                    <p className="text-3xl font-bold text-qatar-gold">QAR 7,500</p>
                   </div>
-                  <p className="text-3xl font-bold text-qatar-gold">QAR 7,500</p>
-                </div>
 
-                <div className="border-t border-gray-100 pt-4">
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <DollarSign className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Monthly Salary</span>
+                  <div className="border-t border-gray-100 pt-4">
+                    <div className="flex items-center gap-2 text-gray-600 mb-1">
+                      <DollarSign className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Monthly Salary</span>
+                    </div>
+                    <p className="text-2xl font-bold text-qatar-maroon">QAR 2,300</p>
+                    <p className="text-sm text-gray-500">PKR 180,000</p>
                   </div>
-                  <p className="text-2xl font-bold text-qatar-maroon">QAR 2,300</p>
-                  <p className="text-sm text-gray-500">PKR 180,000</p>
-                </div>
 
-                <div className="border-t border-gray-100 pt-4">
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <Users className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Contract Duration</span>
+                  <div className="border-t border-gray-100 pt-4">
+                    <div className="flex items-center gap-2 text-gray-600 mb-1">
+                      <Users className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Contract Duration</span>
+                    </div>
+                    <p className="text-gray-700 font-medium">2 years (renewable)</p>
                   </div>
-                  <p className="text-gray-700 font-medium">2 years (renewable)</p>
-                </div>
 
-                <div className="border-t border-gray-100 pt-4 space-y-3">
-                  <Link href="/contact" className="block">
-                    <Button className="w-full bg-qatar-maroon hover:bg-qatar-maroon/90 text-white text-lg py-6">
-                      Apply Now
-                    </Button>
-                  </Link>
+                  <div className="border-t border-gray-100 pt-4 space-y-3">
+                    <Link href="/contact" className="block">
+                      <Button className="w-full bg-qatar-maroon hover:bg-qatar-maroon/90 text-white text-lg py-6">
+                        Apply Now
+                      </Button>
+                    </Link>
 
-                  <Button
-                    variant="outline"
-                    className="w-full border-qatar-gold text-qatar-gold hover:bg-qatar-gold hover:text-white"
-                  >
-                    Download Brochure
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Contact Card */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Need Help?</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm text-gray-600">
-                  Our visa experts are available 24/7 to answer your questions
-                </p>
-                <div className="space-y-2">
-                  <a href="tel:+97412345678" className="block">
                     <Button
                       variant="outline"
-                      className="w-full justify-start gap-2"
+                      className="w-full border-qatar-gold text-qatar-gold hover:bg-qatar-gold hover:text-white"
                     >
-                      <Phone className="w-4 h-4" />
-                      +974 12345678
+                      Download Brochure
                     </Button>
-                  </a>
-                  <a
-                    href="https://wa.me/97412345678"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block"
-                  >
-                    <Button
-                      variant="outline"
-                      className="w-full justify-start gap-2 text-green-600 border-green-600 hover:bg-green-600 hover:text-white"
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      WhatsApp Chat
-                    </Button>
-                  </a>
-                  <a href="mailto:info@fastqatarvisa.com" className="block">
-                    <Button
-                      variant="outline"
-                      className="w-full justify-start gap-2"
-                    >
-                      <Mail className="w-4 h-4" />
-                      Email Us
-                    </Button>
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
+                  </div>
+                </CardContent>
+              </Card>
 
-            {/* Other Work Visas */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Other Work Visas</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                {[
-                  { name: "Cleaner Visa", slug: "cleaner", fee: "QAR 7,000" },
-                  { name: "Labour Visa", slug: "labour", fee: "QAR 7,000" },
-                  { name: "Accountant Visa", slug: "accountant", fee: "QAR 8,000" },
-                  { name: "Work Permit (2Y)", slug: "work-permit", fee: "From QAR 7,500" },
-                  { name: "Freelance Visa", slug: "freelance", fee: "From QAR 8,500" },
-                ].map((visa) => (
-                  <Link
-                    key={visa.slug}
-                    href={`/services/work/${visa.slug}`}
-                    className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                  >
-                    <span className="text-sm font-medium text-gray-700">
-                      {visa.name}
-                    </span>
-                    <span className="text-sm text-qatar-gold font-semibold">
-                      {visa.fee}
-                    </span>
-                  </Link>
-                ))}
-              </CardContent>
-            </Card>
+              {/* Contact Card */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Need Help?</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm text-gray-600">
+                    Our visa experts are available 24/7 to answer your questions
+                  </p>
+                  <div className="space-y-2">
+                    <a href="tel:+97412345678" className="block">
+                      <Button
+                        variant="outline"
+                        className="w-full justify-start gap-2"
+                      >
+                        <Phone className="w-4 h-4" />
+                        +974 12345678
+                      </Button>
+                    </a>
+                    <a
+                      href="https://wa.me/97412345678"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <Button
+                        variant="outline"
+                        className="w-full justify-start gap-2 text-green-600 border-green-600 hover:bg-green-600 hover:text-white"
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        WhatsApp Chat
+                      </Button>
+                    </a>
+                    <a href="mailto:info@fastqatarvisa.com" className="block">
+                      <Button
+                        variant="outline"
+                        className="w-full justify-start gap-2"
+                      >
+                        <Mail className="w-4 h-4" />
+                        Email Us
+                      </Button>
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Other Work Visas */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Other Work Visas</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-2">
+                  {[
+                    { name: "Cleaner Visa", slug: "cleaner", fee: "QAR 7,000" },
+                    { name: "Labour Visa", slug: "labour", fee: "QAR 7,000" },
+                    { name: "Accountant Visa", slug: "accountant", fee: "QAR 8,000" },
+                    { name: "Work Permit (2Y)", slug: "work-permit", fee: "From QAR 7,500" },
+                    { name: "Freelance Visa", slug: "freelance", fee: "From QAR 8,500" },
+                  ].map((visa) => (
+                    <Link
+                      key={visa.slug}
+                      href={`/services/work/${visa.slug}`}
+                      className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                    >
+                      <span className="text-sm font-medium text-gray-700">
+                        {visa.name}
+                      </span>
+                      <span className="text-sm text-qatar-gold font-semibold">
+                        {visa.fee}
+                      </span>
+                    </Link>
+                  ))}
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>

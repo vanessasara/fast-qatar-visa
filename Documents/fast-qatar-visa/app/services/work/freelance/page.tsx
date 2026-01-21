@@ -296,92 +296,94 @@ export default function FreelanceVisaPage() {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-1 space-y-6">
-            <Card className="sticky top-24 border-qatar-gold">
-              <CardHeader className="bg-gradient-to-r from-qatar-maroon to-qatar-maroon/90 text-white rounded-t-lg">
-                <CardTitle className="text-xl flex items-center gap-2">
-                  <Laptop className="w-5 h-5" />
-                  Freelance Package
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4 pt-6">
-                <div>
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <Clock className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Processing Time</span>
+          <div className="lg:col-span-1">
+            <div className="lg:sticky lg:top-24 space-y-6">
+              <Card className="border-qatar-gold">
+                <CardHeader className="bg-gradient-to-r from-qatar-maroon to-qatar-maroon/90 text-white rounded-t-lg">
+                  <CardTitle className="text-xl flex items-center gap-2">
+                    <Laptop className="w-5 h-5" />
+                    Freelance Package
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 pt-6">
+                  <div>
+                    <div className="flex items-center gap-2 text-gray-600 mb-1">
+                      <Clock className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Processing Time</span>
+                    </div>
+                    <p className="text-gray-700 font-medium">25-30 working days</p>
                   </div>
-                  <p className="text-gray-700 font-medium">25-30 working days</p>
-                </div>
 
-                <div className="border-t border-gray-100 pt-4">
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <DollarSign className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Visa Fee</span>
+                  <div className="border-t border-gray-100 pt-4">
+                    <div className="flex items-center gap-2 text-gray-600 mb-1">
+                      <DollarSign className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Visa Fee</span>
+                    </div>
+                    <p className="text-3xl font-bold text-qatar-gold">From QAR 8,500</p>
                   </div>
-                  <p className="text-3xl font-bold text-qatar-gold">From QAR 8,500</p>
-                </div>
 
-                <div className="border-t border-gray-100 pt-4">
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <Calendar className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Duration</span>
+                  <div className="border-t border-gray-100 pt-4">
+                    <div className="flex items-center gap-2 text-gray-600 mb-1">
+                      <Calendar className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Duration</span>
+                    </div>
+                    <p className="text-2xl font-bold text-qatar-maroon">1-2 Years</p>
+                    <p className="text-sm text-gray-500">Renewable</p>
                   </div>
-                  <p className="text-2xl font-bold text-qatar-maroon">1-2 Years</p>
-                  <p className="text-sm text-gray-500">Renewable</p>
-                </div>
 
-                <div className="border-t border-gray-100 pt-4">
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <Users className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Family Sponsorship</span>
+                  <div className="border-t border-gray-100 pt-4">
+                    <div className="flex items-center gap-2 text-gray-600 mb-1">
+                      <Users className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Family Sponsorship</span>
+                    </div>
+                    <p className="text-gray-700 font-medium">After 6 months</p>
                   </div>
-                  <p className="text-gray-700 font-medium">After 6 months</p>
-                </div>
 
-                <div className="border-t border-gray-100 pt-4 space-y-3">
-                  <Link href="/contact" className="block">
-                    <Button className="w-full bg-qatar-gold hover:bg-qatar-gold/90 text-white text-lg py-6">
-                      Apply Now
+                  <div className="border-t border-gray-100 pt-4 space-y-3">
+                    <Link href="/contact" className="block">
+                      <Button className="w-full bg-qatar-gold hover:bg-qatar-gold/90 text-white text-lg py-6">
+                        Apply Now
+                      </Button>
+                    </Link>
+                    <Button variant="outline" className="w-full border-qatar-maroon text-qatar-maroon hover:bg-qatar-maroon hover:text-white">
+                      Free Consultation
                     </Button>
-                  </Link>
-                  <Button variant="outline" className="w-full border-qatar-maroon text-qatar-maroon hover:bg-qatar-maroon hover:text-white">
-                    Free Consultation
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                  </div>
+                </CardContent>
+              </Card>
 
-            {/* Contact Card */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Questions?</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm text-gray-600">
-                  Our freelance visa specialists are available 24/7
-                </p>
-                <div className="space-y-2">
-                  <a href="tel:+97412345678" className="block">
-                    <Button variant="outline" className="w-full justify-start gap-2">
-                      <Phone className="w-4 h-4" />
-                      +974 12345678
-                    </Button>
-                  </a>
-                  <a href="https://wa.me/97412345678" target="_blank" rel="noopener noreferrer" className="block">
-                    <Button variant="outline" className="w-full justify-start gap-2 text-green-600 border-green-600 hover:bg-green-600 hover:text-white">
-                      <MessageCircle className="w-4 h-4" />
-                      WhatsApp Chat
-                    </Button>
-                  </a>
-                  <a href="mailto:info@fastqatarvisa.com" className="block">
-                    <Button variant="outline" className="w-full justify-start gap-2">
-                      <Mail className="w-4 h-4" />
-                      Email Us
-                    </Button>
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
+              {/* Contact Card */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Questions?</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm text-gray-600">
+                    Our freelance visa specialists are available 24/7
+                  </p>
+                  <div className="space-y-2">
+                    <a href="tel:+97412345678" className="block">
+                      <Button variant="outline" className="w-full justify-start gap-2">
+                        <Phone className="w-4 h-4" />
+                        +974 12345678
+                      </Button>
+                    </a>
+                    <a href="https://wa.me/97412345678" target="_blank" rel="noopener noreferrer" className="block">
+                      <Button variant="outline" className="w-full justify-start gap-2 text-green-600 border-green-600 hover:bg-green-600 hover:text-white">
+                        <MessageCircle className="w-4 h-4" />
+                        WhatsApp Chat
+                      </Button>
+                    </a>
+                    <a href="mailto:info@fastqatarvisa.com" className="block">
+                      <Button variant="outline" className="w-full justify-start gap-2">
+                        <Mail className="w-4 h-4" />
+                        Email Us
+                      </Button>
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
