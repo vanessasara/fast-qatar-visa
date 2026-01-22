@@ -10,17 +10,38 @@ import TrackingHelp from "@/components/sections/TrackingHelp";
 
 // Mock data for demonstration
 const mockStatus: ApplicationStatus = {
-  referenceNumber: "QV-12345-2024",
+  referenceNumber: "FQV-12345-2026",
   applicantName: "John Smith",
   visaType: "Tourist Visa",
-  applicationDate: "January 15, 2024",
+  applicationDate: "January 15, 2026",
   currentStage: 2,
-  estimatedCompletion: "January 18, 2024",
+  estimatedCompletion: "January 18, 2026",
+  estimatedRemaining: "2-3 days remaining",
   stages: [
-    { name: "Application Received", date: "Jan 15, 2024", completed: true },
-    { name: "Under Review", date: "Jan 16, 2024", completed: false },
-    { name: "Approved", date: null, completed: false },
-    { name: "Visa Dispatched", date: null, completed: false },
+    {
+      name: "Application Received",
+      date: "Jan 15, 2026, 10:30 AM",
+      completed: true,
+      message: "Your application has been received and verified"
+    },
+    {
+      name: "Under Review",
+      date: "Jan 16, 2026",
+      completed: false,
+      message: "Our team is processing your documents"
+    },
+    {
+      name: "Approved",
+      date: null,
+      completed: false,
+      message: "Awaiting approval"
+    },
+    {
+      name: "Visa Issued",
+      date: null,
+      completed: false,
+      message: "Visa will be sent to your email"
+    },
   ],
 };
 

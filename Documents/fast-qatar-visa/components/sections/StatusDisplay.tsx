@@ -19,10 +19,12 @@ export interface ApplicationStatus {
   applicationDate: string;
   currentStage: number; // 1-4
   estimatedCompletion: string;
+  estimatedRemaining?: string;
   stages: {
     name: string;
     date: string | null;
     completed: boolean;
+    message?: string;
   }[];
 }
 
@@ -139,6 +141,16 @@ export default function StatusDisplay({ status, onReset }: StatusDisplayProps) {
                       {stage.date && (
                         <p className="text-xs text-gray-500">{stage.date}</p>
                       )}
+                      {stage.message && (isCurrent || isCompleted) && (
+                        <p className="mt-1 text-xs text-center text-gray-500 max-w-[120px]">
+                          {stage.message}
+                        </p>
+                      )}
+                      {isCurrent && status.estimatedRemaining && (
+                        <p className="mt-1 text-xs text-center font-medium text-qatar-gold max-w-[120px]">
+                          {status.estimatedRemaining}
+                        </p>
+                      )}
                     </div>
                   );
                 })}
@@ -195,6 +207,14 @@ export default function StatusDisplay({ status, onReset }: StatusDisplayProps) {
                       </p>
                       {stage.date && (
                         <p className="text-sm text-gray-500">{stage.date}</p>
+                      )}
+                      {stage.message && (
+                        <p className="text-sm text-gray-500 mt-1">{stage.message}</p>
+                      )}
+                      {isCurrent && status.estimatedRemaining && (
+                        <p className="text-sm font-medium text-qatar-gold mt-1">
+                          {status.estimatedRemaining}
+                        </p>
                       )}
                     </div>
                   </div>

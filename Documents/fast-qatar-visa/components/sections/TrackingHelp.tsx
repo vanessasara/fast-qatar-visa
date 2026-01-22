@@ -87,6 +87,27 @@ export default function TrackingHelp() {
                 ))}
               </ul>
             </div>
+
+            {/* Status Update Timing */}
+            <div className="mt-8 rounded-xl border border-gray-200 bg-white p-6">
+              <h4 className="mb-4 font-semibold text-gray-900">
+                Status Update Timing
+              </h4>
+              <ul className="space-y-3 text-sm text-gray-600">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-qatar-maroon" />
+                  Updates every 6-12 hours during processing
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-qatar-maroon" />
+                  Email notifications sent at each stage
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-qatar-maroon" />
+                  SMS updates available (if opted in)
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Contact Support Card */}
@@ -105,14 +126,14 @@ export default function TrackingHelp() {
 
               <div className="mt-6 space-y-4">
                 <a
-                  href="mailto:support@fastqatarvisa.com"
+                  href="mailto:info@fastqatarvisa.com"
                   className="flex items-center gap-3 rounded-lg bg-gray-50 p-3 transition-colors hover:bg-gray-100"
                 >
                   <Mail className="h-5 w-5 text-qatar-maroon" />
                   <div>
                     <p className="text-sm font-medium text-gray-900">Email</p>
                     <p className="text-xs text-gray-500">
-                      support@fastqatarvisa.com
+                      info@fastqatarvisa.com
                     </p>
                   </div>
                 </a>
@@ -124,7 +145,7 @@ export default function TrackingHelp() {
                   <Phone className="h-5 w-5 text-qatar-maroon" />
                   <div>
                     <p className="text-sm font-medium text-gray-900">Phone</p>
-                    <p className="text-xs text-gray-500">+974 1234 5678</p>
+                    <p className="text-xs text-gray-500">+974 12345678</p>
                   </div>
                 </a>
 

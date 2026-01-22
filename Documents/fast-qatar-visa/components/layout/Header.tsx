@@ -67,8 +67,9 @@ export default function Header() {
               <a
                 href={`tel:${WHATSAPP_NUMBER}`}
                 className="flex items-center gap-2 hover:text-qatar-gold transition-colors"
+                aria-label="Call us"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4" aria-hidden="true" />
                 <span>{PHONE_NUMBER}</span>
               </a>
               <a
@@ -76,8 +77,9 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-qatar-gold transition-colors"
+                aria-label="Chat on WhatsApp"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4" aria-hidden="true" />
                 <span className="hidden sm:inline">WhatsApp</span>
               </a>
             </div>
@@ -111,7 +113,7 @@ export default function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden items-center gap-1 md:flex lg:gap-2">
+            <nav className="hidden items-center gap-1 md:flex lg:gap-2" aria-label="Main navigation">
               {navLinks.map((link) => (
                 <div key={link.href} className="relative group">
                   {link.subItems ? (

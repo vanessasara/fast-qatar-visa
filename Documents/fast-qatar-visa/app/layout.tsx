@@ -54,8 +54,49 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Structured data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Fast Qatar Visa Center",
+    "url": "https://fastqatarvisa.com",
+    "logo": "https://fastqatarvisa.com/logo.png",
+    "description": "Professional Qatar visa processing service with 10+ years experience, 98% success rate, and 24/7 support.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Office 303, Abdul Jaleel Abdul Ghani Building, Al Matar Street",
+      "addressLocality": "Doha",
+      "addressCountry": "Qatar"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+974-12345678",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Arabic"],
+      "areaServed": "Worldwide"
+    },
+    "sameAs": [
+      "https://facebook.com/fastqatarvisa",
+      "https://twitter.com/fastqatarvisa",
+      "https://linkedin.com/company/fastqatarvisa"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1250",
+      "bestRating": "5"
+    }
+  };
+
   return (
     <html lang="en" className={`${playfair.variable} ${manrope.variable}`}>
+      <head>
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body className="font-body antialiased">
         <div className="flex min-h-screen flex-col">
           {/* Skip to content link for accessibility */}
@@ -64,7 +105,7 @@ export default function RootLayout({
           </a>
 
           <Header />
-          <main id="main-content" className="flex-1 pt-16 md:pt-20" role="main">
+          <main id="main-content" className="flex-1 pt-16 md:pt-20" role="main" aria-label="Main content">
             {children}
           </main>
           <Footer />

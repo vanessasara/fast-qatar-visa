@@ -69,7 +69,7 @@ export default function TrackingForm({ onTrack, isLoading }: TrackingFormProps) 
                   setErrors((prev) => ({ ...prev, reference: undefined }));
                 }
               }}
-              placeholder="e.g., QV-12345-2024"
+              placeholder="e.g., FQV-12345-2026"
               className={cn(
                 "w-full rounded-lg border px-4 py-3 text-gray-900 transition-colors focus:outline-none focus:ring-2",
                 errors.reference

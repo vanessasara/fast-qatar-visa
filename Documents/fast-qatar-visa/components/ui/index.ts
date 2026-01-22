@@ -26,3 +26,9 @@ export {
 } from "./skeleton";
 
 export { default as ScrollAnimation } from "./scroll-animation";
+
+// Custom Phase 7 Components
+export { VisaCard } from "./VisaCard";
+export { StatCard } from "./StatCard";
+export { FeatureCard } from "./FeatureCard";
+export { TestimonialCard } from "./TestimonialCard";

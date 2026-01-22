@@ -464,3 +464,162 @@ textarea:focus-visible {
   background-color: #f9fafb;
   border-radius: 0.5rem;
 }
+
+/* ==============================================
+   ENHANCED ANIMATIONS FOR PHASE 7
+   ============================================== */
+
+/* Scale-in animation for cards */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+/* Bounce subtle for CTA buttons */
+@keyframes bounceSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounceSubtle 2s ease-in-out infinite;
+}
+
+/* Shimmer effect for loading/premium elements */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+}
+
+/* Smooth button transitions */
+.btn-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-transition:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -8px rgba(139, 21, 56, 0.3);
+}
+
+.btn-transition:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 10px -5px rgba(139, 21, 56, 0.3);
+}
+
+/* Card shine effect on hover */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.card-shine:hover::before {
+  left: 100%;
+}
+
+/* Stagger animation delays for grid items */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* Enhanced hover effects for links and cards */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+/* Gradient border animation */
+@keyframes borderGradient {
+  0%, 100% {
+    border-color: #8B1538;
+  }
+  50% {
+    border-color: #D4AF37;
+  }
+}
+
+.border-animate {
+  animation: borderGradient 3s ease-in-out infinite;
+}
+
+/* Subtle grain texture overlay */
+.grain-texture::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Improved focus states for accessibility */
+.focus-ring-qatar:focus {
+  outline: 3px solid #D4AF37;
+  outline-offset: 2px;
+}
+
+.focus-ring-maroon:focus {
+  outline: 3px solid #8B1538;
+  outline-offset: 2px;
+}

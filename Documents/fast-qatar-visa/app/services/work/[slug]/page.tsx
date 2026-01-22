@@ -27,6 +27,35 @@ export async function generateMetadata({ params }: WorkVisaPageProps): Promise<M
   return {
     title: visa.metadata.title,
     description: visa.metadata.description,
+    keywords: [
+      `${visa.title}`,
+      "Qatar work visa",
+      "Qatar employment visa",
+      "Qatar visa processing",
+      "Qatar job visa",
+      visa.slug,
+    ],
+    openGraph: {
+      title: visa.metadata.title,
+      description: visa.metadata.description,
+      type: "website",
+      locale: "en_US",
+      siteName: "Fast Qatar Visa Center",
+      images: [
+        {
+          url: visa.image,
+          width: 1200,
+          height: 630,
+          alt: visa.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: visa.metadata.title,
+      description: visa.metadata.description,
+      images: [visa.image],
+    },
   };
 }
 
@@ -38,8 +67,37 @@ export default async function WorkVisaPage({ params }: WorkVisaPageProps) {
     notFound();
   }
 
+  // Structured data for the work visa service
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": visa.title,
+    "description": visa.metadata.description,
+    "provider": {
+      "@type": "Organization",
+      "name": "Fast Qatar Visa Center",
+      "url": "https://fastqatarvisa.com",
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Qatar",
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": visa.visaFee.replace(/[^0-9]/g, ""),
+      "priceCurrency": "QAR",
+      "description": `${visa.title} processing service`,
+    },
+  };
+
   return (
     <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
       {/* Hero Section */}
       <WorkVisaHero
         title={visa.title}
