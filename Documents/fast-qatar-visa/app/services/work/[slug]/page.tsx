@@ -76,7 +76,6 @@ export default async function WorkVisaPage({ params }: WorkVisaPageProps) {
     "provider": {
       "@type": "Organization",
       "name": "Fast Qatar Visa Center",
-      "url": "https://fastqatarvisa.com",
     },
     "areaServed": {
       "@type": "Country",
@@ -117,6 +116,7 @@ export default async function WorkVisaPage({ params }: WorkVisaPageProps) {
           <WorkVisaSidebar
             currentSlug={visa.slug}
             visaFee={visa.visaFee}
+            visaFeePKR={visa.visaFeePKR}
             visaFeeNote={visa.visaFeeNote}
             salary={visa.salary}
             salaryPKR={visa.salaryPKR}

@@ -25,6 +25,7 @@ interface WorkVisaSidebarProps {
 export function WorkVisaSidebar({
   currentSlug,
   visaFee,
+  visaFeePKR,
   visaFeeNote,
   salary,
   salaryPKR,
@@ -77,6 +78,7 @@ export function WorkVisaSidebar({
                 <span className="text-sm font-semibold">Visa Fee</span>
               </div>
               <p className="text-3xl font-bold text-qatar-gold">{visaFee}</p>
+              {visaFeePKR && <p className="text-3xl font-bold text-qatar-maroon">{visaFeePKR}</p>}
               {visaFeeNote && <p className="text-sm text-gray-500">{visaFeeNote}</p>}
             </div>
 

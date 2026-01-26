@@ -3,11 +3,35 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, Clock, DollarSign } from "lucide-react";
+import { Check, Clock} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { IMAGES } from "@/lib/images";
 
 const visaTypes = [
+  {
+    id: "work",
+    label: "Work",
+    image: IMAGES.services.work,
+    title: "Work Visa",
+    description: `The Qatar Work Visa is required for individuals who have secured employment in Qatar and wish to work legally in the country. This visa is sponsored by your employer and allows you to live and work in Qatar for the duration of your employment contract.
+
+Qatar offers excellent career opportunities across various sectors including oil and gas, construction, healthcare, education, hospitality, and technology. With no income tax and a high standard of living, Qatar is an attractive destination for professionals from around the world.
+
+The work visa process involves coordination between you, your employer, and the relevant government authorities. Our team ensures that all documentation is properly prepared to avoid delays.`,
+    eligibility: [
+      "Valid passport with at least 6 months validity",
+      "Job offer from Qatar-based employer",
+      "Educational certificates (attested)",
+      "Professional experience certificates",
+      "Medical fitness certificate",
+      "Police clearance certificate",
+      "Recent passport-sized photographs",
+    ],
+    processingTime: "7-14 Business Days",
+    priceInUsd: "$ 200",
+    priceInPkr: "PKR 30,000",
+    priceInRiyad: "SAR 750",
+  },
   {
     id: "tourist",
     label: "Tourist",
@@ -26,7 +50,9 @@ The tourist visa is typically valid for 30 days with options to extend. Multiple
       "Recent passport-sized photograph",
     ],
     processingTime: "2-3 Business Days",
-    price: "From $75",
+    priceInUsd: "$ 75",
+    priceInPkr: "PKR 15,000",
+    priceInRiyad: "SAR 250",
   },
   {
     id: "business",
@@ -47,7 +73,9 @@ The business visa offers various validity options to suit your travel frequency,
       "Hotel booking or accommodation confirmation",
     ],
     processingTime: "3-5 Business Days",
-    price: "From $120",
+    priceInUsd: "$ 120",
+    priceInPkr: "PKR 24,000",
+    priceInRiyad: "SAR 450",
   },
   {
     id: "transit",
@@ -67,7 +95,9 @@ Transit visas are typically valid for 96 hours (4 days), giving you plenty of ti
       "Recent passport-sized photograph",
     ],
     processingTime: "1-2 Business Days",
-    price: "From $35",
+    priceInUsd: "$ 35",
+    priceInPkr: "PKR 6,000",
+    priceInRiyad: "SAR 125",
   },
   {
     id: "family",
@@ -89,30 +119,11 @@ We understand that family reunification is important, and our team works diligen
       "Recent passport-sized photographs for all applicants",
     ],
     processingTime: "5-7 Business Days",
-    price: "From $150",
+    priceInUsd: "$ 150",
+    priceInPkr: "PKR 30,000",
+    priceInRiyad: "SAR 600",
   },
-  {
-    id: "work",
-    label: "Work",
-    image: IMAGES.services.work,
-    title: "Work Visa",
-    description: `The Qatar Work Visa is required for individuals who have secured employment in Qatar and wish to work legally in the country. This visa is sponsored by your employer and allows you to live and work in Qatar for the duration of your employment contract.
 
-Qatar offers excellent career opportunities across various sectors including oil and gas, construction, healthcare, education, hospitality, and technology. With no income tax and a high standard of living, Qatar is an attractive destination for professionals from around the world.
-
-The work visa process involves coordination between you, your employer, and the relevant government authorities. Our team ensures that all documentation is properly prepared to avoid delays.`,
-    eligibility: [
-      "Valid passport with at least 6 months validity",
-      "Job offer from Qatar-based employer",
-      "Educational certificates (attested)",
-      "Professional experience certificates",
-      "Medical fitness certificate",
-      "Police clearance certificate",
-      "Recent passport-sized photographs",
-    ],
-    processingTime: "7-14 Business Days",
-    price: "From $200",
-  },
 ];
 
 export default function ServicesList() {
@@ -194,9 +205,19 @@ export default function ServicesList() {
                 </span>
               </div>
               <div className="flex items-center gap-2 rounded-lg bg-qatar-gold/10 px-4 py-2">
-                <DollarSign className="h-5 w-5 text-qatar-gold-600" />
+              
                 <span className="font-medium text-qatar-gold-700">
-                  {activeVisa.price}
+                  {activeVisa.priceInUsd}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 rounded-lg bg-qatar-maroon/10 px-4 py-2">
+                <span className="font-medium text-qatar-maroon-700">
+                  {activeVisa.priceInPkr}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 rounded-lg bg-qatar-maroon/10 px-4 py-2">
+                <span className="font-medium text-qatar-gold-700">
+                  {activeVisa.priceInRiyad}
                 </span>
               </div>
             </div>
