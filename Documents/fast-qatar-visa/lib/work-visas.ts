@@ -10,6 +10,7 @@ export interface WorkVisa {
   icon: string;
   image: string;
   visaFee: string;
+  visaFeePKR: string;
   visaFeeNote?: string;
   salary: string;
   salaryPKR?: string;

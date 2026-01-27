@@ -9,6 +9,7 @@ import { CONTACT_INFO, getOtherWorkVisas } from "@/lib/work-visas";
 interface WorkVisaSidebarProps {
   currentSlug: string;
   visaFee: string;
+  visaFeePKR: string;
   visaFeeNote?: string;
   salary: string;
   salaryPKR?: string;
