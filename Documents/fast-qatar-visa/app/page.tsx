@@ -13,11 +13,11 @@ export default function Home() {
       <Hero />
       <ServicesPreview />
       <HowItWorks />
+      <CTASection />
       <WorkVisaCategories />
       <Statistics />
       <WhyChooseUs />
       <Testimonials />
-      <CTASection />
     </>
   );
 }
