@@ -55,7 +55,7 @@ const services = [
     description: "Employment visas for various job categories",
     badge: "Multiple Options",
     image: IMAGES.work.workPermit,
-    href: "/services/work",
+    href: "/work",
     highlight: true,
   },
   {
@@ -65,7 +65,7 @@ const services = [
     processing: "5-7 days",
     badge: "New",
     image: IMAGES.work.freelance,
-    href: "/services/work/freelance",
+    href: "/work/freelance",
   },
 ];
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { useTheme } from 'next-themes';
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -27,16 +28,16 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   {
-    href: "/services/work",
+    href: "/work",
     label: "Work Visas",
     highlight: true,
     subItems: [
-      { href: "/services/work/bike-rider", label: "Bike Rider Visa" },
-      { href: "/services/work/cleaner", label: "Cleaner Visa" },
-      { href: "/services/work/labour", label: "Labour Visa" },
-      { href: "/services/work/accountant", label: "Accountant Visa" },
-      { href: "/services/work/work-permit", label: "Work Permit (2Y)" },
-      { href: "/services/work/freelance", label: "Freelance Visa" },
+      { href: "/work/bike-rider", label: "Bike Rider Visa" },
+      { href: "/work/cleaner", label: "Cleaner Visa" },
+      { href: "/work/labour", label: "Labour Visa" },
+      { href: "/work/accountant", label: "Accountant Visa" },
+      { href: "/work/work-permit", label: "Work Permit (2Y)" },
+      { href: "/work/freelance", label: "Freelance Visa" },
     ],
   },
   { href: "/about", label: "About" },
@@ -52,7 +53,7 @@ export default function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [expandedMobileMenu, setExpandedMobileMenu] = useState<string | null>(null);
   const pathname = usePathname();
-
+  const { theme } = useTheme();
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -123,13 +124,17 @@ export default function Header() {
               href="/"
               className="relative shrink-0 h-12 w-28 sm:h-14 sm:w-32 md:h-16 md:w-36 lg:h-18 lg:w-40"
             >
-              <Image
-                src="/Logo.png"
-                fill
-                alt="Fast Qatar Visa Logo"
-                className="object-contain dark:brightness-0 dark:invert"
-                priority
-              />
+
+<Image
+  src="/Logo.png"
+  fill
+  alt="Fast Qatar Visa Logo"
+  className={cn(
+    "object-contain",
+    theme === 'dark' && "brightness-0 invert"
+  )}
+  priority
+/>
             </Link>
 
             {/* Desktop Navigation */}
@@ -172,7 +177,7 @@ export default function Header() {
                         <DropdownMenuSeparator />
                         <DropdownMenuItem asChild>
                           <Link
-                            href="/services/work"
+                            href="/work"
                             className="font-medium text-qatar-gold dark:text-qatar-gold-400 cursor-pointer"
                           >
                             View All Work Visas →

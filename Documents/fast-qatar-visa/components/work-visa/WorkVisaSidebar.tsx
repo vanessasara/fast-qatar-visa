@@ -199,7 +199,7 @@ export function WorkVisaSidebar({
               {otherVisas.map((visa) => (
                 <Link
                   key={visa.slug}
-                  href={`/services/work/${visa.slug}`}
+                  href={`/work/${visa.slug}`}
                   className="flex items-center justify-between p-3 bg-muted rounded-lg hover:bg-muted/80 transition-colors"
                 >
                   <span className="text-sm font-medium text-muted-foreground">

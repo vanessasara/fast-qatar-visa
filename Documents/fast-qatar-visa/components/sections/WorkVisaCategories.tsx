@@ -229,7 +229,7 @@ export default function WorkVisaCategories() {
                     </div>
 
                     {/* CTA Button */}
-                    <Link href={`/services/work/${visa.slug}`} className="block">
+                    <Link href={`/work/${visa.slug}`} className="block">
                       <Button
                         className="w-full bg-qatar-maroon hover:bg-qatar-maroon/90 text-white"
                         size="lg"
@@ -250,7 +250,7 @@ export default function WorkVisaCategories() {
             <p className="text-muted-foreground">
               All prices include government fees and processing charges
             </p>
-            <Link href="/services/work">
+            <Link href="/work">
               <Button
                 variant="outline"
                 className="border-qatar-gold text-qatar-gold hover:bg-qatar-gold hover:text-white"

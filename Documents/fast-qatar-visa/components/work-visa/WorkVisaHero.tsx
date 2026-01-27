@@ -38,7 +38,7 @@ export function WorkVisaHero({ title, description, image, icon, badges }: WorkVi
             Visa Services
           </Link>
           <span className="mx-2">/</span>
-          <Link href="/services/work" className="hover:text-white transition-colors">
+          <Link href="/work" className="hover:text-white transition-colors">
             Work Visas
           </Link>
           <span className="mx-2">/</span>

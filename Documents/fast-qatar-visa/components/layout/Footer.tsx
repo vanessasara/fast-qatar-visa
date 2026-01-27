@@ -16,11 +16,12 @@ import {
 import { useState } from "react";
 
 const quickLinks = [
-  { href: "/services", label: "Tourist Visa" },
-  { href: "/services", label: "Business Visa" },
-  { href: "/services/work", label: "Work Visas" },
-  { href: "/services", label: "Family Visa" },
-  { href: "/services", label: "Transit Visa" },
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/work", label: "Work Visas" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+  { href: "/track", label: "Track" },
 ];
 
 const resourceLinks = [

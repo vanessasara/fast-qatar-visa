@@ -159,11 +159,9 @@ export default function WorkVisasPage() {
               Home
             </Link>
             <span className="mx-2">/</span>
-            <Link href="/services" className="hover:text-white">
-              Visa Services
+            <Link href="/work" className="hover:text-white">
+              Work Visas
             </Link>
-            <span className="mx-2">/</span>
-            <span className="text-white">Work Visas</span>
           </nav>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Qatar Work Visa Services
@@ -325,7 +323,7 @@ export default function WorkVisasPage() {
 
                       {/* CTA */}
                       <div className="flex gap-4">
-                        <Link href={`/services/work/${visa.slug}`}>
+                        <Link href={`/work/${visa.slug}`}>
                           <Button className="bg-qatar-maroon hover:bg-qatar-maroon/90 text-white">
                             View Details
                             <ArrowRight className="w-4 h-4 ml-2" />
@@ -383,7 +381,7 @@ export default function WorkVisasPage() {
                   <td className="px-6 py-4 text-center">15-20 days</td>
                   <td className="px-6 py-4 text-center">After 1 year</td>
                   <td className="px-6 py-4 text-center">
-                    <Link href="/services/work/bike-rider">
+                    <Link href="/work/bike-rider">
                       <Button size="sm" className="bg-qatar-maroon">
                         Apply
                       </Button>
@@ -399,7 +397,7 @@ export default function WorkVisasPage() {
                   <td className="px-6 py-4 text-center">15-20 days</td>
                   <td className="px-6 py-4 text-center">After 1 year</td>
                   <td className="px-6 py-4 text-center">
-                    <Link href="/services/work/cleaner">
+                    <Link href="/work/cleaner">
                       <Button size="sm" className="bg-qatar-maroon">
                         Apply
                       </Button>
@@ -415,7 +413,7 @@ export default function WorkVisasPage() {
                   <td className="px-6 py-4 text-center">15-20 days</td>
                   <td className="px-6 py-4 text-center">After 1 year</td>
                   <td className="px-6 py-4 text-center">
-                    <Link href="/services/work/labour">
+                    <Link href="/work/labour">
                       <Button size="sm" className="bg-qatar-maroon">
                         Apply
                       </Button>
@@ -438,7 +436,7 @@ export default function WorkVisasPage() {
                     Eligible
                   </td>
                   <td className="px-6 py-4 text-center">
-                    <Link href="/services/work/accountant">
+                    <Link href="/work/accountant">
                       <Button size="sm" className="bg-qatar-maroon">
                         Apply
                       </Button>
@@ -454,7 +452,7 @@ export default function WorkVisasPage() {
                   <td className="px-6 py-4 text-center">20-30 days</td>
                   <td className="px-6 py-4 text-center">Depends on salary</td>
                   <td className="px-6 py-4 text-center">
-                    <Link href="/services/work/work-permit">
+                    <Link href="/work/work-permit">
                       <Button size="sm" className="bg-qatar-maroon">
                         Apply
                       </Button>
@@ -475,7 +473,7 @@ export default function WorkVisasPage() {
                   <td className="px-6 py-4 text-center">25-30 days</td>
                   <td className="px-6 py-4 text-center">After 6 months</td>
                   <td className="px-6 py-4 text-center">
-                    <Link href="/services/work/freelance">
+                          <Link href="/work/freelance">
                       <Button size="sm" className="bg-qatar-maroon">
                         Apply
                       </Button>
