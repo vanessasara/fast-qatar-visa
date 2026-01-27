@@ -57,14 +57,14 @@ const pricingTiers = [
 
 export default function PricingTable() {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-background py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
             Pricing & Processing Time
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Choose the processing speed that suits your travel timeline
           </p>
         </div>
@@ -75,10 +75,10 @@ export default function PricingTable() {
             <div
               key={tier.id}
               className={cn(
-                "relative flex flex-col rounded-2xl border-2 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-xl",
+                "relative flex flex-col rounded-2xl border-2 bg-background p-8 shadow-sm transition-all duration-300 hover:shadow-xl",
                 tier.popular
                   ? "border-qatar-gold ring-2 ring-qatar-gold"
-                  : "border-gray-200 hover:border-qatar-gold/50"
+                  : "border-border hover:border-qatar-gold/50"
               )}
             >
               {/* Popular Badge */}
@@ -112,17 +112,17 @@ export default function PricingTable() {
               </div>
 
               {/* Tier Name */}
-              <h3 className="text-2xl font-bold text-gray-900">{tier.name}</h3>
+              <h3 className="text-2xl font-bold text-foreground">{tier.name}</h3>
 
               {/* Description */}
-              <p className="mt-2 text-sm text-gray-600">{tier.description}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{tier.description}</p>
 
               {/* Price */}
               <div className="mt-6">
-                <span className="text-4xl font-bold text-gray-900">
+                <span className="text-4xl font-bold text-foreground">
                   ${tier.price}
                 </span>
-                <span className="text-gray-500"> / application</span>
+                <span className="text-muted-foreground"> / application</span>
               </div>
 
               {/* Features */}
@@ -135,7 +135,7 @@ export default function PricingTable() {
                         tier.popular ? "text-qatar-gold" : "text-green-500"
                       )}
                     />
-                    <span className="text-sm text-gray-600">{feature}</span>
+                    <span className="text-sm text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -160,7 +160,7 @@ export default function PricingTable() {
 
         {/* Additional Info */}
         <div className="mt-12 text-center">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-muted-foreground">
             All prices are for tourist visa applications. Business and other
             visa types may vary.{" "}
             <Link href="/contact" className="text-qatar-maroon hover:underline">

@@ -108,14 +108,14 @@ export default function RequirementsChecklist() {
   };
 
   return (
-    <section className="bg-gray-50 py-16 md:py-24">
+    <section className="bg-muted py-16 md:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
             Document Requirements
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Make sure you have all the required documents ready before applying
           </p>
         </div>
@@ -125,22 +125,22 @@ export default function RequirementsChecklist() {
           {requirements.map((req) => (
             <div
               key={req.id}
-              className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm"
+              className="overflow-hidden rounded-xl border border-border bg-background shadow-sm"
             >
               {/* Accordion Header */}
               <button
                 onClick={() => toggleItem(req.id)}
-                className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors hover:bg-gray-50"
+                className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors hover:bg-muted"
               >
                 <div className="flex items-center gap-3">
                   <FileText className="h-5 w-5 text-qatar-maroon" />
-                  <span className="font-semibold text-gray-900">
+                  <span className="font-semibold text-foreground">
                     {req.title}
                   </span>
                 </div>
                 <ChevronDown
                   className={cn(
-                    "h-5 w-5 text-gray-500 transition-transform duration-300",
+                    "h-5 w-5 text-muted-foreground transition-transform duration-300",
                     openItem === req.id && "rotate-180"
                   )}
                 />
@@ -153,16 +153,16 @@ export default function RequirementsChecklist() {
                   openItem === req.id ? "max-h-[1000px]" : "max-h-0"
                 )}
               >
-                <div className="border-t border-gray-100 px-6 py-6">
+                <div className="border-t border-border px-6 py-6">
                   {/* Documents List */}
-                  <h4 className="mb-4 font-medium text-gray-900">
+                  <h4 className="mb-4 font-medium text-foreground">
                     Required Documents:
                   </h4>
                   <ul className="space-y-3">
                     {req.documents.map((doc, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-500" />
-                        <span className="text-gray-600">{doc}</span>
+                        <span className="text-muted-foreground">{doc}</span>
                       </li>
                     ))}
                   </ul>

@@ -56,7 +56,7 @@ const values = [
 
 export default function Values() {
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-20 md:py-28">
+    <section className="bg-gradient-to-b from-muted to-background py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center">
@@ -64,10 +64,10 @@ export default function Values() {
             <span className="h-1.5 w-1.5 rounded-full bg-qatar-maroon" />
             What We Stand For
           </span>
-          <h2 className="mt-4 font-heading text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-4 font-heading text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
             Our Core Values
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             The principles that guide everything we do and define who we are as a company
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function Values() {
           {values.map((value, index) => (
             <div
               key={value.title}
-              className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-2xl border border-border bg-background p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Decorative top accent */}
@@ -89,10 +89,10 @@ export default function Values() {
               </div>
 
               {/* Content */}
-              <h3 className="font-heading text-xl font-bold text-gray-900">
+              <h3 className="font-heading text-xl font-bold text-foreground">
                 {value.title}
               </h3>
-              <p className="mt-3 leading-relaxed text-gray-600">
+              <p className="mt-3 leading-relaxed text-muted-foreground">
                 {value.description}
               </p>
 
@@ -104,7 +104,7 @@ export default function Values() {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             These values are at the heart of every visa application we process
           </p>
         </div>

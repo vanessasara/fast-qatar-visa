@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted">
       {/* Hero Section */}
       <section className="bg-gradient-maroon py-20 text-white">
         <div className="container mx-auto px-4">
@@ -32,17 +32,17 @@ export default function PrivacyPage() {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl space-y-8">
             {/* Introduction */}
-            <div className="rounded-xl bg-white p-8 shadow-lg">
+            <div className="rounded-xl bg-background p-8 shadow-lg">
               <h2 className="mb-4 text-2xl font-heading font-bold text-qatar-maroon">
                 Introduction
               </h2>
-              <p className="leading-relaxed text-gray-700">
+              <p className="leading-relaxed text-muted-foreground">
                 Fast Qatar Visa Center is committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our visa processing services and website.
               </p>
             </div>
 
             {/* Information We Collect */}
-            <div className="rounded-xl bg-white p-8 shadow-lg">
+            <div className="rounded-xl bg-background p-8 shadow-lg">
               <div className="mb-6 flex items-center gap-3">
                 <FileText className="h-8 w-8 text-qatar-gold" />
                 <h2 className="text-2xl font-heading font-bold text-qatar-maroon">
@@ -55,7 +55,7 @@ export default function PrivacyPage() {
                   <h3 className="mb-3 text-lg font-semibold text-qatar-maroon">
                     Personal Information
                   </h3>
-                  <ul className="ml-6 space-y-2 text-gray-700">
+                  <ul className="ml-6 space-y-2 text-muted-foreground">
                     <li className="list-disc">Full name, date of birth, and nationality</li>
                     <li className="list-disc">Passport details (number, issue/expiry dates)</li>
                     <li className="list-disc">Contact information (email, phone number, address)</li>
@@ -69,7 +69,7 @@ export default function PrivacyPage() {
                   <h3 className="mb-3 text-lg font-semibold text-qatar-maroon">
                     Automatically Collected Information
                   </h3>
-                  <ul className="ml-6 space-y-2 text-gray-700">
+                  <ul className="ml-6 space-y-2 text-muted-foreground">
                     <li className="list-disc">IP address and browser information</li>
                     <li className="list-disc">Device type and operating system</li>
                     <li className="list-disc">Pages visited and time spent on our website</li>

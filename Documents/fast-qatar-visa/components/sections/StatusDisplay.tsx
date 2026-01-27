@@ -47,7 +47,7 @@ export default function StatusDisplay({ status, onReset }: StatusDisplayProps) {
       case 4:
         return { text: "DISPATCHED", color: "bg-green-100 text-green-700" };
       default:
-        return { text: "PROCESSING", color: "bg-gray-100 text-gray-700" };
+        return { text: "PROCESSING", color: "bg-muted text-foreground" };
     }
   };
 
@@ -55,14 +55,14 @@ export default function StatusDisplay({ status, onReset }: StatusDisplayProps) {
 
   return (
     <div className="mx-auto max-w-3xl animate-fade-in">
-      <div className="rounded-2xl bg-white p-8 shadow-xl">
+      <div className="rounded-2xl bg-background p-8 shadow-xl">
         {/* Header */}
-        <div className="mb-8 flex flex-col items-start justify-between gap-4 border-b border-gray-100 pb-6 sm:flex-row sm:items-center">
+        <div className="mb-8 flex flex-col items-start justify-between gap-4 border-b border-border pb-6 sm:flex-row sm:items-center">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">
+            <h2 className="text-2xl font-bold text-foreground">
               Application Status
             </h2>
-            <p className="mt-1 text-gray-500">
+            <p className="mt-1 text-muted-foreground">
               Reference: <span className="font-mono font-semibold text-qatar-maroon">{status.referenceNumber}</span>
             </p>
           </div>
@@ -77,30 +77,30 @@ export default function StatusDisplay({ status, onReset }: StatusDisplayProps) {
         </div>
 
         {/* Applicant Information */}
-        <div className="mb-8 grid grid-cols-1 gap-4 rounded-lg bg-gray-50 p-4 sm:grid-cols-3">
+        <div className="mb-8 grid grid-cols-1 gap-4 rounded-lg bg-muted p-4 sm:grid-cols-3">
           <div>
-            <p className="text-sm text-gray-500">Applicant Name</p>
-            <p className="font-semibold text-gray-900">{status.applicantName}</p>
+            <p className="text-sm text-muted-foreground">Applicant Name</p>
+            <p className="font-semibold text-foreground">{status.applicantName}</p>
           </div>
           <div>
-            <p className="text-sm text-gray-500">Visa Type</p>
-            <p className="font-semibold text-gray-900">{status.visaType}</p>
+            <p className="text-sm text-muted-foreground">Visa Type</p>
+            <p className="font-semibold text-foreground">{status.visaType}</p>
           </div>
           <div>
-            <p className="text-sm text-gray-500">Application Date</p>
-            <p className="font-semibold text-gray-900">{status.applicationDate}</p>
+            <p className="text-sm text-muted-foreground">Application Date</p>
+            <p className="font-semibold text-foreground">{status.applicationDate}</p>
           </div>
         </div>
 
         {/* Status Timeline */}
         <div className="mb-8">
-          <h3 className="mb-6 font-semibold text-gray-900">Progress Timeline</h3>
+          <h3 className="mb-6 font-semibold text-foreground">Progress Timeline</h3>
 
           {/* Desktop Timeline (Horizontal) */}
           <div className="hidden md:block">
             <div className="relative">
               {/* Progress Line */}
-              <div className="absolute left-0 right-0 top-6 h-1 bg-gray-200">
+              <div className="absolute left-0 right-0 top-6 h-1 bg-muted">
                 <div
                   className="h-full bg-gradient-to-r from-green-500 to-qatar-gold transition-all duration-500"
                   style={{ width: `${((status.currentStage - 1) / 3) * 100}%` }}
@@ -123,7 +123,7 @@ export default function StatusDisplay({ status, onReset }: StatusDisplayProps) {
                             ? "border-green-500 bg-green-500 text-white"
                             : isCurrent
                             ? "border-qatar-gold bg-qatar-gold text-white animate-pulse-subtle"
-                            : "border-gray-300 bg-white text-gray-400"
+                            : "border-border bg-background text-muted-foreground"
                         )}
                       >
                         <Icon className="h-5 w-5" />
@@ -132,17 +132,17 @@ export default function StatusDisplay({ status, onReset }: StatusDisplayProps) {
                         className={cn(
                           "mt-3 text-center text-sm font-medium",
                           isCompleted || isCurrent
-                            ? "text-gray-900"
-                            : "text-gray-400"
+                            ? "text-foreground"
+                            : "text-muted-foreground"
                         )}
                       >
                         {stage.name}
                       </p>
                       {stage.date && (
-                        <p className="text-xs text-gray-500">{stage.date}</p>
+                        <p className="text-xs text-muted-foreground">{stage.date}</p>
                       )}
                       {stage.message && (isCurrent || isCompleted) && (
-                        <p className="mt-1 text-xs text-center text-gray-500 max-w-[120px]">
+                        <p className="mt-1 text-xs text-center text-muted-foreground max-w-[120px]">
                           {stage.message}
                         </p>
                       )}
@@ -174,7 +174,7 @@ export default function StatusDisplay({ status, onReset }: StatusDisplayProps) {
                       <div
                         className={cn(
                           "absolute left-6 top-12 h-full w-0.5 -translate-x-1/2",
-                          isCompleted ? "bg-green-500" : "bg-gray-200"
+                          isCompleted ? "bg-green-500" : "bg-muted"
                         )}
                       />
                     )}
@@ -187,7 +187,7 @@ export default function StatusDisplay({ status, onReset }: StatusDisplayProps) {
                           ? "border-green-500 bg-green-500 text-white"
                           : isCurrent
                           ? "border-qatar-gold bg-qatar-gold text-white animate-pulse-subtle"
-                          : "border-gray-300 bg-white text-gray-400"
+                          : "border-border bg-background text-muted-foreground"
                       )}
                     >
                       <Icon className="h-5 w-5" />
@@ -199,17 +199,17 @@ export default function StatusDisplay({ status, onReset }: StatusDisplayProps) {
                         className={cn(
                           "font-medium",
                           isCompleted || isCurrent
-                            ? "text-gray-900"
-                            : "text-gray-400"
+                            ? "text-foreground"
+                            : "text-muted-foreground"
                         )}
                       >
                         {stage.name}
                       </p>
                       {stage.date && (
-                        <p className="text-sm text-gray-500">{stage.date}</p>
+                        <p className="text-sm text-muted-foreground">{stage.date}</p>
                       )}
                       {stage.message && (
-                        <p className="text-sm text-gray-500 mt-1">{stage.message}</p>
+                        <p className="text-sm text-muted-foreground mt-1">{stage.message}</p>
                       )}
                       {isCurrent && status.estimatedRemaining && (
                         <p className="text-sm font-medium text-qatar-gold mt-1">
@@ -237,17 +237,17 @@ export default function StatusDisplay({ status, onReset }: StatusDisplayProps) {
 
         {/* Action Buttons */}
         <div className="flex flex-wrap gap-3">
-          <button className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50">
+          <button className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted">
             <Download className="h-4 w-4" />
             Download Receipt
           </button>
-          <button className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50">
+          <button className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted">
             <Printer className="h-4 w-4" />
             Print Status
           </button>
           <a
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
           >
             <MessageCircle className="h-4 w-4" />
             Contact Support
@@ -255,7 +255,7 @@ export default function StatusDisplay({ status, onReset }: StatusDisplayProps) {
         </div>
 
         {/* Track Another */}
-        <div className="mt-6 border-t border-gray-100 pt-6 text-center">
+        <div className="mt-6 border-t border-border pt-6 text-center">
           <button
             onClick={onReset}
             className="text-sm font-medium text-qatar-maroon hover:underline"

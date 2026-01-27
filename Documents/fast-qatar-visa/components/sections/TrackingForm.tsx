@@ -42,7 +42,7 @@ export default function TrackingForm({ onTrack, isLoading }: TrackingFormProps) 
 
   return (
     <div className="mx-auto max-w-lg">
-      <div className="rounded-2xl bg-white p-8 shadow-xl">
+      <div className="rounded-2xl bg-background p-8 shadow-xl">
         {/* Icon */}
         <div className="mb-6 flex justify-center">
           <div className="flex h-16 w-16 items-center justify-center rounded-full bg-qatar-gold/10">
@@ -55,7 +55,7 @@ export default function TrackingForm({ onTrack, isLoading }: TrackingFormProps) 
           <div>
             <label
               htmlFor="referenceNumber"
-              className="mb-2 block text-sm font-medium text-gray-700"
+              className="mb-2 block text-sm font-medium text-foreground"
             >
               Reference Number <span className="text-red-500">*</span>
             </label>
@@ -71,10 +71,10 @@ export default function TrackingForm({ onTrack, isLoading }: TrackingFormProps) 
               }}
               placeholder="e.g., FQV-12345-2026"
               className={cn(
-                "w-full rounded-lg border px-4 py-3 text-gray-900 transition-colors focus:outline-none focus:ring-2",
+                "w-full rounded-lg border px-4 py-3 text-foreground transition-colors focus:outline-none focus:ring-2",
                 errors.reference
                   ? "border-red-300 focus:border-red-500 focus:ring-red-200"
-                  : "border-gray-300 focus:border-qatar-maroon focus:ring-qatar-maroon/20"
+                  : "border-border focus:border-qatar-maroon focus:ring-qatar-maroon/20"
               )}
             />
             {errors.reference && (
@@ -86,7 +86,7 @@ export default function TrackingForm({ onTrack, isLoading }: TrackingFormProps) 
           <div>
             <label
               htmlFor="email"
-              className="mb-2 block text-sm font-medium text-gray-700"
+              className="mb-2 block text-sm font-medium text-foreground"
             >
               Email Address <span className="text-red-500">*</span>
             </label>
@@ -102,10 +102,10 @@ export default function TrackingForm({ onTrack, isLoading }: TrackingFormProps) 
               }}
               placeholder="Enter your email address"
               className={cn(
-                "w-full rounded-lg border px-4 py-3 text-gray-900 transition-colors focus:outline-none focus:ring-2",
+                "w-full rounded-lg border px-4 py-3 text-foreground transition-colors focus:outline-none focus:ring-2",
                 errors.email
                   ? "border-red-300 focus:border-red-500 focus:ring-red-200"
-                  : "border-gray-300 focus:border-qatar-maroon focus:ring-qatar-maroon/20"
+                  : "border-border focus:border-qatar-maroon focus:ring-qatar-maroon/20"
               )}
             />
             {errors.email && (
@@ -114,7 +114,7 @@ export default function TrackingForm({ onTrack, isLoading }: TrackingFormProps) 
           </div>
 
           {/* Helper Text */}
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-muted-foreground">
             Your reference number was sent to your email after submitting your
             application.
           </p>
@@ -143,7 +143,7 @@ export default function TrackingForm({ onTrack, isLoading }: TrackingFormProps) 
         <div className="mt-6 text-center">
           <a
             href="#tracking-help"
-            className="inline-flex items-center gap-1 text-sm text-gray-500 transition-colors hover:text-qatar-maroon"
+            className="inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-qatar-maroon"
           >
             <HelpCircle className="h-4 w-4" />
             Can&apos;t find your reference number?

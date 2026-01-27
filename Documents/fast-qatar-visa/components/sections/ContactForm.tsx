@@ -109,15 +109,15 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="rounded-2xl bg-white p-8 shadow-xl">
+    <div className="rounded-2xl bg-background p-8 shadow-xl">
       <span className="inline-flex items-center gap-2 rounded-full bg-qatar-maroon/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-qatar-maroon">
         <span className="h-1.5 w-1.5 rounded-full bg-qatar-maroon" />
         Contact Form
       </span>
-      <h2 className="mt-3 font-heading text-2xl font-bold text-gray-900 sm:text-3xl">
+      <h2 className="mt-3 font-heading text-2xl font-bold text-foreground sm:text-3xl">
         Send Us a Message
       </h2>
-      <p className="mt-2 text-gray-600">
+      <p className="mt-2 text-muted-foreground">
         Fill out the form below and our visa experts will get back to you within 2-4 hours.
       </p>
 
@@ -145,7 +145,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="fullName"
-            className="mb-2 block text-sm font-medium text-gray-700"
+            className="mb-2 block text-sm font-medium text-foreground"
           >
             Full Name <span className="text-red-500">*</span>
           </label>
@@ -157,10 +157,10 @@ export default function ContactForm() {
             onChange={handleChange}
             placeholder="Enter your full name"
             className={cn(
-              "w-full rounded-lg border px-4 py-3 text-gray-900 transition-colors focus:outline-none focus:ring-2",
+              "w-full rounded-lg border px-4 py-3 text-foreground transition-colors focus:outline-none focus:ring-2",
               errors.fullName
                 ? "border-red-300 focus:border-red-500 focus:ring-red-200"
-                : "border-gray-300 focus:border-qatar-maroon focus:ring-qatar-maroon/20"
+                : "border-border focus:border-qatar-maroon focus:ring-qatar-maroon/20"
             )}
           />
           {errors.fullName && (
@@ -172,7 +172,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="email"
-            className="mb-2 block text-sm font-medium text-gray-700"
+            className="mb-2 block text-sm font-medium text-foreground"
           >
             Email Address <span className="text-red-500">*</span>
           </label>
@@ -184,10 +184,10 @@ export default function ContactForm() {
             onChange={handleChange}
             placeholder="your.email@example.com"
             className={cn(
-              "w-full rounded-lg border px-4 py-3 text-gray-900 transition-colors focus:outline-none focus:ring-2",
+              "w-full rounded-lg border px-4 py-3 text-foreground transition-colors focus:outline-none focus:ring-2",
               errors.email
                 ? "border-red-300 focus:border-red-500 focus:ring-red-200"
-                : "border-gray-300 focus:border-qatar-maroon focus:ring-qatar-maroon/20"
+                : "border-border focus:border-qatar-maroon focus:ring-qatar-maroon/20"
             )}
           />
           {errors.email && (
@@ -199,7 +199,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="phone"
-            className="mb-2 block text-sm font-medium text-gray-700"
+            className="mb-2 block text-sm font-medium text-foreground"
           >
             Phone Number
           </label>
@@ -210,7 +210,7 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             placeholder="+974 XXXX XXXX"
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-qatar-maroon focus:outline-none focus:ring-2 focus:ring-qatar-maroon/20"
+            className="w-full rounded-lg border border-border px-4 py-3 text-foreground transition-colors focus:border-qatar-maroon focus:outline-none focus:ring-2 focus:ring-qatar-maroon/20"
           />
         </div>
 
@@ -218,7 +218,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="visaType"
-            className="mb-2 block text-sm font-medium text-gray-700"
+            className="mb-2 block text-sm font-medium text-foreground"
           >
             Visa Type
           </label>
@@ -227,7 +227,7 @@ export default function ContactForm() {
             name="visaType"
             value={formData.visaType}
             onChange={handleChange}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-qatar-maroon focus:outline-none focus:ring-2 focus:ring-qatar-maroon/20"
+            className="w-full rounded-lg border border-border px-4 py-3 text-foreground transition-colors focus:border-qatar-maroon focus:outline-none focus:ring-2 focus:ring-qatar-maroon/20"
           >
             {visaTypes.map((type) => (
               <option key={type.value} value={type.value}>
@@ -241,7 +241,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="message"
-            className="mb-2 block text-sm font-medium text-gray-700"
+            className="mb-2 block text-sm font-medium text-foreground"
           >
             Message <span className="text-red-500">*</span>
           </label>
@@ -253,10 +253,10 @@ export default function ContactForm() {
             rows={5}
             placeholder="Tell us how we can help you..."
             className={cn(
-              "w-full resize-none rounded-lg border px-4 py-3 text-gray-900 transition-colors focus:outline-none focus:ring-2",
+              "w-full resize-none rounded-lg border px-4 py-3 text-foreground transition-colors focus:outline-none focus:ring-2",
               errors.message
                 ? "border-red-300 focus:border-red-500 focus:ring-red-200"
-                : "border-gray-300 focus:border-qatar-maroon focus:ring-qatar-maroon/20"
+                : "border-border focus:border-qatar-maroon focus:ring-qatar-maroon/20"
             )}
           />
           {errors.message && (

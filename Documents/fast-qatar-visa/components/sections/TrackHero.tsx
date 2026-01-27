@@ -5,10 +5,10 @@ import { ChevronRight, Search } from "lucide-react";
 
 export default function TrackHero() {
   return (
-    <section className="relative bg-gradient-to-br from-gray-50 to-gray-100 py-16 md:py-20">
+    <section className="relative bg-gradient-to-br from-muted to-muted py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
-        <nav className="mb-6 flex items-center gap-2 text-sm text-gray-500">
+        <nav className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
           <Link href="/" className="transition-colors hover:text-qatar-maroon">
             Home
           </Link>
@@ -23,12 +23,12 @@ export default function TrackHero() {
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+          <h1 className="text-4xl font-bold text-foreground sm:text-5xl">
             Track Your Application
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-4 max-w-2xl text-lg text-gray-600">
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
             Enter your reference number to check your visa application status in
             real-time. Stay updated on every step of the process.
           </p>

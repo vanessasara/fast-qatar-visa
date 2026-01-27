@@ -66,7 +66,7 @@ export function WorkVisaSidebar({
                 <Clock className="w-4 h-4" />
                 <span className="text-sm font-semibold">Processing Time</span>
               </div>
-              <p className="text-gray-700 font-medium">{processingTime}</p>
+              <p className="text-muted-foreground font-medium">{processingTime}</p>
               {expressProcessing && (
                 <p className="text-sm text-qatar-gold">{expressProcessing}</p>
               )}
@@ -80,7 +80,7 @@ export function WorkVisaSidebar({
               </div>
               <p className="text-3xl font-bold text-qatar-gold">{visaFee}</p>
               {visaFeePKR && <p className="text-3xl font-bold text-qatar-maroon">{visaFeePKR}</p>}
-              {visaFeeNote && <p className="text-sm text-gray-500">{visaFeeNote}</p>}
+              {visaFeeNote && <p className="text-sm text-muted-foreground">{visaFeeNote}</p>}
             </div>
 
             {/* Salary */}
@@ -90,8 +90,8 @@ export function WorkVisaSidebar({
                 <span className="text-sm font-semibold">Monthly Salary</span>
               </div>
               <p className="text-2xl font-bold text-qatar-maroon">{salary}</p>
-              {salaryPKR && <p className="text-sm text-gray-500">{salaryPKR}</p>}
-              {salaryNote && <p className="text-sm text-gray-500">{salaryNote}</p>}
+              {salaryPKR && <p className="text-sm text-muted-foreground">{salaryPKR}</p>}
+              {salaryNote && <p className="text-sm text-muted-foreground">{salaryNote}</p>}
             </div>
 
             {/* Duration (for some visa types) */}
@@ -102,7 +102,7 @@ export function WorkVisaSidebar({
                   <span className="text-sm font-semibold">Duration</span>
                 </div>
                 <p className="text-2xl font-bold text-qatar-maroon">{duration}</p>
-                <p className="text-sm text-gray-500">Renewable</p>
+                <p className="text-sm text-muted-foreground">Renewable</p>
               </div>
             )}
 
@@ -118,10 +118,10 @@ export function WorkVisaSidebar({
                 <p className="text-green-600 font-medium">Eligible</p>
               ) : familySponsorship.startsWith("After") || familySponsorship.startsWith("Based") ? (
                 <>
-                  <p className="text-gray-700 font-medium">{familySponsorship}</p>
+                  <p className="text-muted-foreground font-medium">{familySponsorship}</p>
                 </>
               ) : (
-                <p className="text-gray-700 font-medium">{duration} (renewable)</p>
+                <p className="text-muted-foreground font-medium">{duration} (renewable)</p>
               )}
             </div>
 
@@ -154,7 +154,7 @@ export function WorkVisaSidebar({
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               {isPremium
                 ? currentSlug === "freelance"
                   ? "Our freelance visa specialists are available 24/7"
@@ -200,9 +200,9 @@ export function WorkVisaSidebar({
                 <Link
                   key={visa.slug}
                   href={`/services/work/${visa.slug}`}
-                  className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="flex items-center justify-between p-3 bg-muted rounded-lg hover:bg-muted/80 transition-colors"
                 >
-                  <span className="text-sm font-medium text-gray-700">
+                  <span className="text-sm font-medium text-muted-foreground">
                     {visa.shortTitle} Visa
                   </span>
                   <span className="text-sm text-qatar-gold font-semibold">

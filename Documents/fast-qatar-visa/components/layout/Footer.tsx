@@ -60,7 +60,7 @@ export default function Footer() {
                 src="/Logo.png"
                 fill
                 alt="Fast Qatar Visa Logo"
-                className="object-contain object-left brightness-0 invert"
+                className="object-contain object-left dark:brightness-0 dark:invert"
               />
             </Link>
             <p className="mb-6 text-sm leading-relaxed text-gray-300">

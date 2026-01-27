@@ -20,7 +20,7 @@ export function FeatureCard({
     iconColor === 'gold' ? 'bg-qatar-gold/10' : 'bg-qatar-maroon/10'
 
   return (
-    <Card className="border border-gray-100 hover-lift transition-all duration-300 group hover:border-qatar-gold/30">
+    <Card className="border border-border hover-lift transition-all duration-300 group hover:border-qatar-gold/30">
       <CardHeader>
         {/* Icon */}
         <div
@@ -37,7 +37,7 @@ export function FeatureCard({
 
       <CardContent>
         {/* Description */}
-        <p className="text-gray-600 leading-relaxed">{description}</p>
+        <p className="text-muted-foreground leading-relaxed">{description}</p>
 
         {/* Decorative Bottom Border */}
         <div className="mt-6 h-1 w-0 rounded-full bg-gradient-to-r from-qatar-maroon to-qatar-gold transition-all duration-500 group-hover:w-full" />

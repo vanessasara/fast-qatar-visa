@@ -167,7 +167,7 @@ export default function FAQ() {
   });
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-16 md:py-24">
+    <section className="bg-gradient-to-b from-muted to-background py-16 md:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center">
@@ -175,10 +175,10 @@ export default function FAQ() {
             <span className="h-1.5 w-1.5 rounded-full bg-qatar-maroon" />
             FAQ
           </span>
-          <h2 className="mt-4 font-heading text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-4 font-heading text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
             Frequently Asked Questions
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Quick answers to common questions about our visa services
           </p>
         </div>
@@ -186,13 +186,13 @@ export default function FAQ() {
         {/* Search Bar */}
         <div className="mt-10">
           <div className="relative">
-            <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
+            <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
             <input
               type="text"
               placeholder="Search questions..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-xl border border-gray-200 bg-white py-4 pl-12 pr-4 text-gray-900 shadow-sm transition-colors focus:border-qatar-maroon focus:outline-none focus:ring-2 focus:ring-qatar-maroon/20"
+              className="w-full rounded-xl border border-border bg-background py-4 pl-12 pr-4 text-foreground shadow-sm transition-colors focus:border-qatar-maroon focus:outline-none focus:ring-2 focus:ring-qatar-maroon/20"
             />
           </div>
         </div>
@@ -205,7 +205,7 @@ export default function FAQ() {
               "rounded-full px-4 py-2 text-sm font-medium transition-colors",
               activeCategory === "all"
                 ? "bg-qatar-maroon text-white"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                : "bg-muted text-foreground hover:bg-muted"
             )}
           >
             All Questions
@@ -218,7 +218,7 @@ export default function FAQ() {
                 "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                 activeCategory === category.id
                   ? "bg-qatar-maroon text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  : "bg-muted text-foreground hover:bg-muted"
               )}
             >
               {category.label}
@@ -229,9 +229,9 @@ export default function FAQ() {
         {/* FAQ Accordion */}
         <div className="mt-10 space-y-4">
           {filteredFaqs.length === 0 ? (
-            <div className="rounded-xl border border-gray-200 bg-white p-8 text-center">
-              <HelpCircle className="mx-auto h-12 w-12 text-gray-300" />
-              <p className="mt-4 text-gray-600">
+            <div className="rounded-xl border border-border bg-background p-8 text-center">
+              <HelpCircle className="mx-auto h-12 w-12 text-muted-foreground" />
+              <p className="mt-4 text-muted-foreground">
                 No questions found matching your criteria. Try a different search term or category.
               </p>
             </div>
@@ -239,24 +239,24 @@ export default function FAQ() {
             filteredFaqs.map((faq, index) => (
               <div
                 key={index}
-                className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md"
+                className="overflow-hidden rounded-xl border border-border bg-background shadow-sm transition-shadow hover:shadow-md"
               >
                 {/* Question Header */}
                 <button
                   onClick={() => toggleItem(index)}
-                  className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors hover:bg-gray-50"
+                  className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors hover:bg-muted"
                 >
                   <div className="flex items-center gap-3">
                     <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-qatar-maroon/10">
                       <HelpCircle className="h-4 w-4 text-qatar-maroon" />
                     </div>
-                    <span className="font-semibold text-gray-900">
+                    <span className="font-semibold text-foreground">
                       {faq.question}
                     </span>
                   </div>
                   <ChevronDown
                     className={cn(
-                      "h-5 w-5 flex-shrink-0 text-gray-500 transition-transform duration-300",
+                      "h-5 w-5 flex-shrink-0 text-muted-foreground transition-transform duration-300",
                       openIndex === index && "rotate-180"
                     )}
                   />
@@ -269,8 +269,8 @@ export default function FAQ() {
                     openIndex === index ? "max-h-[500px]" : "max-h-0"
                   )}
                 >
-                  <div className="border-t border-gray-100 px-6 py-5 pl-[72px]">
-                    <p className="leading-relaxed text-gray-600">{faq.answer}</p>
+                  <div className="border-t border-border px-6 py-5 pl-[72px]">
+                    <p className="leading-relaxed text-muted-foreground">{faq.answer}</p>
                   </div>
                 </div>
               </div>
@@ -280,15 +280,15 @@ export default function FAQ() {
 
         {/* Results count */}
         {searchQuery && (
-          <p className="mt-4 text-center text-sm text-gray-500">
+          <p className="mt-4 text-center text-sm text-muted-foreground">
             Showing {filteredFaqs.length} of {faqs.length} questions
           </p>
         )}
 
         {/* Still Have Questions */}
         <div className="mt-12 rounded-2xl bg-gradient-to-r from-qatar-maroon/5 to-qatar-gold/5 p-8 text-center">
-          <h3 className="text-lg font-semibold text-gray-900">Still have questions?</h3>
-          <p className="mt-2 text-gray-600">
+          <h3 className="text-lg font-semibold text-foreground">Still have questions?</h3>
+          <p className="mt-2 text-muted-foreground">
             Our visa experts are available 24/7 to help you.
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-4">

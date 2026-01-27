@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--muted);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -107,10 +107,22 @@ h1, h2, h3, h4, h5, h6,
   background: #731434;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #cc9a23;
+}
+
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #8B1538 #f1f1f1;
+  scrollbar-color: #8B1538 var(--muted);
+}
+
+.dark * {
+  scrollbar-color: #D4AF37 var(--muted);
 }
 
 /* Fade-in animation */

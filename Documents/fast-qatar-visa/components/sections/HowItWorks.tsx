@@ -36,15 +36,15 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-background py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollAnimation animation="fade-up">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
               Simple 4-Step Process
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
               Get your Qatar visa in just a few easy steps
             </p>
           </div>
@@ -66,7 +66,7 @@ export default function HowItWorks() {
                   <div className="relative flex flex-col items-center text-center">
                     {/* Step Circle */}
                     <div className="relative z-10">
-                      <div className="flex h-24 w-24 items-center justify-center rounded-full bg-white border-4 border-qatar-gold shadow-lg">
+                      <div className="flex h-24 w-24 items-center justify-center rounded-full bg-background border-4 border-qatar-gold shadow-lg">
                         <step.icon className="h-10 w-10 text-qatar-maroon" />
                       </div>
                       {/* Number Badge */}
@@ -76,10 +76,10 @@ export default function HowItWorks() {
                     </div>
 
                     {/* Content */}
-                    <h3 className="mt-6 text-xl font-bold text-gray-900">
+                    <h3 className="mt-6 text-xl font-bold text-foreground">
                       {step.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-gray-600 max-w-[200px]">
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground max-w-[200px]">
                       {step.description}
                     </p>
                   </div>
@@ -117,10 +117,10 @@ export default function HowItWorks() {
                           Step {step.number}
                         </span>
                       </div>
-                      <h3 className="mt-1 text-lg font-bold text-gray-900">
+                      <h3 className="mt-1 text-lg font-bold text-foreground">
                         {step.title}
                       </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                         {step.description}
                       </p>
                     </div>

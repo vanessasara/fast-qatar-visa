@@ -31,15 +31,15 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variants = {
       primary:
-        "bg-qatar-maroon text-white hover:bg-qatar-maroon-800 focus:ring-qatar-maroon",
+        "bg-qatar-maroon text-white hover:bg-qatar-maroon-800 dark:hover:bg-qatar-maroon-600 focus:ring-qatar-maroon",
       secondary:
-        "bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-500",
+        "bg-muted text-foreground hover:bg-muted/80 dark:bg-muted dark:hover:bg-muted/60 focus:ring-ring",
       outline:
-        "border-2 border-qatar-maroon text-qatar-maroon bg-transparent hover:bg-qatar-maroon hover:text-white focus:ring-qatar-maroon",
+        "border-2 border-qatar-maroon text-qatar-maroon dark:border-qatar-gold dark:text-qatar-gold bg-transparent hover:bg-qatar-maroon hover:text-white dark:hover:bg-qatar-gold dark:hover:text-qatar-maroon-900 focus:ring-qatar-maroon dark:focus:ring-qatar-gold",
       ghost:
-        "text-gray-700 hover:bg-gray-100 focus:ring-gray-500",
+        "text-foreground hover:bg-muted dark:hover:bg-muted/50 focus:ring-ring",
       gold:
-        "bg-qatar-gold text-white hover:bg-qatar-gold-500 focus:ring-qatar-gold",
+        "bg-qatar-gold text-white hover:bg-qatar-gold-500 dark:hover:bg-qatar-gold-300 focus:ring-qatar-gold",
     };
 
     const sizes = {

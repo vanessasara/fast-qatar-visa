@@ -23,7 +23,7 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
             Overview
           </CardTitle>
         </CardHeader>
-        <CardContent className="prose max-w-none text-gray-700">
+        <CardContent className="prose max-w-none text-muted-foreground">
           {visa.overview.map((paragraph, idx) => (
             <p key={idx}>{paragraph}</p>
           ))}
@@ -40,7 +40,7 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-700 mb-4">
+            <p className="text-muted-foreground mb-4">
               {visa.slug === "freelance"
                 ? "The Freelance Visa is ideal for independent professionals in:"
                 : "This work permit is available for multiple professional categories:"}
@@ -49,7 +49,7 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
               {visa.jobCategories.map((category, idx) => (
                 <div key={idx} className="job-category-item">
                   <CheckCircle className="icon-gold-sm" />
-                  <span className="text-sm text-gray-700">{category}</span>
+                  <span className="text-sm text-muted-foreground">{category}</span>
                 </div>
               ))}
             </div>
@@ -74,7 +74,7 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
             {visa.eligibility.map((item, idx) => (
               <li key={idx} className="checklist-item">
                 <CheckCircle className="icon-gold mt-0.5" />
-                <span className="text-gray-700">{item}</span>
+                <span className="text-muted-foreground">{item}</span>
               </li>
             ))}
           </ul>
@@ -93,18 +93,18 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
           {/* Pricing Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="pricing-card-gold">
-              <div className="text-sm text-gray-600 mb-1">Visa Processing Fee</div>
+              <div className="text-sm text-muted-foreground mb-1">Visa Processing Fee</div>
               <div className="text-3xl font-bold text-qatar-gold">{visa.visaFee}</div>
-              <div className="text-sm text-gray-500 mt-1">
+              <div className="text-sm text-muted-foreground mt-1">
                 {visa.visaFeeNote || "One-time payment"}
               </div>
             </div>
             <div className="pricing-card-maroon">
-              <div className="text-sm text-gray-600 mb-1">
+              <div className="text-sm text-muted-foreground mb-1">
                 {visa.slug === "freelance" ? "Income Potential" : "Monthly Salary"}
               </div>
               <div className="text-3xl font-bold text-qatar-maroon">{visa.salary}</div>
-              <div className="text-sm text-gray-500 mt-1">
+              <div className="text-sm text-muted-foreground mt-1">
                 {visa.salaryPKR || visa.salaryNote || ""}
               </div>
             </div>
@@ -112,12 +112,12 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
 
           {/* Salary Ranges (for Labour Visa) */}
           {visa.salaryRanges && (
-            <div className="p-4 bg-gray-50 rounded-lg">
+            <div className="p-4 bg-muted rounded-lg">
               <h4 className="font-semibold mb-3 text-qatar-maroon">Salary Range by Skill Level:</h4>
               <div className="space-y-2">
                 {visa.salaryRanges.map((range, idx) => (
                   <div key={idx} className="flex justify-between">
-                    <span className="text-gray-600">{range.level}</span>
+                    <span className="text-muted-foreground">{range.level}</span>
                     <span className="font-semibold">{range.salary}</span>
                   </div>
                 ))}
@@ -132,7 +132,7 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
               return (
                 <div key={idx} className="text-center">
                   {DetailIcon && <DetailIcon className="icon-gold-center" />}
-                  <div className="text-sm text-gray-500">{detail.label}</div>
+                  <div className="text-sm text-muted-foreground">{detail.label}</div>
                   <div className="font-semibold text-sm">{detail.value}</div>
                 </div>
               );
@@ -148,12 +148,12 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
               {visa.packageIncludes.map((item, idx) => (
                 <div key={idx} className="checklist-item-sm">
                   <CheckCircle className="icon-gold-sm" />
-                  <span className="text-gray-700 text-sm">{item}</span>
+                  <span className="text-muted-foreground text-sm">{item}</span>
                 </div>
               ))}
             </div>
             {visa.slug === "work-permit" && (
-              <p className="text-sm text-gray-500 mt-4">
+              <p className="text-sm text-muted-foreground mt-4">
                 * Family sponsorship depends on salary level (typically QAR 10,000+ for family visa eligibility)
               </p>
             )}
@@ -171,8 +171,8 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {visa.workingConditions.map((condition, idx) => (
                 <div key={idx}>
-                  <div className="font-semibold mb-2 text-gray-800">{condition.label}:</div>
-                  <p className="text-gray-600">{condition.value}</p>
+                  <div className="font-semibold mb-2 text-foreground">{condition.label}:</div>
+                  <p className="text-muted-foreground">{condition.value}</p>
                 </div>
               ))}
             </div>
@@ -182,7 +182,7 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
 
       {/* Benefits (for Accountant and Freelance) */}
       {visa.benefits && (
-        <Card className="bg-gradient-to-br from-qatar-gold/5 to-white border-qatar-gold/20">
+        <Card className="bg-gradient-to-br from-qatar-gold/5 to-background border-qatar-gold/20">
           <CardHeader>
             <CardTitle className="text-2xl text-qatar-maroon">
               {visa.slug === "accountant" ? "Why Choose This Visa?" : "Key Benefits"}
@@ -197,7 +197,7 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
                   </div>
                   <div>
                     <h4 className="font-semibold text-qatar-maroon">{benefit.title}</h4>
-                    <p className="text-sm text-gray-600">{benefit.description}</p>
+                    <p className="text-sm text-muted-foreground">{benefit.description}</p>
                   </div>
                 </div>
               ))}
@@ -214,7 +214,7 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
           </CardHeader>
           <CardContent>
             {visa.slug !== "labour" && (
-              <p className="text-gray-700 mb-4">
+              <p className="text-muted-foreground mb-4">
                 {visa.slug === "accountant"
                   ? "Accountants in Qatar work with leading organizations:"
                   : visa.slug === "bike-rider"
@@ -226,7 +226,7 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
               {visa.jobCategories.map((category, idx) => (
                 <div key={idx} className="job-category-item">
                   {JobIcon && <JobIcon className="w-4 h-4 text-qatar-gold" />}
-                  <span className="text-sm text-gray-700">{category}</span>
+                  <span className="text-sm text-muted-foreground">{category}</span>
                 </div>
               ))}
             </div>
@@ -247,7 +247,7 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
             {visa.requiredDocuments.map((item, idx) => (
               <li key={idx} className="checklist-item">
                 <FileText className="icon-gold mt-0.5" />
-                <span className="text-gray-700">{item}</span>
+                <span className="text-muted-foreground">{item}</span>
               </li>
             ))}
           </ul>
@@ -255,7 +255,7 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
           {/* Attestation Note */}
           {(visa.slug === "bike-rider" || visa.slug === "accountant") && (
             <div className={`mt-6 p-4 rounded-lg border ${visa.slug === "accountant" ? "bg-qatar-maroon/5 border-qatar-maroon/10" : "bg-qatar-gold/10 border-qatar-gold/20"}`}>
-              <p className="text-sm text-gray-700">
+              <p className="text-sm text-muted-foreground">
                 {visa.slug === "accountant" ? (
                   <>
                     <strong>Attestation Process:</strong> All educational documents require attestation from your home country&apos;s Ministry of Foreign Affairs and Qatar Embassy. We provide complete attestation assistance.

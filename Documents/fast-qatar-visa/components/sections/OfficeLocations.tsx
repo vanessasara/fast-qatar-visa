@@ -36,7 +36,7 @@ const features = [
 
 export default function OfficeLocations() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-background py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center">
@@ -44,10 +44,10 @@ export default function OfficeLocations() {
             <span className="h-1.5 w-1.5 rounded-full bg-qatar-gold" />
             Visit Us
           </span>
-          <h2 className="mt-4 font-heading text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-4 font-heading text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
             Our Office Location
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Stop by our office or reach out through any of our communication channels
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function OfficeLocations() {
           {/* Left Column - Office Details */}
           <div className="space-y-8">
             {/* Office Card */}
-            <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg">
+            <div className="overflow-hidden rounded-2xl border border-border bg-background shadow-lg">
               {/* Office Image */}
               <div className="relative h-48 overflow-hidden">
                 <Image
@@ -80,9 +80,9 @@ export default function OfficeLocations() {
                     <MapPin className="h-5 w-5 text-qatar-maroon" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">Address</p>
-                    <p className="text-gray-600">{officeInfo.address}</p>
-                    <p className="text-gray-600">{officeInfo.street}</p>
+                    <p className="font-medium text-foreground">Address</p>
+                    <p className="text-muted-foreground">{officeInfo.address}</p>
+                    <p className="text-muted-foreground">{officeInfo.street}</p>
                   </div>
                 </div>
 
@@ -92,7 +92,7 @@ export default function OfficeLocations() {
                     <Phone className="h-5 w-5 text-qatar-maroon" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">Phone</p>
+                    <p className="font-medium text-foreground">Phone</p>
                     <a
                       href={`tel:${officeInfo.phone.replace(/-/g, "")}`}
                       className="text-qatar-gold hover:underline"
@@ -108,7 +108,7 @@ export default function OfficeLocations() {
                     <Mail className="h-5 w-5 text-qatar-maroon" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">Email</p>
+                    <p className="font-medium text-foreground">Email</p>
                     <a
                       href={`mailto:${officeInfo.email}`}
                       className="text-qatar-gold hover:underline"
@@ -124,7 +124,7 @@ export default function OfficeLocations() {
                     <Clock className="h-5 w-5 text-qatar-maroon" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">Working Hours</p>
+                    <p className="font-medium text-foreground">Working Hours</p>
                     <p className="text-qatar-gold font-medium">{officeInfo.hours}</p>
                   </div>
                 </div>
@@ -166,13 +166,13 @@ export default function OfficeLocations() {
               {features.map((feature) => (
                 <div
                   key={feature.title}
-                  className="rounded-xl border border-gray-100 bg-gray-50 p-4 text-center"
+                  className="rounded-xl border border-border bg-muted p-4 text-center"
                 >
                   <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-qatar-gold/10">
                     <feature.icon className="h-6 w-6 text-qatar-gold" />
                   </div>
-                  <h4 className="font-semibold text-gray-900">{feature.title}</h4>
-                  <p className="mt-1 text-xs text-gray-600">{feature.description}</p>
+                  <h4 className="font-semibold text-foreground">{feature.title}</h4>
+                  <p className="mt-1 text-xs text-muted-foreground">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -180,9 +180,9 @@ export default function OfficeLocations() {
 
           {/* Right Column - Map */}
           <div className="relative">
-            <div className="sticky top-24 overflow-hidden rounded-2xl border border-gray-200 shadow-lg">
+            <div className="sticky top-24 overflow-hidden rounded-2xl border border-border shadow-lg">
               {/* Map Embed */}
-              <div className="relative h-[500px] w-full bg-gray-100">
+              <div className="relative h-[500px] w-full bg-muted">
                 <iframe
                   src={officeInfo.mapUrl}
                   width="100%"
@@ -197,11 +197,11 @@ export default function OfficeLocations() {
               </div>
 
               {/* Map Footer */}
-              <div className="bg-white p-4">
+              <div className="bg-background p-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <MapPin className="h-5 w-5 text-qatar-maroon" />
-                    <span className="text-sm font-medium text-gray-700">
+                    <span className="text-sm font-medium text-foreground">
                       Al Matar Street, Doha
                     </span>
                   </div>
@@ -221,7 +221,7 @@ export default function OfficeLocations() {
 
         {/* Bottom Note */}
         <div className="mt-16 rounded-2xl bg-gradient-to-r from-qatar-maroon/5 to-qatar-gold/5 p-8 text-center">
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-foreground">
             <span className="font-semibold">Note:</span> Office visits are available by appointment.
             For faster service, we recommend applying online or contacting us via phone/WhatsApp.
           </p>

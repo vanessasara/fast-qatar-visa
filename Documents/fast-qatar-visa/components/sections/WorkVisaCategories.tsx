@@ -115,7 +115,7 @@ const workVisas = [
 
 export default function WorkVisaCategories() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-20 bg-gradient-to-b from-background to-muted">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <ScrollAnimation animation="fade-up">
@@ -126,7 +126,7 @@ export default function WorkVisaCategories() {
             <h2 className="text-4xl md:text-5xl font-bold text-qatar-maroon mb-4">
               Qatar Work Visa Services
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Professional employment visas with competitive packages and comprehensive support
             </p>
           </div>
@@ -186,40 +186,40 @@ export default function WorkVisaCategories() {
                     {/* Pricing */}
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-gray-600">Visa Fee:</span>
+                        <span className="text-muted-foreground">Visa Fee:</span>
                         <span className="text-xl font-bold text-qatar-gold">
                           {visa.visaFee}
                         </span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-gray-600">Salary:</span>
+                        <span className="text-muted-foreground">Salary:</span>
                         <span className="text-lg font-semibold text-qatar-maroon">
                           {visa.salary}
                         </span>
                       </div>
                       {visa.salaryPKR && (
-                        <div className="text-sm text-gray-500 text-right">
+                        <div className="text-sm text-muted-foreground text-right">
                           {visa.salaryPKR}
                         </div>
                       )}
                     </div>
 
                     {/* Duration */}
-                    <div className="flex items-center gap-2 text-gray-600 py-2 border-y border-gray-100">
+                    <div className="flex items-center gap-2 text-muted-foreground py-2 border-y border-border">
                       <Clock className="w-4 h-4 text-qatar-gold" />
                       <span>Duration: {visa.duration}</span>
                     </div>
 
                     {/* Includes */}
                     <div className="space-y-2">
-                      <p className="font-semibold text-sm text-gray-700">
+                      <p className="font-semibold text-sm text-foreground">
                         Package Includes:
                       </p>
                       <ul className="space-y-1">
                         {visa.includes.map((item, idx) => (
                           <li
                             key={idx}
-                            className="flex items-start gap-2 text-sm text-gray-600"
+                            className="flex items-start gap-2 text-sm text-muted-foreground"
                           >
                             <CheckCircle className="w-4 h-4 text-qatar-gold mt-0.5 flex-shrink-0" />
                             <span>{item}</span>
@@ -247,7 +247,7 @@ export default function WorkVisaCategories() {
         {/* Section Footer */}
         <ScrollAnimation animation="fade-up" delay={600}>
           <div className="mt-12 text-center space-y-4">
-            <p className="text-gray-600">
+            <p className="text-muted-foreground">
               All prices include government fees and processing charges
             </p>
             <Link href="/services/work">

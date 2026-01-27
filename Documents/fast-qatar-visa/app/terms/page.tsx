@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted">
       {/* Hero Section */}
       <section className="bg-gradient-maroon py-20 text-white">
         <div className="container mx-auto px-4">
@@ -32,17 +32,17 @@ export default function TermsPage() {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl space-y-8">
             {/* Agreement */}
-            <div className="rounded-xl bg-white p-8 shadow-lg">
+            <div className="rounded-xl bg-background p-8 shadow-lg">
               <h2 className="mb-4 text-2xl font-heading font-bold text-qatar-maroon">
                 Agreement to Terms
               </h2>
-              <p className="leading-relaxed text-gray-700">
+              <p className="leading-relaxed text-muted-foreground">
                 By accessing or using Fast Qatar Visa Center services, you agree to be bound by these Terms of Service. If you disagree with any part of the terms, you may not access our services.
               </p>
             </div>
 
             {/* Services */}
-            <div className="rounded-xl bg-white p-8 shadow-lg">
+            <div className="rounded-xl bg-background p-8 shadow-lg">
               <div className="mb-6 flex items-center gap-3">
                 <FileText className="h-8 w-8 text-qatar-gold" />
                 <h2 className="text-2xl font-heading font-bold text-qatar-maroon">
@@ -50,7 +50,7 @@ export default function TermsPage() {
                 </h2>
               </div>
 
-              <div className="space-y-4 text-gray-700">
+              <div className="space-y-4 text-muted-foreground">
                 <p>Fast Qatar Visa Center provides visa processing and consultation services including:</p>
                 <ul className="ml-6 space-y-2">
                   <li className="list-disc">Tourist visa processing</li>
@@ -64,14 +64,14 @@ export default function TermsPage() {
             </div>
 
             {/* User Responsibilities */}
-            <div className="rounded-xl bg-white p-8 shadow-lg">
+            <div className="rounded-xl bg-background p-8 shadow-lg">
               <h2 className="mb-6 text-2xl font-heading font-bold text-qatar-maroon">
                 User Responsibilities
               </h2>
 
               <div className="space-y-4">
-                <p className="text-gray-700">When using our services, you agree to:</p>
-                <ul className="space-y-3 text-gray-700">
+                <p className="text-muted-foreground">When using our services, you agree to:</p>
+                <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
                     <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-qatar-gold" />
                     <span>Provide accurate, complete, and truthful information</span>
@@ -97,12 +97,12 @@ export default function TermsPage() {
             </div>
 
             {/* Payment Terms */}
-            <div className="rounded-xl bg-white p-8 shadow-lg">
+            <div className="rounded-xl bg-background p-8 shadow-lg">
               <h2 className="mb-6 text-2xl font-heading font-bold text-qatar-maroon">
                 Payment Terms
               </h2>
 
-              <div className="space-y-4 text-gray-700">
+              <div className="space-y-4 text-muted-foreground">
                 <p><strong>Service Fees:</strong> All service fees are clearly stated before processing begins. Fees include government charges and our service fees unless otherwise specified.</p>
                 <p><strong>Payment Schedule:</strong> Payment terms will be communicated at the time of application. Typically, 50% is required upfront with the balance due before visa issuance.</p>
                 <p><strong>Accepted Methods:</strong> We accept credit cards, debit cards, bank transfers, and online payment gateways.</p>
@@ -110,12 +110,12 @@ export default function TermsPage() {
             </div>
 
             {/* Refund Policy */}
-            <div className="rounded-xl bg-white p-8 shadow-lg">
+            <div className="rounded-xl bg-background p-8 shadow-lg">
               <h2 className="mb-6 text-2xl font-heading font-bold text-qatar-maroon">
                 Refund Policy
               </h2>
 
-              <div className="space-y-4 text-gray-700">
+              <div className="space-y-4 text-muted-foreground">
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-qatar-maroon" />
@@ -143,7 +143,7 @@ export default function TermsPage() {
                 <AlertTriangle className="h-6 w-6 flex-shrink-0 text-qatar-gold" />
                 <div>
                   <h3 className="mb-2 font-semibold text-qatar-maroon">Important Disclaimer</h3>
-                  <p className="text-sm text-gray-700 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Fast Qatar Visa Center is an independent visa processing service. We are not affiliated with or endorsed by the government of Qatar. While we maintain a high success rate, we cannot guarantee visa approval as final decisions rest with Qatar immigration authorities.
                   </p>
                 </div>

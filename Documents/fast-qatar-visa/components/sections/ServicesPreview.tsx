@@ -71,15 +71,15 @@ const services = [
 
 export default function ServicesPreview() {
   return (
-    <section className="bg-gray-50 py-16 md:py-24">
+    <section className="bg-muted py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollAnimation animation="fade-up">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
               Our Visa Services
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
               Comprehensive visa solutions for every travel need
             </p>
           </div>
@@ -95,7 +95,7 @@ export default function ServicesPreview() {
             >
               <Link href={service.href} className="block h-full">
                 <div
-                  className={`group relative h-full overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
+                  className={`group relative h-full overflow-hidden rounded-xl bg-background shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
                     service.highlight
                       ? "ring-2 ring-qatar-gold hover:ring-qatar-gold"
                       : "hover:ring-2 hover:ring-qatar-gold"
@@ -133,16 +133,16 @@ export default function ServicesPreview() {
 
                   {/* Card Content */}
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900">
+                    <h3 className="text-xl font-bold text-foreground">
                       {service.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                       {service.description}
                     </p>
 
                     {/* Processing Time */}
                     {service.processing && (
-                      <div className="mt-3 flex items-center gap-2 text-sm text-gray-500">
+                      <div className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
                         <Clock className="h-4 w-4 text-qatar-gold" />
                         <span>Processing: {service.processing}</span>
                       </div>

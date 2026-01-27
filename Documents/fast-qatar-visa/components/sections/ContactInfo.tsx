@@ -43,15 +43,15 @@ const officeAddress = {
 
 export default function ContactInfo() {
   return (
-    <div className="rounded-2xl bg-white p-8 shadow-xl">
+    <div className="rounded-2xl bg-background p-8 shadow-xl">
       <span className="inline-flex items-center gap-2 rounded-full bg-qatar-gold/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-qatar-gold">
         <span className="h-1.5 w-1.5 rounded-full bg-qatar-gold" />
         Qatar Office
       </span>
-      <h2 className="mt-3 font-heading text-2xl font-bold text-gray-900 sm:text-3xl">
+      <h2 className="mt-3 font-heading text-2xl font-bold text-foreground sm:text-3xl">
         Contact Information
       </h2>
-      <p className="mt-2 text-gray-600">
+      <p className="mt-2 text-muted-foreground">
         Reach us directly through any of these channels.
       </p>
 
@@ -63,13 +63,13 @@ export default function ContactInfo() {
               <detail.icon className="h-5 w-5 text-qatar-maroon" />
             </div>
             <div>
-              <p className="text-sm font-medium text-gray-500">{detail.label}</p>
+              <p className="text-sm font-medium text-muted-foreground">{detail.label}</p>
               {detail.href ? (
                 <a
                   href={detail.href}
                   target={detail.href.startsWith("http") ? "_blank" : undefined}
                   rel={detail.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="text-lg font-semibold text-gray-900 transition-colors hover:text-qatar-maroon"
+                  className="text-lg font-semibold text-foreground transition-colors hover:text-qatar-maroon"
                 >
                   {detail.value}
                 </a>
@@ -78,22 +78,22 @@ export default function ContactInfo() {
                   {detail.value}
                 </p>
               )}
-              <p className="text-sm text-gray-500">{detail.description}</p>
+              <p className="text-sm text-muted-foreground">{detail.description}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* Office Address */}
-      <div className="mt-8 rounded-xl border border-gray-100 bg-gray-50 p-5">
+      <div className="mt-8 rounded-xl border border-border bg-muted p-5">
         <div className="flex items-start gap-4">
           <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-qatar-maroon text-white">
             <MapPin className="h-5 w-5" />
           </div>
           <div>
-            <p className="font-semibold text-gray-900">Office Address</p>
-            <p className="mt-1 text-sm text-gray-600">{officeAddress.line1}</p>
-            <p className="text-sm text-gray-600">{officeAddress.line2}</p>
+            <p className="font-semibold text-foreground">Office Address</p>
+            <p className="mt-1 text-sm text-muted-foreground">{officeAddress.line1}</p>
+            <p className="text-sm text-muted-foreground">{officeAddress.line2}</p>
             <a
               href={officeAddress.directionsUrl}
               target="_blank"
@@ -135,8 +135,8 @@ export default function ContactInfo() {
       </div>
 
       {/* Map */}
-      <div className="mt-6 overflow-hidden rounded-xl border border-gray-200">
-        <div className="relative h-48 w-full bg-gray-100">
+      <div className="mt-6 overflow-hidden rounded-xl border border-border">
+        <div className="relative h-48 w-full bg-muted">
           <iframe
             src={officeAddress.mapUrl}
             width="100%"

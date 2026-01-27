@@ -132,10 +132,10 @@ export default function ServicesList() {
   const activeVisa = visaTypes.find((v) => v.id === activeTab) || visaTypes[0];
 
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-background py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Tab Navigation */}
-        <div className="mb-12 flex flex-wrap justify-center gap-2 border-b border-gray-200 pb-4">
+        <div className="mb-12 flex flex-wrap justify-center gap-2 border-b border-border pb-4">
           {visaTypes.map((visa) => (
             <button
               key={visa.id}
@@ -144,7 +144,7 @@ export default function ServicesList() {
                 "rounded-lg px-4 py-2 text-sm font-medium transition-all sm:px-6 sm:py-3 sm:text-base",
                 activeTab === visa.id
                   ? "bg-qatar-maroon text-white shadow-md"
-                  : "text-gray-600 hover:bg-gray-100 hover:text-qatar-maroon"
+                  : "text-muted-foreground hover:bg-muted hover:text-qatar-maroon"
               )}
             >
               {visa.label}
@@ -168,12 +168,12 @@ export default function ServicesList() {
 
           {/* Information Content */}
           <div className="lg:col-span-3">
-            <h2 className="text-3xl font-bold text-gray-900">
+            <h2 className="text-3xl font-bold text-foreground">
               {activeVisa.title}
             </h2>
 
             {/* Description */}
-            <div className="mt-6 space-y-4 text-gray-600">
+            <div className="mt-6 space-y-4 text-muted-foreground">
               {activeVisa.description.split("\n\n").map((paragraph, idx) => (
                 <p key={idx} className="leading-relaxed">
                   {paragraph}
@@ -183,14 +183,14 @@ export default function ServicesList() {
 
             {/* Eligibility */}
             <div className="mt-8">
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold text-foreground">
                 Eligibility Requirements
               </h3>
               <ul className="mt-4 space-y-3">
                 {activeVisa.eligibility.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-500" />
-                    <span className="text-gray-600">{item}</span>
+                    <span className="text-muted-foreground">{item}</span>
                   </li>
                 ))}
               </ul>

@@ -73,19 +73,19 @@ export function VisaCard({
 
       <CardContent className="space-y-4">
         {/* Description */}
-        <p className="text-sm text-gray-600 line-clamp-3 min-h-[60px]">
+        <p className="text-sm text-muted-foreground line-clamp-3 min-h-[60px]">
           {description}
         </p>
 
         {/* Pricing */}
-        <div className="space-y-2 border-t border-gray-100 pt-4">
+        <div className="space-y-2 border-t border-border pt-4">
           <div className="flex items-center justify-between">
-            <span className="text-sm text-gray-600">Visa Fee:</span>
+            <span className="text-sm text-muted-foreground">Visa Fee:</span>
             <span className="text-lg font-bold text-qatar-gold">{price}</span>
           </div>
           {salary && (
             <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">Salary:</span>
+              <span className="text-sm text-muted-foreground">Salary:</span>
               <span className="text-base font-semibold text-qatar-maroon">
                 {salary}
               </span>

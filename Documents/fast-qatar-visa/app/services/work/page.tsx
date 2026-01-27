@@ -209,7 +209,7 @@ export default function WorkVisasPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-qatar-maroon mb-4">
               Available Work Visa Categories
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Select the visa category that matches your skills and career goals.
               Each package includes comprehensive support and benefits.
             </p>
@@ -276,30 +276,30 @@ export default function WorkVisasPage() {
                         </h3>
                       </div>
 
-                      <p className="text-gray-600 mb-6">{visa.description}</p>
+                      <p className="text-muted-foreground mb-6">{visa.description}</p>
 
                       {/* Pricing Row */}
-                      <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-gray-50 rounded-lg">
+                      <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-muted rounded-lg">
                         <div>
-                          <div className="text-sm text-gray-500">Visa Fee</div>
+                          <div className="text-sm text-muted-foreground">Visa Fee</div>
                           <div className="text-lg font-bold text-qatar-gold">
                             {visa.visaFee}
                           </div>
                         </div>
                         <div>
-                          <div className="text-sm text-gray-500">Salary</div>
+                          <div className="text-sm text-muted-foreground">Salary</div>
                           <div className="text-lg font-bold text-qatar-maroon">
                             {visa.salary}
                           </div>
                           {visa.salaryPKR && (
-                            <div className="text-xs text-gray-500">
+                            <div className="text-xs text-muted-foreground">
                               {visa.salaryPKR}
                             </div>
                           )}
                         </div>
                         <div>
-                          <div className="text-sm text-gray-500">Processing</div>
-                          <div className="text-lg font-bold text-gray-700">
+                          <div className="text-sm text-muted-foreground">Processing</div>
+                          <div className="text-lg font-bold text-foreground">
                             {visa.processingTime}
                           </div>
                         </div>
@@ -307,14 +307,14 @@ export default function WorkVisasPage() {
 
                       {/* Includes */}
                       <div className="mb-6">
-                        <div className="text-sm font-semibold text-gray-700 mb-2">
+                        <div className="text-sm font-semibold text-foreground mb-2">
                           Package Includes:
                         </div>
                         <div className="grid grid-cols-2 gap-2">
                           {visa.includes.slice(0, 4).map((item, idx) => (
                             <div
                               key={idx}
-                              className="flex items-center gap-2 text-sm text-gray-600"
+                              className="flex items-center gap-2 text-sm text-muted-foreground"
                             >
                               <CheckCircle className="w-4 h-4 text-qatar-gold flex-shrink-0" />
                               <span>{item}</span>
@@ -350,19 +350,19 @@ export default function WorkVisasPage() {
       </section>
 
       {/* Comparison Table */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-qatar-maroon mb-4">
               Quick Comparison
             </h2>
-            <p className="text-gray-600">
+            <p className="text-muted-foreground">
               Compare all work visa categories at a glance
             </p>
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+            <table className="w-full bg-background rounded-xl shadow-lg overflow-hidden">
               <thead className="bg-qatar-maroon text-white">
                 <tr>
                   <th className="px-6 py-4 text-left">Visa Category</th>
@@ -373,8 +373,8 @@ export default function WorkVisasPage() {
                   <th className="px-6 py-4 text-center">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
-                <tr className="hover:bg-gray-50">
+              <tbody className="divide-y divide-border">
+                <tr className="hover:bg-muted">
                   <td className="px-6 py-4 font-medium">Bike Rider</td>
                   <td className="px-6 py-4 text-center text-qatar-gold font-bold">
                     QAR 7,500
@@ -390,7 +390,7 @@ export default function WorkVisasPage() {
                     </Link>
                   </td>
                 </tr>
-                <tr className="hover:bg-gray-50">
+                <tr className="hover:bg-muted">
                   <td className="px-6 py-4 font-medium">Cleaner</td>
                   <td className="px-6 py-4 text-center text-qatar-gold font-bold">
                     QAR 7,000
@@ -406,7 +406,7 @@ export default function WorkVisasPage() {
                     </Link>
                   </td>
                 </tr>
-                <tr className="hover:bg-gray-50">
+                <tr className="hover:bg-muted">
                   <td className="px-6 py-4 font-medium">Labour</td>
                   <td className="px-6 py-4 text-center text-qatar-gold font-bold">
                     QAR 7,000
@@ -422,7 +422,7 @@ export default function WorkVisasPage() {
                     </Link>
                   </td>
                 </tr>
-                <tr className="hover:bg-gray-50 bg-qatar-gold/5">
+                <tr className="hover:bg-muted bg-qatar-gold/5">
                   <td className="px-6 py-4 font-medium">
                     Accountant{" "}
                     <Badge className="ml-2 bg-qatar-gold text-white text-xs">
@@ -445,7 +445,7 @@ export default function WorkVisasPage() {
                     </Link>
                   </td>
                 </tr>
-                <tr className="hover:bg-gray-50">
+                <tr className="hover:bg-muted">
                   <td className="px-6 py-4 font-medium">Work Permit (2Y)</td>
                   <td className="px-6 py-4 text-center text-qatar-gold font-bold">
                     From QAR 7,500
@@ -461,7 +461,7 @@ export default function WorkVisasPage() {
                     </Link>
                   </td>
                 </tr>
-                <tr className="hover:bg-gray-50">
+                <tr className="hover:bg-muted">
                   <td className="px-6 py-4 font-medium">
                     Freelance{" "}
                     <Badge className="ml-2 bg-qatar-maroon text-white text-xs">
@@ -486,7 +486,7 @@ export default function WorkVisasPage() {
             </table>
           </div>
 
-          <p className="text-center text-gray-500 text-sm mt-4">
+          <p className="text-center text-muted-foreground text-sm mt-4">
             All fees include government charges and processing. Additional express
             processing available for urgent applications.
           </p>
@@ -508,7 +508,7 @@ export default function WorkVisasPage() {
             <Link href="/contact">
               <Button
                 size="lg"
-                className="bg-white text-qatar-maroon hover:bg-gray-100"
+                className="bg-background text-qatar-maroon hover:bg-muted"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Contact Us Now
@@ -522,7 +522,7 @@ export default function WorkVisasPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white/10"
+                className="border-background text-white hover:bg-background/10"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 WhatsApp Chat

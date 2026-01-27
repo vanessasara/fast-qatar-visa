@@ -83,7 +83,7 @@ export default function TrackPage() {
       <TrackHero />
 
       {/* Tracking Section */}
-      <section className="bg-white py-12 md:py-16">
+      <section className="bg-background py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {error && (
             <div className="mx-auto mb-8 max-w-lg rounded-lg bg-red-50 p-4 text-center text-red-700">

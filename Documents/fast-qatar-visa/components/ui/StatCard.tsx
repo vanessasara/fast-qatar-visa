@@ -17,7 +17,7 @@ export function StatCard({
   description,
 }: StatCardProps) {
   return (
-    <Card className="border-0 bg-white shadow-lg hover-lift overflow-hidden group">
+    <Card className="border-0 bg-background shadow-lg hover-lift overflow-hidden group">
       <CardContent className="p-6 text-center">
         {/* Icon */}
         <div className="mb-4 inline-flex items-center justify-center rounded-full bg-qatar-gold/10 p-4 transition-transform duration-300 group-hover:scale-110">
@@ -37,13 +37,13 @@ export function StatCard({
         </div>
 
         {/* Label */}
-        <h3 className="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-1">
+        <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-1">
           {label}
         </h3>
 
         {/* Optional Description */}
         {description && (
-          <p className="text-xs text-gray-500 mt-2">{description}</p>
+          <p className="text-xs text-muted-foreground mt-2">{description}</p>
         )}
 
         {/* Decorative Element */}

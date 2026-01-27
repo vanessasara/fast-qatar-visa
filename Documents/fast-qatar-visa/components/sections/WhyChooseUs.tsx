@@ -57,15 +57,15 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-gray-50 py-16 md:py-24">
+    <section className="bg-muted py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollAnimation animation="fade-up">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
               Why Choose Fast Qatar Visa?
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
               Your trusted partner for hassle-free visa processing
             </p>
           </div>
@@ -79,7 +79,7 @@ export default function WhyChooseUs() {
               animation="fade-up"
               delay={index * 100}
             >
-              <div className="group h-full rounded-xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-qatar-gold hover:shadow-lg">
+              <div className="group h-full rounded-xl border border-border bg-background p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-qatar-gold hover:shadow-lg">
                 {/* Icon */}
                 <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-qatar-gold/10 text-qatar-gold transition-colors group-hover:bg-qatar-gold group-hover:text-white">
                   <feature.icon className="h-7 w-7" />
@@ -91,12 +91,12 @@ export default function WhyChooseUs() {
                 </p>
 
                 {/* Title */}
-                <h3 className="mt-2 text-xl font-bold text-gray-900">
+                <h3 className="mt-2 text-xl font-bold text-foreground">
                   {feature.title}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-3 text-sm leading-relaxed text-gray-600">
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {feature.description}
                 </p>
               </div>

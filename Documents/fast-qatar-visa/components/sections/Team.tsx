@@ -33,14 +33,14 @@ const team = [
 
 export default function Team() {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-background py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
             Meet Our Team
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Dedicated professionals committed to your visa success
           </p>
         </div>
@@ -53,7 +53,7 @@ export default function Team() {
               className="group text-center"
             >
               {/* Photo */}
-              <div className="relative mx-auto mb-6 h-48 w-48 overflow-hidden rounded-full ring-4 ring-gray-100 transition-all duration-300 group-hover:ring-qatar-gold">
+              <div className="relative mx-auto mb-6 h-48 w-48 overflow-hidden rounded-full ring-4 ring-border transition-all duration-300 group-hover:ring-qatar-gold">
                 <Image
                   src={member.image}
                   alt={member.name}
@@ -63,11 +63,11 @@ export default function Team() {
               </div>
 
               {/* Info */}
-              <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
+              <h3 className="text-xl font-bold text-foreground">{member.name}</h3>
               <p className="mt-1 text-sm font-medium text-qatar-maroon">
                 {member.role}
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-gray-600">
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {member.bio}
               </p>
 
@@ -75,14 +75,14 @@ export default function Team() {
               <div className="mt-4 flex justify-center gap-3">
                 <a
                   href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-all hover:bg-qatar-maroon hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-muted text-muted-foreground transition-all hover:bg-qatar-maroon hover:text-white"
                   aria-label={`${member.name} LinkedIn`}
                 >
                   <Linkedin className="h-4 w-4" />
                 </a>
                 <a
                   href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-all hover:bg-qatar-maroon hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-muted text-muted-foreground transition-all hover:bg-qatar-maroon hover:text-white"
                   aria-label={`Email ${member.name}`}
                 >
                   <Mail className="h-4 w-4" />

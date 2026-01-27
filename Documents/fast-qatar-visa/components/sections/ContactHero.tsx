@@ -120,7 +120,7 @@ export default function ContactHero() {
         >
           <path
             d="M0 60V30C240 50 480 10 720 30C960 50 1200 10 1440 30V60H0Z"
-            fill="#f9fafb"
+            className="fill-muted"
           />
         </svg>
       </div>

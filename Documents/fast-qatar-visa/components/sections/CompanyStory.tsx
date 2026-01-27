@@ -42,7 +42,7 @@ const highlights = [
 
 export default function CompanyStory() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-background py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           {/* Image Column */}
@@ -63,14 +63,14 @@ export default function CompanyStory() {
             <div className="absolute -bottom-6 -right-6 -z-10 h-full w-full rounded-2xl bg-qatar-gold/20" />
 
             {/* Floating stats card */}
-            <div className="absolute -bottom-8 -left-4 rounded-xl bg-white p-6 shadow-xl sm:-left-8">
+            <div className="absolute -bottom-8 -left-4 rounded-xl bg-background p-6 shadow-xl sm:-left-8">
               <div className="flex items-center gap-4">
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-qatar-maroon text-white">
                   <Award className="h-7 w-7" />
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-qatar-maroon">98%</div>
-                  <div className="text-sm text-gray-600">Success Rate</div>
+                  <div className="text-sm text-muted-foreground">Success Rate</div>
                 </div>
               </div>
             </div>
@@ -85,12 +85,12 @@ export default function CompanyStory() {
             </span>
 
             {/* Heading */}
-            <h2 className="mt-4 font-heading text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 font-heading text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
               Your Trusted Partner for Qatar Visa Services
             </h2>
 
             {/* Story Paragraphs */}
-            <div className="mt-8 space-y-5 text-gray-600">
+            <div className="mt-8 space-y-5 text-muted-foreground">
               <p className="text-lg leading-relaxed">
                 Fast Qatar Visa Center was established with a vision to simplify Qatar visa
                 processing for travelers, workers, and families worldwide. With over 10 years
@@ -121,7 +121,7 @@ export default function CompanyStory() {
               {highlights.map((item) => (
                 <div key={item} className="flex items-start gap-2">
                   <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-qatar-gold" />
-                  <span className="text-sm text-gray-700">{item}</span>
+                  <span className="text-sm text-foreground">{item}</span>
                 </div>
               ))}
             </div>
@@ -133,7 +133,7 @@ export default function CompanyStory() {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-white/10">
+                <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-background/10">
                   <stat.icon className="h-7 w-7 text-qatar-gold" />
                 </div>
                 <div className="text-3xl font-bold text-white sm:text-4xl">

@@ -38,15 +38,15 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-background py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollAnimation animation="fade-up">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
               What Our Clients Say
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
               Real experiences from travelers worldwide
             </p>
           </div>
@@ -60,7 +60,7 @@ export default function Testimonials() {
               animation="fade-up"
               delay={index * 100}
             >
-              <div className="group relative h-full rounded-xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-qatar-gold hover:shadow-lg">
+              <div className="group relative h-full rounded-xl border border-border bg-background p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-qatar-gold hover:shadow-lg">
                 {/* Quote Icon */}
                 <Quote className="absolute right-6 top-6 h-10 w-10 text-qatar-gold/20" />
 
@@ -75,10 +75,10 @@ export default function Testimonials() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">
+                    <h4 className="font-semibold text-foreground">
                       {testimonial.name}
                     </h4>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-muted-foreground">
                       {testimonial.flag} {testimonial.country}
                     </p>
                   </div>
@@ -90,7 +90,7 @@ export default function Testimonials() {
                 </Badge>
 
                 {/* Review Text */}
-                <p className="mb-6 text-sm leading-relaxed text-gray-600">
+                <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
 

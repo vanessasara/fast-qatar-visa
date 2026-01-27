@@ -22,7 +22,7 @@ export function TestimonialCard({
   photo,
 }: TestimonialCardProps) {
   return (
-    <Card className="border border-gray-100 hover-lift transition-all duration-300 h-full flex flex-col">
+    <Card className="border border-border hover-lift transition-all duration-300 h-full flex flex-col">
       <CardContent className="p-6 flex flex-col flex-1">
         {/* Quote Icon */}
         <div className="mb-4">
@@ -30,7 +30,7 @@ export function TestimonialCard({
         </div>
 
         {/* Testimonial Text */}
-        <blockquote className="text-gray-700 leading-relaxed mb-6 flex-1 italic">
+        <blockquote className="text-foreground leading-relaxed mb-6 flex-1 italic">
           &ldquo;{quote}&rdquo;
         </blockquote>
 
@@ -42,14 +42,14 @@ export function TestimonialCard({
               className={`h-5 w-5 ${
                 index < rating
                   ? 'fill-qatar-gold text-qatar-gold'
-                  : 'fill-gray-200 text-gray-200'
+                  : 'fill-muted text-muted'
               }`}
             />
           ))}
         </div>
 
         {/* Author Section */}
-        <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
+        <div className="flex items-center gap-4 pt-4 border-t border-border">
           {/* Photo */}
           <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded-full ring-2 ring-qatar-gold/20">
             <Image
@@ -65,7 +65,7 @@ export function TestimonialCard({
             <div className="font-semibold text-qatar-maroon truncate">
               {name}
             </div>
-            <div className="text-sm text-gray-600 truncate">
+            <div className="text-sm text-muted-foreground truncate">
               {countryFlag && <span className="mr-1">{countryFlag}</span>}
               {country}
             </div>
