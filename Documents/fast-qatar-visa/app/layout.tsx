@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Playfair_Display, Manrope } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { ThemeProvider } from "@/components/theme-provider";
+import { LoadingBar } from "@/components/loading";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -89,7 +91,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${playfair.variable} ${manrope.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${manrope.variable}`} suppressHydrationWarning>
       <head>
         {/* Structured Data */}
         <script
@@ -98,18 +100,26 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased">
-        <div className="flex min-h-screen flex-col">
-          {/* Skip to content link for accessibility */}
-          <a href="#main-content" className="skip-to-content">
-            Skip to main content
-          </a>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <LoadingBar />
+          <div className="flex min-h-screen flex-col">
+            {/* Skip to content link for accessibility */}
+            <a href="#main-content" className="skip-to-content">
+              Skip to main content
+            </a>
 
-          <Header />
-          <main id="main-content" className="flex-1 pt-16 md:pt-20" role="main" aria-label="Main content">
-            {children}
-          </main>
-          <Footer />
-        </div>
+            <Header />
+            <main id="main-content" className="flex-1 pt-16 md:pt-20" role="main" aria-label="Main content">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
