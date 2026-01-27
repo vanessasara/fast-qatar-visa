@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Playfair_Display, Manrope } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -106,7 +107,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <LoadingBar />
+          <Suspense fallback={null}>
+            <LoadingBar />
+          </Suspense>
           <div className="flex min-h-screen flex-col">
             {/* Skip to content link for accessibility */}
             <a href="#main-content" className="skip-to-content">
