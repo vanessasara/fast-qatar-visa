@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, ChevronDown, Briefcase, Phone, MessageCircle } from "lucide-react";
+import { Menu, ChevronDown, Briefcase, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   Sheet,
@@ -12,6 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { WhatsAppIcon } from "@/components/ui/icons/WhatsAppIcon";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -79,7 +80,7 @@ export default function Header() {
                 className="flex items-center gap-2 hover:text-qatar-gold transition-colors"
                 aria-label="Chat on WhatsApp"
               >
-                <MessageCircle className="w-4 h-4" aria-hidden="true" />
+                <WhatsAppIcon className="w-4 h-4" aria-hidden="true" />
                 <span className="hidden sm:inline">WhatsApp</span>
               </a>
             </div>
@@ -101,7 +102,7 @@ export default function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="relative shrink-0 h-12 w-24 sm:h-16 sm:w-32 md:h-18 md:w-36 lg:h-20 lg:w-40"
+              className="relative shrink-0 h-14 w-32 sm:h-18 sm:w-40 md:h-20 md:w-44 lg:h-24 lg:w-52"
             >
               <Image
                 src="/Logo.png"
@@ -175,7 +176,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-green-500 px-4 py-2 text-sm font-semibold text-green-600 transition-all hover:bg-green-500 hover:text-white"
               >
-                <MessageCircle className="w-4 h-4" />
+                <WhatsAppIcon className="w-4 h-4" />
                 <span className="hidden lg:inline">WhatsApp</span>
               </a>
               <Link
@@ -269,7 +270,7 @@ export default function Header() {
                     className="flex items-center justify-center gap-2 rounded-lg bg-green-500 px-5 py-3 text-base font-semibold text-white transition-all hover:bg-green-600"
                     onClick={() => setIsSheetOpen(false)}
                   >
-                    <MessageCircle className="w-5 h-5" />
+                    <WhatsAppIcon className="w-5 h-5" />
                     WhatsApp Chat
                   </a>
                   <Link

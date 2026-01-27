@@ -26,7 +26,7 @@ const trustBadges = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] w-full overflow-hidden">
+    <section className="relative min-h-[65vh] w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -42,7 +42,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-[90vh] max-w-7xl items-center px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto flex min-h-[65vh] max-w-7xl items-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl py-20">
           {/* Main Heading */}
           <h1 className="animate-fade-in text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
