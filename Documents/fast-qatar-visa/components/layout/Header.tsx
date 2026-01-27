@@ -122,7 +122,7 @@ export default function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="relative shrink-0 h-12 w-28 sm:h-14 sm:w-32 md:h-16 md:w-36 lg:h-18 lg:w-40"
+              className="relative shrink-0 h-12 w-28 sm:h-34 sm:w-30 md:h-36 md:w-36 lg:h-28 lg:w-40"
             >
 
 <Image
@@ -240,7 +240,7 @@ export default function Header() {
                     <SheetTitle className="text-left">
                       <Link
                         href="/"
-                        className="relative block h-10 w-24"
+                        className="relative block h-24 w-24"
                         onClick={() => setIsSheetOpen(false)}
                       >
                         <Image
