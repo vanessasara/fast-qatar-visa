@@ -26,7 +26,7 @@ const trustBadges = [
 
 export default function Hero() {
   return (
-    <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden">
+    <section className="relative min-h-[calc(100vh-120px)] h-[calc(100vh-120px)] w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image

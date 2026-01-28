@@ -31,9 +31,9 @@ export default function AboutPage() {
       <AboutHero />
       <CompanyStory />
       <Values />
+      <CTASection />
       <OfficeLocations />
       <Team />
-      <CTASection />
     </>
   );
 }

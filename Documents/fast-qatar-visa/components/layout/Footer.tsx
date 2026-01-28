@@ -29,7 +29,8 @@ const resourceLinks = [
   { href: "/contact", label: "FAQs" },
   { href: "/services", label: "Visa Requirements" },
   { href: "/services", label: "Document Checklist" },
-  { href: "#", label: "Privacy Policy" },
+  { href: "/privacy", label: "Privacy Policy" },
+  { href: "/terms", label: "Terms" },
 ];
 
 const socialLinks = [

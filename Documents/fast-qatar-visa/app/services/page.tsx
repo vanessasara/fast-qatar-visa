@@ -16,9 +16,9 @@ export default function ServicesPage() {
     <>
       <ServicesHero />
       <ServicesList />
+      <CTASection />
       <RequirementsChecklist />
       <PricingTable />
-      <CTASection />
     </>
   );
 }
