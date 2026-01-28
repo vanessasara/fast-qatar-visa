@@ -25,11 +25,11 @@ export default function ServicesHero() {
       <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav className="mb-4 flex items-center gap-2 text-sm text-white/80">
-          <Link href="/" className="transition-colors hover:text-white">
+          <Link href="/" className="transition-colors hover:text-white font-medium">
             Home
           </Link>
-          <ChevronRight className="h-4 w-4" />
-          <span className="text-qatar-gold">Services</span>
+          <ChevronRight className="h-4 w-4 flex-shrink-0" />
+          <span className="text-qatar-gold font-medium">Services</span>
         </nav>
 
         {/* Title */}

@@ -117,7 +117,7 @@ export default function RootLayout({
             </a>
 
             <Header />
-            <main id="main-content" className="flex-1 pt-16 md:pt-20" role="main" aria-label="Main content">
+            <main id="main-content" className="flex-1" role="main" aria-label="Main content">
               {children}
             </main>
             <Footer />

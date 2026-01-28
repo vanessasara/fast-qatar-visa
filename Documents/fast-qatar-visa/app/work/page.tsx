@@ -15,6 +15,7 @@ import {
   ArrowRight,
   Phone,
   MessageCircle,
+  ChevronRight,
 } from "lucide-react";
 
 export const metadata = {
@@ -154,14 +155,12 @@ export default function WorkVisasPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
         <div className="container mx-auto px-4 relative z-10">
-          <nav className="text-white/70 text-sm mb-4">
-            <Link href="/" className="hover:text-white">
+          <nav className="flex items-center gap-2 text-white/70 text-sm mb-4">
+            <Link href="/" className="hover:text-white font-medium transition-colors">
               Home
             </Link>
-            <span className="mx-2">/</span>
-            <Link href="/work" className="hover:text-white">
-              Work Visas
-            </Link>
+            <ChevronRight className="h-4 w-4 flex-shrink-0" />
+            <span className="text-qatar-gold font-medium">Work Visas</span>
           </nav>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Qatar Work Visa Services

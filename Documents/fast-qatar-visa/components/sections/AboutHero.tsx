@@ -34,10 +34,10 @@ export default function AboutHero() {
       <div className="relative z-10 mx-auto flex h-full min-h-[60vh] max-w-7xl flex-col justify-center px-4 py-20 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav className="mb-6 flex items-center gap-2 text-sm text-white/80">
-          <Link href="/" className="transition-colors hover:text-qatar-gold">
+          <Link href="/" className="transition-colors hover:text-qatar-gold font-medium">
             Home
           </Link>
-          <ChevronRight className="h-4 w-4" />
+          <ChevronRight className="h-4 w-4 flex-shrink-0" />
           <span className="font-medium text-qatar-gold">About Us</span>
         </nav>
 
