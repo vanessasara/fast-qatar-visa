@@ -1,5 +1,3 @@
-"use client";
-
 import { FileCheck, Upload, CreditCard, Mail } from "lucide-react";
 import ScrollAnimation from "@/components/ui/scroll-animation";
 

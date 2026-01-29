@@ -1,17 +1,17 @@
-"use client";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, FileText, Users, DollarSign } from "lucide-react";
-import * as Icons from "lucide-react";
+import { ICON_MAP, type IconName } from "@/lib/icon-map";
 import type { WorkVisa } from "@/lib/work-visas";
+
+const { GraduationCap } = ICON_MAP;
 
 interface WorkVisaContentProps {
   visa: WorkVisa;
 }
 
 export function WorkVisaContent({ visa }: WorkVisaContentProps) {
-  // Get the icon component dynamically
-  const JobIcon = Icons[visa.icon as keyof typeof Icons] as React.ComponentType<{ className?: string }>;
+  // Get the icon component dynamically from our optimized icon map
+  const JobIcon = ICON_MAP[visa.icon as IconName];
 
   return (
     <div className="lg:col-span-2 space-y-8">
@@ -62,7 +62,7 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
         <CardHeader>
           <CardTitle className="card-title-with-icon">
             {visa.slug === "accountant" ? (
-              <Icons.GraduationCap className="w-6 h-6" />
+              <GraduationCap className="w-6 h-6" />
             ) : (
               <Users className="w-6 h-6" />
             )}
@@ -128,7 +128,7 @@ export function WorkVisaContent({ visa }: WorkVisaContentProps) {
           {/* Contract Details Grid */}
           <div className="contract-details-grid">
             {visa.contractDetails.map((detail, idx) => {
-              const DetailIcon = Icons[detail.icon as keyof typeof Icons] as React.ComponentType<{ className?: string }>;
+              const DetailIcon = ICON_MAP[detail.icon as IconName];
               return (
                 <div key={idx} className="text-center">
                   {DetailIcon && <DetailIcon className="icon-gold-center" />}

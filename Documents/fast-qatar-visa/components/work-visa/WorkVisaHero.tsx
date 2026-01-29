@@ -1,9 +1,7 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import * as Icons from "lucide-react";
+import { ICON_MAP, type IconName } from "@/lib/icon-map";
 
 interface WorkVisaHeroProps {
   title: string;
@@ -14,8 +12,8 @@ interface WorkVisaHeroProps {
 }
 
 export function WorkVisaHero({ title, description, image, icon, badges }: WorkVisaHeroProps) {
-  // Dynamically get the icon component
-  const IconComponent = Icons[icon as keyof typeof Icons] as React.ComponentType<{ className?: string }>;
+  // Dynamically get the icon component from our optimized icon map
+  const IconComponent = ICON_MAP[icon as IconName];
 
   return (
     <section className="work-visa-hero">

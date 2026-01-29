@@ -1,5 +1,3 @@
-"use client";
-
 import { FileCheck, Globe, Trophy, Clock } from "lucide-react";
 import ScrollAnimation from "@/components/ui/scroll-animation";
 

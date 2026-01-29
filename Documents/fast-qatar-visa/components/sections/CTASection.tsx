@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { Shield, Headphones, BadgeCheck } from "lucide-react";
 

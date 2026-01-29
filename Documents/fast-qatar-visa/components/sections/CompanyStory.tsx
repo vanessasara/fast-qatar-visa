@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { Calendar, Users, Award, Globe, CheckCircle } from "lucide-react";
 import { IMAGES } from "@/lib/images";
