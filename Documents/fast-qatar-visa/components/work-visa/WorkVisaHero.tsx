@@ -26,22 +26,7 @@ export function WorkVisaHero({ title, description, image, icon, badges }: WorkVi
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
       <div className="container mx-auto px-4 relative z-10">
-        {/* Breadcrumb */}
-        <nav className="text-white/70 text-sm mb-4">
-          <Link href="/" className="hover:text-white transition-colors">
-            Home
-          </Link>
-          <span className="mx-2">/</span>
-          <Link href="/services" className="hover:text-white transition-colors">
-            Visa Services
-          </Link>
-          <span className="mx-2">/</span>
-          <Link href="/work" className="hover:text-white transition-colors">
-            Work Visas
-          </Link>
-          <span className="mx-2">/</span>
-          <span className="text-white">{title}</span>
-        </nav>
+      
 
         {/* Icon and Badges */}
         <div className="flex items-center gap-3 mb-4">

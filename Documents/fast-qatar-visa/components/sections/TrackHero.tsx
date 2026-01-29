@@ -5,15 +5,7 @@ export default function TrackHero() {
   return (
     <section className="relative bg-gradient-to-br from-muted to-muted py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Breadcrumb */}
-        <nav className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
-          <Link href="/" className="transition-colors hover:text-qatar-maroon font-medium">
-            Home
-          </Link>
-          <ChevronRight className="h-4 w-4 flex-shrink-0" />
-          <span className="text-qatar-maroon font-medium">Track Application</span>
-        </nav>
-
+        
         <div className="flex flex-col items-center text-center">
           {/* Icon */}
           <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-qatar-maroon/10">

@@ -50,14 +50,7 @@ export default function ContactHero() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex h-full min-h-[50vh] max-w-7xl flex-col justify-center px-4 py-16 sm:px-6 lg:px-8">
-        {/* Breadcrumb */}
-        <nav className="mb-6 flex items-center gap-2 text-sm text-white/80">
-          <Link href="/" className="transition-colors hover:text-qatar-gold font-medium">
-            Home
-          </Link>
-          <ChevronRight className="h-4 w-4 flex-shrink-0" />
-          <span className="font-medium text-qatar-gold">Contact</span>
-        </nav>
+        
 
         {/* Title */}
         <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-qatar-gold">
